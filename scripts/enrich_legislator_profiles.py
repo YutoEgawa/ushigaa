@@ -9,7 +9,10 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from lxml import html
+try:
+    from lxml import html
+except ModuleNotFoundError:
+    html = None
 
 
 OUT_DIR = Path("data")
@@ -114,10 +117,19 @@ def to_date(year: int, month: int | None, day: int | None) -> tuple[str, str] | 
         parsed = date(year, month or 1, day or 1)
     except ValueError:
         return None
+    today = date.today()
+    if parsed > today:
+        return None
+    # Current Diet members must be adults well beyond a normal minimum
+    # candidacy age. This keeps update dates and career years out of
+    # birth_date even when a page contains misleading date-like text.
+    age = today.year - parsed.year - ((today.month, today.day) < (parsed.month, parsed.day))
+    if age < 25:
+        return None
     return parsed.isoformat(), precision
 
 
-def parse_birth_date(text: str) -> tuple[str, str] | None:
+def parse_birth_date(text: str, *, allow_unlabeled: bool = False) -> tuple[str, str] | None:
     text = normalize_digits(text)
     era_pattern = "|".join(ERA_BASE_YEAR.keys())
     candidates: list[tuple[re.Match[str], tuple[str, str] | None]] = []
@@ -152,7 +164,10 @@ def parse_birth_date(text: str) -> tuple[str, str] | None:
         candidates.append((m, to_date(int(m.group(1)), int(m.group(2)), int(m.group(3)))))
 
     valid = [(match, parsed) for match, parsed in candidates if parsed]
-    birth_markers = [m.start() for m in re.finditer(r"生まれ|出生", text)]
+    if allow_unlabeled and valid:
+        return valid[0][1]
+
+    birth_markers = [m.start() for m in re.finditer(r"生まれ|出生|生[。、．,，]", text)]
     for marker in birth_markers:
         window_start = max(0, marker - 90)
         nearby = [
@@ -165,9 +180,11 @@ def parse_birth_date(text: str) -> tuple[str, str] | None:
 
     for match, parsed in valid:
         context = text[match.end() : match.end() + 60]
+        if re.search(r"^\s*(?:生まれ|出生|生[。、．,，])", context):
+            return parsed
         if "生まれ" in context or "出生" in context:
             return parsed
-    return valid[0][1] if valid else None
+    return None
 
 
 def parse_election_count(text: str) -> tuple[int | None, str | None]:

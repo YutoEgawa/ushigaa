@@ -253,7 +253,7 @@ def parse_craj_profile(url: str, body: bytes, member: dict[str, str]) -> PartyPr
         if th and td:
             table_values[th] = td
 
-    birth = parse_birth_date(table_values.get("生年月日", ""))
+    birth = parse_birth_date(table_values.get("生年月日", ""), allow_unlabeled=True)
     career_parts: list[str] = []
     label_map = {
         "役職": "役職",
@@ -290,7 +290,7 @@ def labeled_birth_date(lines: list[str]) -> tuple[str, str] | None:
         if line == "生年月日" or line.startswith("生年月日 "):
             candidates = [line.removeprefix("生年月日").strip(), *lines[index + 1 : index + 4]]
             for candidate in candidates:
-                parsed = parse_birth_date(candidate)
+                parsed = parse_birth_date(candidate, allow_unlabeled=True)
                 if parsed:
                     return parsed
     return None
