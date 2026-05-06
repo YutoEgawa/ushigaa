@@ -1,13 +1,34 @@
+import random
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.config import Settings, get_settings
 from app.email_sender import EmailNotConfiguredError, EmailSendError, send_contact_email
-from app.models import ContactRequest, ContactResponse, District, LegislatorListResponse, LegislatorSummary, Party
-from app.supabase_client import SupabaseClient, build_legislator_params
+from app.models import (
+    ContactRequest,
+    ContactResponse,
+    District,
+    LegislatorListResponse,
+    LegislatorSummary,
+    Party,
+    PowerMapHouse,
+    PowerMapResponse,
+    PowerMapSegment,
+)
+from app.supabase_client import LEGISLATOR_SELECT, SupabaseClient, build_legislator_params
 
 router = APIRouter()
+
+GAUGE_COLORS = [
+    "#38D5FF",
+    "#A7F83B",
+    "#FFBE3D",
+    "#B985FF",
+    "#FF6B45",
+    "#35E0A1",
+    "#6F8CFF",
+]
 
 
 def get_supabase(settings: Annotated[Settings, Depends(get_settings)]) -> SupabaseClient:
@@ -123,6 +144,128 @@ def apply_house_alignment_ranks(
         row["alignment_rank"] = rank
 
     return ranked_rows
+
+
+@router.get("/power-map", response_model=PowerMapResponse)
+async def power_map(
+    supabase: Annotated[SupabaseClient, Depends(get_supabase)],
+) -> PowerMapResponse:
+    parties, _ = await supabase.get(
+        "parties",
+        {
+            "select": "name,name_short,color_hex,alignment,alignment_rank,alignment_rank_member_count",
+            "order": "alignment.asc,alignment_rank.asc,name.asc",
+        },
+    )
+    return PowerMapResponse(
+        shugiin=await build_power_map_house(supabase, parties, "shugiin", "衆議院"),
+        sangiin=await build_power_map_house(supabase, parties, "sangiin", "参議院"),
+    )
+
+
+async def build_power_map_house(
+    supabase: SupabaseClient,
+    parties: list[dict[str, object]],
+    house: str,
+    title: str,
+) -> PowerMapHouse:
+    members, _ = await supabase.get(
+        "active_legislators",
+        {"select": "party_name", "house": f"eq.{house}", "limit": 1000},
+    )
+    ranked_parties = apply_house_alignment_ranks(parties, members)
+    party_map = {str(party.get("name")): party for party in ranked_parties if party.get("name")}
+
+    counts: dict[str, int] = {}
+    for member in members:
+        party_name = member.get("party_name")
+        label = party_name if isinstance(party_name, str) and party_name else "その他"
+        counts[label] = counts.get(label, 0) + 1
+
+    segments = sorted(
+        (
+            build_power_map_segment(label, seats, party_map.get(label))
+            for label, seats in counts.items()
+        ),
+        key=power_map_sort_key,
+    )
+    colored_segments = [
+        segment.model_copy(
+            update={
+                "color": "#65708A"
+                if segment.alignment == "other"
+                else GAUGE_COLORS[index % len(GAUGE_COLORS)]
+            }
+        )
+        for index, segment in enumerate(segments)
+    ]
+    ruling_seats = sum(segment.seats for segment in colored_segments if segment.alignment == "ruling")
+    return PowerMapHouse(
+        title=title,
+        totalSeats=len(members),
+        rulingSeats=ruling_seats,
+        segments=colored_segments,
+    )
+
+
+def build_power_map_segment(label: str, seats: int, party: dict[str, object] | None) -> PowerMapSegment:
+    alignment = (
+        str(party.get("alignment"))
+        if party and party.get("alignment")
+        else ("other" if label == "無所属" else "opposition")
+    )
+    return PowerMapSegment(
+        label=label,
+        seats=seats,
+        color="#65708A",
+        alignment=alignment,
+        alignmentRank=int(party.get("alignment_rank") or 999) if party else 999,
+        memberCount=int(party.get("alignment_rank_member_count") or seats) if party else seats,
+    )
+
+
+def power_map_sort_key(segment: PowerMapSegment) -> tuple[int, int, int, str]:
+    group_order = {"ruling": 0, "opposition": 1, "other": 2}
+    return (
+        group_order.get(segment.alignment, 99),
+        segment.alignmentRank,
+        -segment.seats,
+        segment.label,
+    )
+
+
+@router.get("/featured-freshmen", response_model=list[LegislatorSummary])
+async def featured_freshmen(
+    supabase: Annotated[SupabaseClient, Depends(get_supabase)],
+    limit: Annotated[int, Query(ge=1, le=12)] = 3,
+) -> list[LegislatorSummary]:
+    _, count = await supabase.get(
+        "active_legislators",
+        {
+            "select": "id",
+            "election_count": "eq.1",
+            "limit": 1,
+            "offset": 0,
+        },
+    )
+    if not count:
+        return []
+
+    offsets = random.sample(range(count), k=min(limit, count))
+    rows: list[dict[str, object]] = []
+    for offset in offsets:
+        page, _ = await supabase.get(
+            "active_legislators",
+            {
+                "select": LEGISLATOR_SELECT,
+                "election_count": "eq.1",
+                "order": "name_kana.asc",
+                "limit": 1,
+                "offset": offset,
+            },
+        )
+        rows.extend(page)
+    return [LegislatorSummary.model_validate(row) for row in rows[:limit]]
 
 
 @router.get("/districts", response_model=list[District])

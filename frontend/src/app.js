@@ -192,6 +192,21 @@ async function listDistricts(house = "all") {
   ].filter((item) => house === "all" || item.house === house));
 }
 
+function fallbackPowerMap() {
+  return {
+    shugiin: buildGaugeData("衆議院", fallbackLegislators.filter((item) => item.house === "shugiin"), fallbackParties),
+    sangiin: buildGaugeData("参議院", fallbackLegislators.filter((item) => item.house === "sangiin"), fallbackParties)
+  };
+}
+
+async function getPowerMap() {
+  return api("/power-map", fallbackPowerMap());
+}
+
+async function listFeaturedFreshmen(limit = 3) {
+  return api(`/featured-freshmen?limit=${limit}`, randomFirstTermLegislators(fallbackLegislators, limit));
+}
+
 async function listAllLegislatorsByHouse(house) {
   const items = [];
   let offset = 0;
@@ -268,30 +283,23 @@ async function renderTop() {
   renderTopContent({
     page,
     parties: fallbackParties,
-    shugiinParties: fallbackParties,
-    sangiinParties: fallbackParties,
     districts: fallbackDistricts,
-    shugiinMembers: fallbackLegislators.filter((item) => item.house === "shugiin"),
-    sangiinMembers: fallbackLegislators.filter((item) => item.house === "sangiin"),
+    powerMap: fallbackPowerMap(),
+    featuredFreshmen: randomFirstTermLegislators(fallbackLegislators, 3),
     isLoading: true
   });
 
-  const [parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers] = await Promise.all([
+  const [parties, districts, powerMap, featuredFreshmen] = await Promise.all([
     listParties(),
-    listParties("shugiin"),
-    listParties("sangiin"),
     listDistricts(state.house),
-    listAllLegislatorsByHouse("shugiin"),
-    listAllLegislatorsByHouse("sangiin")
+    getPowerMap(),
+    listFeaturedFreshmen(3)
   ]);
   if (state.view !== "top") return;
-  renderTopContent({ page, parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers });
+  renderTopContent({ page, parties, districts, powerMap, featuredFreshmen });
 }
 
-function renderTopContent({ page, parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers, isLoading = false }) {
-  const shugiinGauge = buildGaugeData("衆議院", shugiinMembers, shugiinParties);
-  const sangiinGauge = buildGaugeData("参議院", sangiinMembers, sangiinParties);
-  const featuredFreshmen = randomFirstTermLegislators([...shugiinMembers, ...sangiinMembers], 3);
+function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen, isLoading = false }) {
   page.className = "page-frame top-page";
   page.innerHTML = `
     ${fallbackBanner()}
@@ -300,8 +308,8 @@ function renderTopContent({ page, parties, shugiinParties, sangiinParties, distr
       ${quickSearchPanel()}
     </section>
     <section class="power-map-strip" aria-label="勢力図">
-      ${gauge(shugiinGauge)}
-      ${gauge(sangiinGauge)}
+      ${gauge(powerMap.shugiin)}
+      ${gauge(powerMap.sangiin)}
     </section>
     <section class="hud-panel featured-freshmen-panel">
       <div class="panel-title">注目の大型新人議員</div>

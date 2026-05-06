@@ -59,6 +59,27 @@ class District(BaseModel):
     block_name: str | None = None
 
 
+class PowerMapSegment(BaseModel):
+    label: str
+    seats: int
+    color: str
+    alignment: str
+    alignmentRank: int
+    memberCount: int
+
+
+class PowerMapHouse(BaseModel):
+    title: str
+    totalSeats: int
+    rulingSeats: int
+    segments: list[PowerMapSegment]
+
+
+class PowerMapResponse(BaseModel):
+    shugiin: PowerMapHouse
+    sangiin: PowerMapHouse
+
+
 class ContactRequest(BaseModel):
     name: str = Field(min_length=1, max_length=120)
     organization: str | None = Field(default=None, max_length=160)
