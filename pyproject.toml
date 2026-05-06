@@ -1,7 +1,7 @@
 [project]
-name = "kokkai-giin-db"
+name = "ushigaa"
 version = "0.1.0"
-description = "Japanese Diet legislator database API"
+description = "Ushigaa API for Japanese Diet legislator data"
 requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115.0",
