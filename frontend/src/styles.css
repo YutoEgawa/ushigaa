@@ -254,6 +254,12 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.search-filter-panel .advanced-search-grid,
+.search-filter-panel .suggest-row,
+.search-filter-panel .range-row {
+  grid-template-columns: 1fr;
+}
+
 .selected-token-list {
   display: flex;
   flex-wrap: wrap;

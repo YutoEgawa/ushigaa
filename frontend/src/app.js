@@ -379,8 +379,8 @@ async function renderDetail() {
       <dl>
         ${dataRow("所属政党・会派", item.party_name || "未設定")}
         ${dataRow("選挙区", item.district_name || "未設定")}
-        ${dataRow("区分", item.district_type || "未設定")}
-        ${dataRow("選挙年", item.election_year || "未設定")}
+        ${dataRow("区分", districtTypeLabel(item.district_type))}
+        ${dataRow("当選年", item.election_year || "未設定")}
         ${dataRow("当選回数", formatElectionCount(item))}
         ${dataRow("生年月日", formatBirthDate(item))}
         ${dataRow("年齢", calculateAge(item))}
@@ -1131,6 +1131,12 @@ function options(values, activeValue) {
 
 function houseLabel(house) {
   return house === "shugiin" ? "衆議院" : "参議院";
+}
+
+function districtTypeLabel(type) {
+  if (type === "proportional" || type === "比例代表") return "比例選出";
+  if (type === "single" || type === "小選挙区" || type === "選挙区") return "選挙区選出";
+  return type || "未設定";
 }
 
 function shortPartyName(name) {
