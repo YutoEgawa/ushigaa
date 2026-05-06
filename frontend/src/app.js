@@ -951,7 +951,7 @@ function featuredFreshmenCards(items) {
         <h3>${escapeHtml(item.name_kanji)}</h3>
         <p class="kana">${escapeHtml(item.name_kana || "")}</p>
         <p>${metaLine(item)}</p>
-        <span class="freshman-reason">${escapeHtml(electionCountLabel(item))}</span>
+        <span class="freshman-reason">${escapeHtml(formatElectionCount(item))}</span>
         <button class="text-button" data-open="${item.id}">詳細</button>
       </article>
     `
