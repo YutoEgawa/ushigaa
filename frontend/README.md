@@ -5,8 +5,8 @@ Cloudflare Pages settings:
 - Project name: `ushigaa`
 - Production branch: `main`
 - Framework preset: None
-- Build command: empty
-- Build output directory: `frontend`
+- Build command: `npm run build`
+- Build output directory: `dist`
 
 Production API endpoint:
 

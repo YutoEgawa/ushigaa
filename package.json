@@ -1,0 +1,8 @@
+{
+  "name": "ushigaa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-frontend.mjs"
+  }
+}

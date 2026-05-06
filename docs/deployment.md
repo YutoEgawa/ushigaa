@@ -50,7 +50,12 @@ curl https://<api-domain>/v1/legislators?limit=1
 
 Cloudflare Pages project name: `ushigaa`
 
-フロントエンドは静的SPAなので、`frontend/` を公開ディレクトリとしてホスティングする。
+フロントエンドは静的SPAです。Cloudflare Pagesでは以下を設定する。
+
+```text
+Build command: npm run build
+Build output directory: dist
+```
 
 本番公開時は `frontend/config.js` の API URL を本番APIへ差し替える。
 
