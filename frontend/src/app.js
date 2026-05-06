@@ -259,8 +259,7 @@ function bindHeader() {
 }
 
 async function renderTop() {
-  const [preview, parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers] = await Promise.all([
-    listLegislators({ limit: 6, house: state.house }),
+  const [parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers] = await Promise.all([
     listParties(),
     listParties("shugiin"),
     listParties("sangiin"),
@@ -270,6 +269,7 @@ async function renderTop() {
   ]);
   const shugiinGauge = buildGaugeData("衆議院", shugiinMembers, shugiinParties);
   const sangiinGauge = buildGaugeData("参議院", sangiinMembers, sangiinParties);
+  const featuredFreshmen = randomFirstTermLegislators([...shugiinMembers, ...sangiinMembers], 3);
   const page = document.querySelector("#page");
   page.className = "page-frame top-page";
   page.innerHTML = `
@@ -284,14 +284,14 @@ async function renderTop() {
     </section>
     <section class="hud-panel featured-freshmen-panel">
       <div class="panel-title">注目の大型新人議員</div>
-      <p class="panel-note">当選1期目の判定データ追加後、話題性・代表性・新規性の事実に基づいて自動抽出します。</p>
+      <p class="panel-note">当選1回目の議員からランダムに表示しています。</p>
       <div class="featured-grid">
-        ${featuredFreshmenCards(preview.items)}
+        ${featuredFreshmenCards(featuredFreshmen)}
       </div>
     </section>
     <section class="hud-panel top-intro-panel" aria-label="ウシガーの説明">
       <div>
-        <p class="panel-title">WHAT IS P-CHAN?</p>
+        <p class="panel-title">WHAT IS USHIGAA?</p>
         <p>ウシガーは、国会議員のプロフィール、所属、選挙区、経歴、政治勢力図を公開情報からまとめて検索できる政治家データベースです。</p>
       </div>
       <button class="secondary-button" id="top-about-link" type="button">ウシガーについて</button>
@@ -895,23 +895,41 @@ function rosterCard(item) {
 }
 
 function featuredFreshmenCards(items) {
-  const candidates = items.slice(0, 3);
-  if (!candidates.length) {
-    return `<div class="empty-state">新人議員候補データを準備中です。</div>`;
+  if (!items.length) {
+    return `<div class="empty-state">当選1回目の議員データを準備中です。</div>`;
   }
-  return candidates
+  return items
     .map(
       (item) => `
       <article class="freshman-card">
         <h3>${escapeHtml(item.name_kanji)}</h3>
         <p class="kana">${escapeHtml(item.name_kana || "")}</p>
         <p>${metaLine(item)}</p>
-        <span class="freshman-reason">当選回数データ追加後に注目理由を表示</span>
+        <span class="freshman-reason">${escapeHtml(electionCountLabel(item))}</span>
         <button class="text-button" data-open="${item.id}">詳細</button>
       </article>
     `
     )
     .join("");
+}
+
+function randomFirstTermLegislators(items, count) {
+  const candidates = items.filter((item) => Number(item.election_count) === 1);
+  return shuffleItems(candidates).slice(0, count);
+}
+
+function shuffleItems(items) {
+  const shuffled = [...items];
+  const cryptoValues = new Uint32Array(shuffled.length);
+  if (window.crypto?.getRandomValues) {
+    window.crypto.getRandomValues(cryptoValues);
+  }
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomValue = cryptoValues[index] || Math.floor(Math.random() * 4294967296);
+    const swapIndex = randomValue % (index + 1);
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
 }
 
 function bindOpenDetails() {
