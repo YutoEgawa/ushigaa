@@ -150,6 +150,14 @@ def apply_house_alignment_ranks(
 async def power_map(
     supabase: Annotated[SupabaseClient, Depends(get_supabase)],
 ) -> PowerMapResponse:
+    parties, members = await load_power_map_sources(supabase)
+    return PowerMapResponse(
+        shugiin=build_power_map_house(parties, members, "shugiin", "衆議院"),
+        sangiin=build_power_map_house(parties, members, "sangiin", "参議院"),
+    )
+
+
+async def load_power_map_sources(supabase: SupabaseClient) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     parties, _ = await supabase.get(
         "parties",
         {
@@ -157,27 +165,20 @@ async def power_map(
             "order": "alignment.asc,alignment_rank.asc,name.asc",
         },
     )
-    return PowerMapResponse(
-        shugiin=await build_power_map_house(supabase, parties, "shugiin", "衆議院"),
-        sangiin=await build_power_map_house(supabase, parties, "sangiin", "参議院"),
-    )
-
-
-async def build_power_map_house(
-    supabase: SupabaseClient,
-    parties: list[dict[str, object]],
-    house: str,
-    title: str,
-) -> PowerMapHouse:
     members, _ = await supabase.get(
         "active_legislators",
-        {"select": "party_name", "house": f"eq.{house}", "limit": 1000},
+        {"select": "house,party_name", "limit": 1000},
     )
-    ranked_parties = apply_house_alignment_ranks(parties, members)
+    return parties, members
+
+
+def build_power_map_house(parties: list[dict[str, object]], members: list[dict[str, object]], house: str, title: str) -> PowerMapHouse:
+    house_members = [member for member in members if member.get("house") == house]
+    ranked_parties = apply_house_alignment_ranks(parties, house_members)
     party_map = {str(party.get("name")): party for party in ranked_parties if party.get("name")}
 
     counts: dict[str, int] = {}
-    for member in members:
+    for member in house_members:
         party_name = member.get("party_name")
         label = party_name if isinstance(party_name, str) and party_name else "その他"
         counts[label] = counts.get(label, 0) + 1
@@ -202,7 +203,7 @@ async def build_power_map_house(
     ruling_seats = sum(segment.seats for segment in colored_segments if segment.alignment == "ruling")
     return PowerMapHouse(
         title=title,
-        totalSeats=len(members),
+        totalSeats=len(house_members),
         rulingSeats=ruling_seats,
         segments=colored_segments,
     )
@@ -239,33 +240,19 @@ async def featured_freshmen(
     supabase: Annotated[SupabaseClient, Depends(get_supabase)],
     limit: Annotated[int, Query(ge=1, le=12)] = 3,
 ) -> list[LegislatorSummary]:
-    _, count = await supabase.get(
+    rows, _ = await supabase.get(
         "active_legislators",
         {
-            "select": "id",
+            "select": LEGISLATOR_SELECT,
             "election_count": "eq.1",
-            "limit": 1,
-            "offset": 0,
+            "order": "name_kana.asc",
+            "limit": 1000,
         },
     )
-    if not count:
+    if not rows:
         return []
-
-    offsets = random.sample(range(count), k=min(limit, count))
-    rows: list[dict[str, object]] = []
-    for offset in offsets:
-        page, _ = await supabase.get(
-            "active_legislators",
-            {
-                "select": LEGISLATOR_SELECT,
-                "election_count": "eq.1",
-                "order": "name_kana.asc",
-                "limit": 1,
-                "offset": offset,
-            },
-        )
-        rows.extend(page)
-    return [LegislatorSummary.model_validate(row) for row in rows[:limit]]
+    selected_rows = random.sample(rows, k=min(limit, len(rows)))
+    return [LegislatorSummary.model_validate(row) for row in selected_rows]
 
 
 @router.get("/districts", response_model=list[District])

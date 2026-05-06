@@ -200,11 +200,11 @@ function fallbackPowerMap() {
 }
 
 async function getPowerMap() {
-  return api("/power-map", fallbackPowerMap());
+  return api("/power-map", null);
 }
 
 async function listFeaturedFreshmen(limit = 3) {
-  return api(`/featured-freshmen?limit=${limit}`, randomFirstTermLegislators(fallbackLegislators, limit));
+  return api(`/featured-freshmen?limit=${limit}`, []);
 }
 
 async function listAllLegislatorsByHouse(house) {
@@ -284,8 +284,8 @@ async function renderTop() {
     page,
     parties: fallbackParties,
     districts: fallbackDistricts,
-    powerMap: fallbackPowerMap(),
-    featuredFreshmen: randomFirstTermLegislators(fallbackLegislators, 3),
+    powerMap: null,
+    featuredFreshmen: null,
     isLoading: true
   });
 
@@ -308,14 +308,13 @@ function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen
       ${quickSearchPanel()}
     </section>
     <section class="power-map-strip" aria-label="勢力図">
-      ${gauge(powerMap.shugiin)}
-      ${gauge(powerMap.sangiin)}
+      ${powerMap ? `${gauge(powerMap.shugiin)}${gauge(powerMap.sangiin)}` : powerMapLoadingPanels(isLoading)}
     </section>
     <section class="hud-panel featured-freshmen-panel">
       <div class="panel-title">注目の大型新人議員</div>
       <p class="panel-note">${isLoading ? "最新データを読み込み中です。" : "当選1回目の議員からランダムに表示しています。"}</p>
       <div class="featured-grid">
-        ${featuredFreshmenCards(featuredFreshmen)}
+        ${featuredFreshmen === null ? loadingCards("大型新人議員を読み込み中です。") : featuredFreshmenCards(featuredFreshmen)}
       </div>
     </section>
     <section class="hud-panel top-intro-panel" aria-label="ウシガーの説明">
@@ -330,6 +329,24 @@ function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen
   bindOpenDetails();
   bindQuickSearch();
   bindTopIntro();
+}
+
+function powerMapLoadingPanels(isLoading) {
+  const message = isLoading ? "勢力図を読み込み中です。" : "勢力図を読み込めませんでした。";
+  return `
+    <section class="hud-panel gauge-panel">
+      <div class="panel-title">衆議院 勢力図</div>
+      <div class="loading-state">${message}</div>
+    </section>
+    <section class="hud-panel gauge-panel">
+      <div class="panel-title">参議院 勢力図</div>
+      <div class="loading-state">${message}</div>
+    </section>
+  `;
+}
+
+function loadingCards(message) {
+  return `<div class="empty-state">${escapeHtml(message)}</div>`;
 }
 
 async function renderSearch() {
