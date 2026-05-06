@@ -47,6 +47,11 @@ const fallbackParties = [
   { id: "party-cdp", name: "立憲民主党", name_short: "立憲", alignment: "opposition", alignment_rank: 1 },
   { id: "party-komei", name: "公明党", name_short: "公明", alignment: "opposition", alignment_rank: 2 }
 ];
+const fallbackDistricts = [
+  { id: "district-okayama-1", name: "岡山1区", house: "shugiin" },
+  { id: "district-proportional", name: "比例", house: "sangiin" },
+  { id: "district-tottori-shimane", name: "鳥取・島根", house: "sangiin" }
+];
 
 let state = readState();
 let apiOffline = false;
@@ -157,6 +162,28 @@ async function listFilteredLegislators({
   electionMax = "",
   proportional = "all"
 } = {}) {
+  const hasAdvancedFilters =
+    parties.length ||
+    districts.length ||
+    ageMin ||
+    ageMax ||
+    electionMin ||
+    electionMax ||
+    proportional !== "all";
+  if (!hasAdvancedFilters) {
+    return listLegislators({ q, house, limit: 50, offset: 0 });
+  }
+  if (
+    parties.length <= 1 &&
+    districts.length <= 1 &&
+    !ageMin &&
+    !ageMax &&
+    !electionMin &&
+    !electionMax &&
+    proportional === "all"
+  ) {
+    return listLegislators({ q, house, party: parties[0] || "", district: districts[0] || "", limit: 50, offset: 0 });
+  }
   const firstPage = await listLegislators({ q, house, limit: 100, offset: 0 });
   let items = [...firstPage.items];
   const total = firstPage.count ?? firstPage.items.length;
@@ -185,11 +212,7 @@ async function listParties(house = "all") {
 
 async function listDistricts(house = "all") {
   const path = house === "all" ? "/districts" : `/districts?house=${house}`;
-  return api(path, [
-    { id: "district-okayama-1", name: "岡山1区", house: "shugiin" },
-    { id: "district-proportional", name: "比例", house: "sangiin" },
-    { id: "district-tottori-shimane", name: "鳥取・島根", house: "sangiin" }
-  ].filter((item) => house === "all" || item.house === house));
+  return api(path, fallbackDistricts.filter((item) => house === "all" || item.house === house));
 }
 
 function fallbackPowerMap() {
@@ -275,11 +298,6 @@ function bindHeader() {
 
 async function renderTop() {
   const page = document.querySelector("#page");
-  const fallbackDistricts = [
-    { id: "district-okayama-1", name: "岡山1区", house: "shugiin" },
-    { id: "district-proportional", name: "比例", house: "sangiin" },
-    { id: "district-tottori-shimane", name: "鳥取・島根", house: "sangiin" }
-  ];
   renderTopContent({
     page,
     parties: fallbackParties,
@@ -350,6 +368,15 @@ function loadingCards(message) {
 }
 
 async function renderSearch() {
+  const page = document.querySelector("#page");
+  renderSearchContent({
+    page,
+    data: null,
+    parties: fallbackParties,
+    districts: fallbackDistricts.filter((item) => state.house === "all" || item.house === state.house),
+    isLoading: true
+  });
+
   const [data, parties, districts] = await Promise.all([
     listFilteredLegislators({
       q: state.q,
@@ -365,7 +392,11 @@ async function renderSearch() {
     listParties(),
     listDistricts(state.house)
   ]);
-  const page = document.querySelector("#page");
+  if (state.view !== "search") return;
+  renderSearchContent({ page, data, parties, districts });
+}
+
+function renderSearchContent({ page, data, parties, districts, isLoading = false }) {
   page.className = "page-frame search-page";
   page.innerHTML = `
     <section class="hud-panel filter-panel search-filter-panel">
@@ -377,10 +408,10 @@ async function renderSearch() {
     <section class="hud-panel search-results">
       <div class="search-results-head">
         <input value="${escapeHtml(state.q)}" aria-label="検索キーワード" id="result-search" />
-        <span>${state.q ? `検索: "${escapeHtml(state.q)}"` : "すべての議員"} / ${data.count ?? data.items.length}件</span>
+        <span>${searchResultStatus(data, isLoading)}</span>
       </div>
       <div class="results-list">
-        ${data.items.length ? data.items.map(rosterCard).join("") : `<div class="empty-state">条件に一致する議員が見つかりませんでした。</div>`}
+        ${isLoading ? searchLoadingState() : searchResultList(data)}
       </div>
     </section>
   `;
@@ -395,6 +426,33 @@ async function renderSearch() {
   });
   document.querySelector("[data-clear]").addEventListener("click", () => navigate({ view: "search", q: state.q, house: "all" }));
   bindOpenDetails();
+}
+
+function searchResultStatus(data, isLoading) {
+  if (isLoading) return "検索中 / データリンク確立中";
+  return `${state.q ? `検索: "${escapeHtml(state.q)}"` : "すべての議員"} / ${data.count ?? data.items.length}件`;
+}
+
+function searchResultList(data) {
+  return data.items.length
+    ? data.items.map(rosterCard).join("")
+    : `<div class="empty-state">条件に一致する議員が見つかりませんでした。</div>`;
+}
+
+function searchLoadingState() {
+  return `
+    <section class="search-loading" role="status" aria-live="polite">
+      <div class="scan-core" aria-hidden="true"><span></span><i></i></div>
+      <div class="scan-copy">
+        <p class="panel-title">SEARCHING DATABASE</p>
+        <h2>政治家データをスキャン中</h2>
+        <p>条件に一致する議員を照合しています。</p>
+      </div>
+      <div class="scan-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+  `;
 }
 
 async function renderDetail() {

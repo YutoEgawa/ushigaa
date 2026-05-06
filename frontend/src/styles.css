@@ -679,6 +679,123 @@ textarea:focus {
   gap: 12px;
 }
 
+.search-loading {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 213, 255, 0.42);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(56, 213, 255, 0.14), rgba(255, 210, 92, 0.08)),
+    radial-gradient(circle at 16% 30%, rgba(167, 248, 59, 0.16), transparent 30%),
+    var(--bg-surface-raised);
+}
+
+.search-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(56, 213, 255, 0.14), transparent);
+  transform: translateX(-100%);
+  animation: scanSweep 1.8s linear infinite;
+}
+
+.scan-core {
+  position: relative;
+  width: 132px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(56, 213, 255, 0.55);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 28px rgba(56, 213, 255, 0.18);
+}
+
+.scan-core::before,
+.scan-core::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(167, 248, 59, 0.28);
+  border-radius: 50%;
+}
+
+.scan-core::after {
+  inset: 38px;
+  border-color: rgba(255, 210, 92, 0.34);
+}
+
+.scan-core span {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+  animation: radarSpin 1.2s linear infinite;
+}
+
+.scan-core i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-amber);
+  box-shadow: 0 0 18px rgba(255, 210, 92, 0.85);
+}
+
+.scan-copy {
+  position: relative;
+  display: grid;
+  gap: 8px;
+}
+
+.scan-copy h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.scan-copy p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.scan-bars {
+  position: relative;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.scan-bars span {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(56, 213, 255, 0.24);
+  animation: barPulse 1s ease-in-out infinite;
+}
+
+.scan-bars span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.scan-bars span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.scan-bars span:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.scan-bars span:nth-child(5) {
+  animation-delay: 0.48s;
+}
+
 .roster-card {
   display: flex;
   align-items: center;
@@ -721,6 +838,31 @@ textarea:focus {
   background: #2b2413;
   font-size: 12px;
   font-weight: 800;
+}
+
+@keyframes radarSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scanSweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes barPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.72);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .detail-page {
@@ -1040,6 +1182,12 @@ textarea:focus {
 
   .top-intro-panel {
     align-items: start;
+  }
+
+  .search-loading {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
   }
 
   .top-intro-panel p:not(.panel-title) {
