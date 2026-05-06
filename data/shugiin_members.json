@@ -1,0 +1,4187 @@
+[
+  {
+    "name_kanji": "逢沢 一郎",
+    "name_kana": "あいさわ いちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "青木 ひとみ",
+    "name_kana": "あおき ひとみ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "青柳 仁士",
+    "name_kana": "あおやぎ ひとし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "青山 繁晴",
+    "name_kana": "あおやま しげはる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "青山 周平",
+    "name_kana": "あおやま しゅうへい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "赤澤 亮正",
+    "name_kana": "あかざわ りょうせい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鳥取2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "赤羽 一嘉",
+    "name_kana": "あかば かずよし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "あかま 二郎",
+    "name_kana": "あかま じろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "秋葉 賢也",
+    "name_kana": "あきば けんや",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "浅田 眞澄美",
+    "name_kana": "あさだ ますみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "浅野 哲",
+    "name_kana": "あさの さとし",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "茨城5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "東 国幹",
+    "name_kana": "あずま くによし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "東 徹",
+    "name_kana": "あずま とおる",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "畦元 将吾",
+    "name_kana": "あぜもと しょうご",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "麻生 太郎",
+    "name_kana": "あそう たろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "阿部 圭史",
+    "name_kana": "あべ けいし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "兵庫2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "阿部 司",
+    "name_kana": "あべ つかさ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "あべ 俊子",
+    "name_kana": "あべ としこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "阿部 弘樹",
+    "name_kana": "あべ ひろき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "有田 芳生",
+    "name_kana": "ありた よしふ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "安藤 たかお",
+    "name_kana": "あんどう たかお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京28",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "飯泉 嘉門",
+    "name_kana": "いいずみ かもん",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "五十嵐 清",
+    "name_kana": "いがらし きよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "池下 卓",
+    "name_kana": "いけした たく",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "池畑 浩太朗",
+    "name_kana": "いけはた こうたろう",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "伊佐 進一",
+    "name_kana": "いさ しんいち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "石井 啓一",
+    "name_kana": "いしい けいいち",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "石井 拓",
+    "name_kana": "いしい たく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "石川 昭政",
+    "name_kana": "いしかわ あきまさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "石川 勝",
+    "name_kana": "いしかわ まさる",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "石坂 太",
+    "name_kana": "いしざか まさる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "石田 真敏",
+    "name_kana": "いしだ まさとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "石破 茂",
+    "name_kana": "いしば しげる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鳥取1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "石橋 林太郎",
+    "name_kana": "いしばし りんたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "石原 宏高",
+    "name_kana": "いしはら ひろたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "石原 正敬",
+    "name_kana": "いしはら まさたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "三重3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "泉 健太",
+    "name_kana": "いずみ けんた",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "京都3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "一谷 勇一郎",
+    "name_kana": "いちたに ゆういちろう",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "市村 浩一郎",
+    "name_kana": "いちむら こういちろう",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "井出 庸生",
+    "name_kana": "いで ようせい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長野3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井戸 まさえ",
+    "name_kana": "いど まさえ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "伊藤 恵介",
+    "name_kana": "いとう けいすけ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "伊藤 聡",
+    "name_kana": "いとう さとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "伊藤 信太郎",
+    "name_kana": "いとう しんたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "伊藤 忠彦",
+    "name_kana": "いとう ただひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "伊藤 達也",
+    "name_kana": "いとう たつや",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京22",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "伊東 信久",
+    "name_kana": "いとう のぶひさ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "伊東 良孝",
+    "name_kana": "いとう よしたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "稲田 朋美",
+    "name_kana": "いなだ ともみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福井1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "稲葉 大輔",
+    "name_kana": "いなば だいすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "犬飼 明佳",
+    "name_kana": "いぬかい あきよし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "井野 俊郎",
+    "name_kana": "いの としろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井上 信治",
+    "name_kana": "いのうえ しんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京25",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井上 貴博",
+    "name_kana": "いのうえ たかひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井上 英孝",
+    "name_kana": "いのうえ ひでたか",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井林 辰憲",
+    "name_kana": "いばやし たつのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井原 巧",
+    "name_kana": "いはら たくみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛媛2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "井原 隆",
+    "name_kana": "いはら ゆたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "今枝 宗一郎",
+    "name_kana": "いまえだ そういちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "今岡 植",
+    "name_kana": "いまおか うえき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京26",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "岩崎 比菜",
+    "name_kana": "いわさき ひな",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "岩田 和親",
+    "name_kana": "いわた かずちか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "佐賀1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "岩谷 良平",
+    "name_kana": "いわたに りょうへい",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "岩屋 毅",
+    "name_kana": "いわや たけし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大分3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "上杉 謙太郎",
+    "name_kana": "うえすぎ けんたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "上田 英俊",
+    "name_kana": "うえだ えいしゅん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "富山2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "上野 賢一郎",
+    "name_kana": "うえの けんいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "滋賀2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "上野 宏史",
+    "name_kana": "うえの ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "上原 正裕",
+    "name_kana": "うえはら まさひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "浮島 智子",
+    "name_kana": "うきしま ともこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "宇佐美 登",
+    "name_kana": "うさみ のぼる",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "臼木 秀剛",
+    "name_kana": "うすき ひでたけ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "内山 こう",
+    "name_kana": "うちやま こう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "梅村 聡",
+    "name_kana": "うめむら さとし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "浦野 靖人",
+    "name_kana": "うらの やすと",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪15",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "うるま 譲司",
+    "name_kana": "うるま じょうじ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "江渡 聡徳",
+    "name_kana": "えと あきのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "江藤 拓",
+    "name_kana": "えとう たく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "衛藤 博昭",
+    "name_kana": "えとう ひろあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大分1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "英利アルフィヤ",
+    "name_kana": "えり あるふぃや",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "遠藤 敬",
+    "name_kana": "えんどう たかし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪18",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "遠藤 寛明",
+    "name_kana": "えんどう ひろあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山形1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大岡 敏孝",
+    "name_kana": "おおおか としたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "滋賀1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大串 正樹",
+    "name_kana": "おおぐし まさき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大島 敦",
+    "name_kana": "おおしま あつし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "大空 幸星",
+    "name_kana": "おおぞら こうき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京15",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大塚 拓",
+    "name_kana": "おおつか たく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大西 洋平",
+    "name_kana": "おおにし ようへい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京16",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大野 敬太郎",
+    "name_kana": "おおの けいたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "香川3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "大森 江里子",
+    "name_kana": "おおもり えりこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "緒方 林太郎",
+    "name_kana": "おがた りんたろう",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "福岡9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "岡野 純子",
+    "name_kana": "おかの じゅんこ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "岡本 三成",
+    "name_kana": "おかもと みつなり",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "岡本 康宏",
+    "name_kana": "おかもと やすひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小川 淳也",
+    "name_kana": "おがわ じゅんや",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "香川1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "奥下 剛光",
+    "name_kana": "おくした たけみつ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "尾崎 正直",
+    "name_kana": "おざき まさなお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "高知2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "長田 紘一郎",
+    "name_kana": "おさだ こういちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "小里 泰弘",
+    "name_kana": "おざと やすひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "小竹 凱",
+    "name_kana": "おだけ かい",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "小田原 潔",
+    "name_kana": "おだわら きよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京21",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "落合 貴之",
+    "name_kana": "おちあい たかゆき",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "鬼木 誠",
+    "name_kana": "おにき まこと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小野寺 五典",
+    "name_kana": "おのでら いつのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "尾花 瑛仁",
+    "name_kana": "おばな あきひと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小渕 優子",
+    "name_kana": "おぶち ゆうこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "尾身 朝子",
+    "name_kana": "おみ あさこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "河西 宏一",
+    "name_kana": "かさい こういち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "鹿嶋 祐介",
+    "name_kana": "かしま ゆうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "梶山 弘志",
+    "name_kana": "かじやま ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "柏倉 祐司",
+    "name_kana": "かしわくら ゆうじ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "勝俣 孝明",
+    "name_kana": "かつまた たかあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "勝目 康",
+    "name_kana": "かつめ やすし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "門 寛子",
+    "name_kana": "かど ひろこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "加藤 鮎子",
+    "name_kana": "かとう あゆこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山形3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "加藤 勝信",
+    "name_kana": "かとう かつのぶ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "加藤 貴弘",
+    "name_kana": "かとう たかひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "加藤 大博",
+    "name_kana": "かとう ともひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "加藤 竜祥",
+    "name_kana": "かとう りゅうしょう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長崎2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "門山 宏哲",
+    "name_kana": "かどやま ひろあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "金澤 結衣",
+    "name_kana": "かなざわ ゆい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川20",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "金子 恵美",
+    "name_kana": "かねこ えみ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "金子 恭之",
+    "name_kana": "かねこ やすし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "金子 容三",
+    "name_kana": "かねこ ようぞう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長崎3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "金村 龍那",
+    "name_kana": "かねむら りゅうな",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "上川 陽子",
+    "name_kana": "かみかわ ようこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "神谷 裕",
+    "name_kana": "かみや ひろし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北海道10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "川 裕一郎",
+    "name_kana": "かわ ゆういちろう",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "河井 昭成",
+    "name_kana": "かわい あきなり",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "河合 道雄",
+    "name_kana": "かわい みちお",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "川崎 ひでと",
+    "name_kana": "かわさき ひでと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "三重2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "河野 正美",
+    "name_kana": "かわの まさみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "河野 義博",
+    "name_kana": "かわの よしひろ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "川松 真一朗",
+    "name_kana": "かわまつ しんいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京23",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "河村 たかし",
+    "name_kana": "かわむら たかし",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "愛知1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "菅家 一郎",
+    "name_kana": "かんけ いちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "神田 潤一",
+    "name_kana": "かんだ じゅんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "青森2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "城内 実",
+    "name_kana": "きうち みのる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "黄川田 仁志",
+    "name_kana": "きかわだ ひとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "菊田 真紀子",
+    "name_kana": "きくた まきこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "岸 信千世",
+    "name_kana": "きし のぶちよ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山口2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "岸田 文雄",
+    "name_kana": "きしだ ふみお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "喜多 義典",
+    "name_kana": "きた よしのり",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "北神 圭朗",
+    "name_kana": "きたがみ けいろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "木下 敏之",
+    "name_kana": "きのした としゆき",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "木原 誠二",
+    "name_kana": "きはら せいじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京20",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "木原 稔",
+    "name_kana": "きはら みのる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "木村 次郎",
+    "name_kana": "きむら じろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "青森3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "金城 泰邦",
+    "name_kana": "きんじょう やすくに",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "草間 剛",
+    "name_kana": "くさま つよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川19",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "工藤 彰三",
+    "name_kana": "くどう しょうぞう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "工藤 聖子",
+    "name_kana": "くどう せいこ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "国定 勇人",
+    "name_kana": "くにさだ いさと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "國重 徹",
+    "name_kana": "くにしげ とおる",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "国光 あやの",
+    "name_kana": "くにみつ あやの",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "熊田 裕通",
+    "name_kana": "くまだ ひろみち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "栗原 渉",
+    "name_kana": "くりはら わたる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "黒崎 祐一",
+    "name_kana": "くろさき ゆういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京27",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "黒田 征樹",
+    "name_kana": "くろだ まさき",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪16",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小池 正昭",
+    "name_kana": "こいけ まさあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小泉 進次郎",
+    "name_kana": "こいずみ しんじろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小泉 龍司",
+    "name_kana": "こいずみ りゅうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "河野 太郎",
+    "name_kana": "こうの たろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川15",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高村 正大",
+    "name_kana": "こうむら まさひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山口1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "こうらい啓一郎",
+    "name_kana": "こうらい けいいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "古賀 篤",
+    "name_kana": "こが あつし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "國場 幸之助",
+    "name_kana": "こくば こうのすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "沖縄1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "輿水 恵一",
+    "name_kana": "こしみず けいいち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "小寺 裕雄",
+    "name_kana": "こてら ひろお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "後藤 茂之",
+    "name_kana": "ごとう しげゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長野4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "後藤 祐一",
+    "name_kana": "ごとう ゆういち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "許斐 亮太郎",
+    "name_kana": "このみ りょうたろう",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "小林 茂樹",
+    "name_kana": "こばやし しげき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "奈良1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小林 修平",
+    "name_kana": "こばやし しゅうへい",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "小林 鷹之",
+    "name_kana": "こばやし たかゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小林 史明",
+    "name_kana": "こばやし ふみあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "小森 卓郎",
+    "name_kana": "こもり たくお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "石川1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "今 洋佑",
+    "name_kana": "こん ようすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "近藤 和也",
+    "name_kana": "こんどう かずや",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "近藤 雅彦",
+    "name_kana": "こんどう まさひこ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "斉木 武志",
+    "name_kana": "さいき たけし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福井2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西條 昌良",
+    "name_kana": "さいじょう まさよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "斎藤アレックス",
+    "name_kana": "さいとう あれっくす",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "齋藤 健",
+    "name_kana": "さいとう けん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "斉藤 鉄夫",
+    "name_kana": "さいとう てつお",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "斎藤 洋明",
+    "name_kana": "さいとう ひろあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "斉藤 りえ",
+    "name_kana": "さいとう りえ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "坂井 学",
+    "name_kana": "さかい まなぶ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "坂本 哲志",
+    "name_kana": "さかもと てつし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "坂本 竜太郎",
+    "name_kana": "さかもと りゅうたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "笹川 博義",
+    "name_kana": "ささがわ ひろよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "佐々木 紀",
+    "name_kana": "ささき はじめ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "石川2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "佐々木 真琴",
+    "name_kana": "ささき まこと",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "佐藤 英道",
+    "name_kana": "さとう ひでみち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "佐藤 主迪",
+    "name_kana": "さとう まさし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川16",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "塩川 鉄也",
+    "name_kana": "しおかわ てつや",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "塩崎 彰久",
+    "name_kana": "しおざき あきひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛媛1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "重徳 和彦",
+    "name_kana": "しげとく かずひこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "繁本 護",
+    "name_kana": "しげもと まもる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "階 猛",
+    "name_kana": "しな たけし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "岩手1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "柴山 昌彦",
+    "name_kana": "しばやま まさひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "島尻 安伊子",
+    "name_kana": "しまじり あいこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "沖縄3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "島田 智明",
+    "name_kana": "しまだ ともあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "島村 かおる",
+    "name_kana": "しまむら かおる",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "下村 博文",
+    "name_kana": "しもむら はくぶん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "庄子 賢一",
+    "name_kana": "しょうじ けんいち",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "白坂 亜紀",
+    "name_kana": "しらさか あき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "新谷 正義",
+    "name_kana": "しんたに まさよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "新藤 義孝",
+    "name_kana": "しんどう よしたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "菅原 一秀",
+    "name_kana": "すがわら いっしゅう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 英敬",
+    "name_kana": "すずき えいけい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "三重4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 馨祐",
+    "name_kana": "すずき けいすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 俊一",
+    "name_kana": "すずき しゅんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岩手2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 淳司",
+    "name_kana": "すずき じゅんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "鈴木 貴子",
+    "name_kana": "すずき たかこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 拓海",
+    "name_kana": "すずき たくみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "鈴木 憲和",
+    "name_kana": "すずき のりかず",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山形2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 隼人",
+    "name_kana": "すずき はやと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鈴木 美香",
+    "name_kana": "すずき みか",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "鈴木 義弘",
+    "name_kana": "すずき よしひろ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "須田 英太郎",
+    "name_kana": "すだ えいたろう",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "住吉 寛紀",
+    "name_kana": "すみよし ひろき",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "関 健一郎",
+    "name_kana": "せき けんいちろう",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "関 芳弘",
+    "name_kana": "せき よしひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "世古 万美子",
+    "name_kana": "せこ まみこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "世耕 弘成",
+    "name_kana": "せこう ひろしげ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "和歌山2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "瀬戸 隆一",
+    "name_kana": "せと たかかず",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "園崎 弘道",
+    "name_kana": "そのさき ひろみち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "平 将明",
+    "name_kana": "たいら まさあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高市 早苗",
+    "name_kana": "たかいち さなえ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "奈良2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高階 恵美子",
+    "name_kana": "たかがい えみこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "島根1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高木 啓",
+    "name_kana": "たかぎ けい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高木 宏壽",
+    "name_kana": "たかぎ ひろひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高沢 一基",
+    "name_kana": "たかざわ かずもと",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "高鳥 修一",
+    "name_kana": "たかとり しゅういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高橋 祐介",
+    "name_kana": "たかはし ゆうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高見 康裕",
+    "name_kana": "たかみ やすひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "島根2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高見 亮",
+    "name_kana": "たかみ りょう",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "高山 聡史",
+    "name_kana": "たかやま さとし",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "武井 俊輔",
+    "name_kana": "たけい しゅんすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "武田 良太",
+    "name_kana": "たけだ りょうた",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "武部 新",
+    "name_kana": "たけべ あらた",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "武村 展英",
+    "name_kana": "たけむら のぶひで",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "滋賀3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田嶋 要",
+    "name_kana": "たじま かなめ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "橘 慶一郎",
+    "name_kana": "たちばな けいいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "富山3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "辰巳 孝太郎",
+    "name_kana": "たつみ こうたろう",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "田所 嘉徳",
+    "name_kana": "たどころ よしのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田中 和徳",
+    "name_kana": "たなか かずのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田中 健",
+    "name_kana": "たなか けん",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "田中 昌史",
+    "name_kana": "たなか まさし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "田中 良生",
+    "name_kana": "たなか りょうせい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉15",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "棚橋 泰文",
+    "name_kana": "たなはし やすふみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "谷 公一",
+    "name_kana": "たに こういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "谷 浩一郎",
+    "name_kana": "たに こういちろう",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "谷川 とむ",
+    "name_kana": "たにがわ とむ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大阪19",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田野瀬 太道",
+    "name_kana": "たのせ たいどう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "奈良3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田畑 裕明",
+    "name_kana": "たばた ひろあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "玉木 雄一郎",
+    "name_kana": "たまき ゆういちろう",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "香川2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田宮 寿人",
+    "name_kana": "たみや ひさと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "田村 智子",
+    "name_kana": "たむら ともこ",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "田村 憲久",
+    "name_kana": "たむら のりひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "三重1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "俵田 祐児",
+    "name_kana": "たわらだ ゆうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "丹野 みどり",
+    "name_kana": "たんの みどり",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "愛知11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "辻 清人",
+    "name_kana": "つじ きよと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "辻 秀樹",
+    "name_kana": "つじ ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "辻 由布子",
+    "name_kana": "つじ ゆうこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "津島 淳",
+    "name_kana": "つしま じゅん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "青森1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "土田 慎",
+    "name_kana": "つちだ しん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "土屋 品子",
+    "name_kana": "つちや しなこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉16",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "角田 秀穂",
+    "name_kana": "つのだ ひでお",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "寺田 稔",
+    "name_kana": "てらだ みのる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "土井 亨",
+    "name_kana": "どい とおる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "渡海 紀三朗",
+    "name_kana": "とかい きさぶろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "冨樫 博之",
+    "name_kana": "とがし ひろゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "秋田1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "とかしきなおみ",
+    "name_kana": "とかしき なおみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "土橋 章宏",
+    "name_kana": "どばし あきひろ",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "豊田 真由子",
+    "name_kana": "とよた まゆこ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "永岡 桂子",
+    "name_kana": "ながおか けいこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "中川こういち",
+    "name_kana": "なかがわ こういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中川 貴元",
+    "name_kana": "なかがわ たかもと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "中川 宏昌",
+    "name_kana": "なかがわ ひろまさ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "中川 康洋",
+    "name_kana": "なかがわ やすひろ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "長坂 康正",
+    "name_kana": "ながさか やすまさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "長澤 興祐",
+    "name_kana": "ながさわ こうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京29",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "長島 昭久",
+    "name_kana": "ながしま あきひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京30",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中曽根 康隆",
+    "name_kana": "なかそね やすたか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中田 宏",
+    "name_kana": "なかだ ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "富山1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "永田 磨梨奈",
+    "name_kana": "ながた まりな",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中谷 元",
+    "name_kana": "なかたに げん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "高知1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中谷 真一",
+    "name_kana": "なかたに しんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山梨1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中司 宏",
+    "name_kana": "なかつか ひろし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "長妻 昭",
+    "name_kana": "ながつま あきら",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "長友 慎治",
+    "name_kana": "ながとも しんじ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "宮崎2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中西 健治",
+    "name_kana": "なかにし けんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中根 一幸",
+    "name_kana": "なかね かずゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "中野 英幸",
+    "name_kana": "なかの ひでゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中野 洋昌",
+    "name_kana": "なかの ひろまさ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "長野 春信",
+    "name_kana": "ながの はるのぶ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "中村 はやと",
+    "name_kana": "なかむら はやと",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "茨城7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "中村 裕之",
+    "name_kana": "なかむら ひろゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "なかや めぐ",
+    "name_kana": "なかや めぐ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "中山 展宏",
+    "name_kana": "なかやま のりひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "中山 泰秀",
+    "name_kana": "なかやま やすひで",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "鍋島 勢理",
+    "name_kana": "なべしま せり",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "仁木 博文",
+    "name_kana": "にき ひろぶみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "徳島1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西岡 秀子",
+    "name_kana": "にしおか ひでこ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "長崎1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西岡 義高",
+    "name_kana": "にしおか よしたか",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "西園 勝秀",
+    "name_kana": "にしぞの かつひで",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "西田 薫",
+    "name_kana": "にしだ かおる",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西田 昭二",
+    "name_kana": "にしだ しょうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "石川3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西野 太亮",
+    "name_kana": "にしの だいすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西村 明宏",
+    "name_kana": "にしむら あきひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西村 智奈美",
+    "name_kana": "にしむら ちなみ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "西村 康稔",
+    "name_kana": "にしむら やすとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西銘 恒三郎",
+    "name_kana": "にしめ こうさぶろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "沖縄4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "西山 尚利",
+    "name_kana": "にしやま なおとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "新田 章文",
+    "name_kana": "にった しょうぶん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "丹羽 秀樹",
+    "name_kana": "にわ ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "額賀 福志郎",
+    "name_kana": "ぬかが ふくしろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "沼崎 満子",
+    "name_kana": "ぬまざき みつこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "根本 拓",
+    "name_kana": "ねもと たく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "根本 幸典",
+    "name_kana": "ねもと ゆきのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知15",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "野田 聖子",
+    "name_kana": "のだ せいこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "野田 佳彦",
+    "name_kana": "のだ よしひこ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "千葉14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "野中 厚",
+    "name_kana": "のなか あつし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "野間 健",
+    "name_kana": "のま たけし",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "鹿児島3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "野村 美穂",
+    "name_kana": "のむら みほ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "萩生田 光一",
+    "name_kana": "はぎうだ こういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京24",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "萩原 佳",
+    "name_kana": "はぎはら けい",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "橋本 岳",
+    "name_kana": "はしもと がく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "橋本 幹彦",
+    "name_kana": "はしもと みきひこ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "長谷川 淳二",
+    "name_kana": "はせがわ じゅんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛媛3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "畑野 君枝",
+    "name_kana": "はたの きみえ",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "鳩山 二郎",
+    "name_kana": "はとやま じろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "葉梨 康弘",
+    "name_kana": "はなし やすひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "馬場 伸幸",
+    "name_kana": "ばば のぶゆき",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪17",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "浜田 靖一",
+    "name_kana": "はまだ やすかず",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "浜地 雅一",
+    "name_kana": "はまち まさかず",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "林 拓海",
+    "name_kana": "はやし たくみ",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "林 芳正",
+    "name_kana": "はやし よしまさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山口3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "原田 直樹",
+    "name_kana": "はらだ なおき",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "原山 大亮",
+    "name_kana": "はらやま だいすけ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "東田 淳平",
+    "name_kana": "ひがしだ じゅんぺい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "日野 紗里亜",
+    "name_kana": "ひの さりあ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "愛知7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "平井 卓也",
+    "name_kana": "ひらい たくや",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "平口 洋",
+    "name_kana": "ひらぐち ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "平沢 勝栄",
+    "name_kana": "ひらさわ かつえい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京17",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "平沼 正二郎",
+    "name_kana": "ひらぬま しょうじろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "平林 晃",
+    "name_kana": "ひらばやし あきら",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "広瀬 建",
+    "name_kana": "ひろせ けん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大分2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "深作 ヘスス",
+    "name_kana": "ふかさく へすす",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "深澤 陽一",
+    "name_kana": "ふかざわ よういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "福重 隆浩",
+    "name_kana": "ふくしげ たかひろ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "福田 徹",
+    "name_kana": "ふくた とおる",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "福田 かおる",
+    "name_kana": "ふくだ かおる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京18",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "福田 達夫",
+    "name_kana": "ふくだ たつお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "福原 淳嗣",
+    "name_kana": "ふくはら じゅんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "秋田2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤井 比早之",
+    "name_kana": "ふじい ひさゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤沢 忠盛",
+    "name_kana": "ふじさわ ただもり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "藤田 ひかる",
+    "name_kana": "ふじた ひかる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長野2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤田 文武",
+    "name_kana": "ふじた ふみたけ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤田 誠",
+    "name_kana": "ふじた まこと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤田 洋司",
+    "name_kana": "ふじた ようじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "藤丸 敏",
+    "name_kana": "ふじまる さとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "藤原 崇",
+    "name_kana": "ふじわら たかし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岩手3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "文月 涼",
+    "name_kana": "ふづき りょう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "船田 元",
+    "name_kana": "ふなだ はじめ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "古井 康介",
+    "name_kana": "ふるい こうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "古川 あおい",
+    "name_kana": "ふるかわ あおい",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "古川 直季",
+    "name_kana": "ふるかわ なおき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川6",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "古川 元久",
+    "name_kana": "ふるかわ もとひさ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "愛知2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "古川 康",
+    "name_kana": "ふるかわ やすし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "佐賀2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "古川 禎久",
+    "name_kana": "ふるかわ よしひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮崎3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "古屋 圭司",
+    "name_kana": "ふるや けいじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "穂坂 泰",
+    "name_kana": "ほさか やすし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "星野 剛士",
+    "name_kana": "ほしの つよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "細田 健一",
+    "name_kana": "ほそだ けんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "細野 豪志",
+    "name_kana": "ほその ごうし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "堀内 詔子",
+    "name_kana": "ほりうち のりこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山梨2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "本田 太郎",
+    "name_kana": "ほんだ たろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "前川 恵",
+    "name_kana": "まえかわ めぐみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "前原 誠司",
+    "name_kana": "まえはら せいじ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "京都2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "牧島 かれん",
+    "name_kana": "まきしま かれん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川17",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "牧野 俊一",
+    "name_kana": "まきの しゅんいち",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "松下 英樹",
+    "name_kana": "まつした ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道9",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "松島 みどり",
+    "name_kana": "まつしま みどり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京14",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "松野 博一",
+    "name_kana": "まつの ひろかず",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "松本 泉",
+    "name_kana": "まつもと いずみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "松本 尚",
+    "name_kana": "まつもと ひさし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "松本 洋平",
+    "name_kana": "まつもと ようへい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京19",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "丸尾 なつ子",
+    "name_kana": "まるお なつこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "丸川 珠代",
+    "name_kana": "まるかわ たまよ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "丸田 康一郎",
+    "name_kana": "まるた こういちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "三木 圭恵",
+    "name_kana": "みき けえ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "水野よしひこ",
+    "name_kana": "みずの よしひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "三反園 訓",
+    "name_kana": "みたぞの さとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鹿児島2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "三谷 英弘",
+    "name_kana": "みたに ひでひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "三ッ林 裕巳",
+    "name_kana": "みつばやし ひろみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉13",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "峰島 侑也",
+    "name_kana": "みねしま ゆうや",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "美延 映夫",
+    "name_kana": "みのべ てるお",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "御法川 信英",
+    "name_kana": "みのりかわ のぶひで",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "三原 朝利",
+    "name_kana": "みはら あさと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "宮内 秀樹",
+    "name_kana": "みやうち ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "宮崎 政久",
+    "name_kana": "みやざき まさひさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "沖縄2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "宮路 拓馬",
+    "name_kana": "みやじ たくま",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鹿児島1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "宮下 一郎",
+    "name_kana": "みやした いちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長野5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "向山 淳",
+    "name_kana": "むこうやま じゅん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道8",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "向山 好一",
+    "name_kana": "むこやま こういち",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "武藤 かず子",
+    "name_kana": "むとう かずこ",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "武藤 容治",
+    "name_kana": "むとう ようじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "宗清 皇一",
+    "name_kana": "むねきよ こういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "村井 英樹",
+    "name_kana": "むらい ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "村岡 敏英",
+    "name_kana": "むらおか としひで",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "秋田3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "村上 誠一郎",
+    "name_kana": "むらかみ せいいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "村上 智信",
+    "name_kana": "むらかみ とものぶ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "村木 汀",
+    "name_kana": "むらき なぎさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "茂木 敏充",
+    "name_kana": "もてぎ としみつ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "森 英介",
+    "name_kana": "もり えいすけ",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "千葉11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "森 ようすけ",
+    "name_kana": "もり ようすけ",
+    "party_short": "国民",
+    "party_name": "国民民主党・無所属クラブ",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "森下 千里",
+    "name_kana": "もりした ちさと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "森原 紀代子",
+    "name_kana": "もりはら きよこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "森山 裕",
+    "name_kana": "もりやま ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鹿児島4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "盛山 正仁",
+    "name_kana": "もりやま まさひと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "保岡 宏武",
+    "name_kana": "やすおか ひろたけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "簗 和生",
+    "name_kana": "やな かずお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北関東",
+    "district_type": "proportional",
+    "block_name": "北関東"
+  },
+  {
+    "name_kanji": "山岡 達丸",
+    "name_kana": "やまおか たつまる",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "山際 大志郎",
+    "name_kana": "やまぎわ だいしろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川18",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山口 俊一",
+    "name_kana": "やまぐち しゅんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "徳島2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山口 晋",
+    "name_kana": "やまぐち すすむ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山口 壯",
+    "name_kana": "やまぐち つよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫12",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山崎 正恭",
+    "name_kana": "やまさき まさやす",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "四国",
+    "district_type": "proportional",
+    "block_name": "四国"
+  },
+  {
+    "name_kanji": "山下 史守朗",
+    "name_kana": "やました しずお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知16",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山下 貴司",
+    "name_kana": "やました たかし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山田 瑛理",
+    "name_kana": "やまだ えり",
+    "party_short": "みらい",
+    "party_name": "チームみらい",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "山田 賢司",
+    "name_kana": "やまだ けんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫7",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山田 美樹",
+    "name_kana": "やまだ みき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山田 基靖",
+    "name_kana": "やまだ もとやす",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫11",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山本 香苗",
+    "name_kana": "やまもと かなえ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "近畿",
+    "district_type": "proportional",
+    "block_name": "近畿"
+  },
+  {
+    "name_kanji": "山本 左近",
+    "name_kana": "やまもと さこん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "山本ジョージ",
+    "name_kana": "やまもと じょーじ",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "山本 深",
+    "name_kana": "やまもと しん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山本 大地",
+    "name_kana": "やまもと だいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "和歌山1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "山本 裕三",
+    "name_kana": "やまもと ゆうぞう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "横田 光弘",
+    "name_kana": "よこた みつひろ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "吉川 里奈",
+    "name_kana": "よしかわ りな",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東京",
+    "district_type": "proportional",
+    "block_name": "東京"
+  },
+  {
+    "name_kanji": "吉田 真次",
+    "name_kana": "よしだ しんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "中国",
+    "district_type": "proportional",
+    "block_name": "中国"
+  },
+  {
+    "name_kanji": "吉田 宣弘",
+    "name_kana": "よしだ のぶひろ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "九州",
+    "district_type": "proportional",
+    "block_name": "九州"
+  },
+  {
+    "name_kanji": "吉田 有理",
+    "name_kana": "よしだ ゆうり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "吉村 悠",
+    "name_kana": "よしむら はるか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "米内 紘正",
+    "name_kana": "よない ひろまさ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "笠 浩史",
+    "name_kana": "りゅう ひろふみ",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "若狹 清史",
+    "name_kana": "わかさ きよし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "北陸信越",
+    "district_type": "proportional",
+    "block_name": "北陸信越"
+  },
+  {
+    "name_kanji": "若林 健太",
+    "name_kana": "わかばやし けんた",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長野1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "若宮 健嗣",
+    "name_kana": "わかみや けんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "若山 慎司",
+    "name_kana": "わかやま しんじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知10",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "鷲尾 英一郎",
+    "name_kana": "わしお えいいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟4",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "早稲田 ゆき",
+    "name_kana": "わせだ ゆき",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "南関東",
+    "district_type": "proportional",
+    "block_name": "南関東"
+  },
+  {
+    "name_kanji": "和田 政宗",
+    "name_kana": "わだ まさむね",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東北",
+    "district_type": "proportional",
+    "block_name": "東北"
+  },
+  {
+    "name_kanji": "和田 義明",
+    "name_kana": "わだ よしあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道5",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "渡辺 藍理",
+    "name_kana": "わたなべ あいり",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東海",
+    "district_type": "proportional",
+    "block_name": "東海"
+  },
+  {
+    "name_kanji": "渡辺 勝幸",
+    "name_kana": "わたなべ かつゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城2",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "渡辺 孝一",
+    "name_kana": "わたなべ こういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "proportional",
+    "block_name": "北海道"
+  },
+  {
+    "name_kanji": "渡辺 真太朗",
+    "name_kana": "わたなべ しんたろう",
+    "party_short": "無",
+    "party_name": "無所属",
+    "district_name": "栃木3",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "渡辺 創",
+    "name_kana": "わたなべ そう",
+    "party_short": "中道",
+    "party_name": "中道改革連合・無所属",
+    "district_name": "宮崎1",
+    "district_type": "single",
+    "block_name": null
+  },
+  {
+    "name_kanji": "渡辺 博道",
+    "name_kana": "わたなべ ひろみち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉6",
+    "district_type": "single",
+    "block_name": null
+  }
+]

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: Ushigaa
+    runtime: python
+    plan: free
+    buildCommand: pip install -e .
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    healthCheckPath: /v1/health
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://ushigaa.com,https://www.ushigaa.com
+      - key: CONTACT_RECIPIENT_EMAIL
+        value: y.egawa.ahstu0415@gmail.com
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: SENDGRID_FROM_EMAIL
+        sync: false
+      - key: SENDGRID_FROM_NAME
+        value: ウシガー

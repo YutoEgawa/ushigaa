@@ -1,0 +1,2472 @@
+[
+  {
+    "name_kanji": "青木 愛",
+    "name_kana": "あおき あい",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007006.htm"
+  },
+  {
+    "name_kanji": "青木 一彦",
+    "name_kana": "あおき かずひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鳥取・島根",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010001.htm"
+  },
+  {
+    "name_kanji": "青島 健太",
+    "name_kana": "あおしま けんた",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022002.htm"
+  },
+  {
+    "name_kanji": "赤松 健",
+    "name_kana": "あかまつ けん",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022003.htm"
+  },
+  {
+    "name_kanji": "秋野 公造",
+    "name_kana": "あきの こうぞう",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010003.htm"
+  },
+  {
+    "name_kanji": "浅尾 慶一郎",
+    "name_kana": "あさお けいいちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998003.htm"
+  },
+  {
+    "name_kanji": "浅田 均",
+    "name_kana": "あさだ ひとし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016003.htm"
+  },
+  {
+    "name_kanji": "朝日 健太郎",
+    "name_kana": "あさひ けんたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016004.htm"
+  },
+  {
+    "name_kanji": "阿達 雅志",
+    "name_kana": "あだち まさし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7014002.htm"
+  },
+  {
+    "name_kanji": "足立 康史",
+    "name_kana": "あだち やすし",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025002.htm"
+  },
+  {
+    "name_kanji": "安達 悠司",
+    "name_kana": "あだち ゆうじ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025003.htm"
+  },
+  {
+    "name_kanji": "有村 治子",
+    "name_kana": "ありむら はるこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001006.htm"
+  },
+  {
+    "name_kanji": "安藤 裕",
+    "name_kana": "あんどう ひろし",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025004.htm"
+  },
+  {
+    "name_kanji": "安野 貴博",
+    "name_kana": "あんの たかひろ",
+    "party_short": "みら",
+    "party_name": "チームみらい",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025005.htm"
+  },
+  {
+    "name_kanji": "生稲 晃子",
+    "name_kana": "いくいな あきこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022004.htm"
+  },
+  {
+    "name_kanji": "石井 準一",
+    "name_kana": "いしい じゅんいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007007.htm"
+  },
+  {
+    "name_kanji": "石井 浩郎",
+    "name_kana": "いしい ひろお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "秋田",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010005.htm"
+  },
+  {
+    "name_kanji": "石井 苗子",
+    "name_kana": "いしい みつこ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016009.htm"
+  },
+  {
+    "name_kanji": "石井 めぐみ",
+    "name_kana": "いしい めぐみ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025045.htm"
+  },
+  {
+    "name_kanji": "石垣 のりこ",
+    "name_kana": "いしがき のりこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "宮城",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019003.htm"
+  },
+  {
+    "name_kanji": "石川 博崇",
+    "name_kana": "いしかわ ひろたか",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010006.htm"
+  },
+  {
+    "name_kanji": "石田 昌宏",
+    "name_kana": "いしだ まさひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013010.htm"
+  },
+  {
+    "name_kanji": "石橋 通宏",
+    "name_kana": "いしばし みちひろ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010007.htm"
+  },
+  {
+    "name_kanji": "泉 房穂",
+    "name_kana": "いずみ ふさほ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025007.htm"
+  },
+  {
+    "name_kanji": "伊勢崎 賢治",
+    "name_kana": "いせざき けんじ",
+    "party_short": "れ新",
+    "party_name": "れいわ新選組",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025008.htm"
+  },
+  {
+    "name_kanji": "礒崎 哲史",
+    "name_kana": "いそざき てつじ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013011.htm"
+  },
+  {
+    "name_kanji": "磯崎 仁彦",
+    "name_kana": "いそざき よしひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "香川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010008.htm"
+  },
+  {
+    "name_kanji": "伊藤 孝江",
+    "name_kana": "いとう たかえ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016005.htm"
+  },
+  {
+    "name_kanji": "伊藤 孝恵",
+    "name_kana": "いとう たかえ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016006.htm"
+  },
+  {
+    "name_kanji": "伊藤 辰夫",
+    "name_kana": "いとう たつお",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025009.htm"
+  },
+  {
+    "name_kanji": "井上 義行",
+    "name_kana": "いのうえ よしゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013006.htm"
+  },
+  {
+    "name_kanji": "猪口 邦子",
+    "name_kana": "いのぐち くにこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010009.htm"
+  },
+  {
+    "name_kanji": "猪瀬 直樹",
+    "name_kana": "いのせ なおき",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022005.htm"
+  },
+  {
+    "name_kanji": "伊波 洋一",
+    "name_kana": "いは よういち",
+    "party_short": "沖縄",
+    "party_name": "沖縄の風",
+    "district_name": "沖縄",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016007.htm"
+  },
+  {
+    "name_kanji": "今井 絵理子",
+    "name_kana": "いまい えりこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016010.htm"
+  },
+  {
+    "name_kanji": "岩渕 友",
+    "name_kana": "いわぶち とも",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016011.htm"
+  },
+  {
+    "name_kanji": "岩本 剛人",
+    "name_kana": "いわもと つよひと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019005.htm"
+  },
+  {
+    "name_kanji": "岩本 麻奈",
+    "name_kana": "いわもと まな",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025038.htm"
+  },
+  {
+    "name_kanji": "いんどう 周作",
+    "name_kana": "いんどう しゅうさく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025010.htm"
+  },
+  {
+    "name_kanji": "上田 勇",
+    "name_kana": "うえだ いさむ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022006.htm"
+  },
+  {
+    "name_kanji": "上田 清司",
+    "name_kana": "うえだ きよし",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019042.htm"
+  },
+  {
+    "name_kanji": "上野 ほたる",
+    "name_kana": "うえの ほたる",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025064.htm"
+  },
+  {
+    "name_kanji": "上野 通子",
+    "name_kana": "うえの みちこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010013.htm"
+  },
+  {
+    "name_kanji": "牛田 茉友",
+    "name_kana": "うしだ まゆ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025035.htm"
+  },
+  {
+    "name_kanji": "臼井 正一",
+    "name_kana": "うすい しょういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022007.htm"
+  },
+  {
+    "name_kanji": "打越 さく良",
+    "name_kana": "うちこし さくら",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "新潟",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019006.htm"
+  },
+  {
+    "name_kanji": "梅村 みずほ",
+    "name_kana": "うめむら みずほ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019007.htm"
+  },
+  {
+    "name_kanji": "江島 潔",
+    "name_kana": "えじま きよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山口",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013001.htm"
+  },
+  {
+    "name_kanji": "江原 くみ子",
+    "name_kana": "えはら くみこ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025011.htm"
+  },
+  {
+    "name_kanji": "大家 敏志",
+    "name_kana": "おおいえ さとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010018.htm"
+  },
+  {
+    "name_kanji": "大島 九州男",
+    "name_kana": "おおしま くすお",
+    "party_short": "れ新",
+    "party_name": "れいわ新選組",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007017.htm"
+  },
+  {
+    "name_kanji": "大津 力",
+    "name_kana": "おおつ つとむ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025013.htm"
+  },
+  {
+    "name_kanji": "岡崎 太",
+    "name_kana": "おかざき ふとし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025014.htm"
+  },
+  {
+    "name_kanji": "岡田 直樹",
+    "name_kana": "おかだ なおき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "石川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004012.htm"
+  },
+  {
+    "name_kanji": "小川 克巳",
+    "name_kana": "おがわ かつみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016012.htm"
+  },
+  {
+    "name_kanji": "奥田 ふみよ",
+    "name_kana": "おくだ ふみよ",
+    "party_short": "れ新",
+    "party_name": "れいわ新選組",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025012.htm"
+  },
+  {
+    "name_kanji": "奥村 祥大",
+    "name_kana": "おくむら よしひろ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025015.htm"
+  },
+  {
+    "name_kanji": "小沢 雅仁",
+    "name_kana": "おざわ まさひと",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019008.htm"
+  },
+  {
+    "name_kanji": "越智 俊之",
+    "name_kana": "おち としゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022008.htm"
+  },
+  {
+    "name_kanji": "尾辻 朋実",
+    "name_kana": "おつじ ともみ",
+    "party_short": "みら",
+    "party_name": "チームみらい",
+    "district_name": "鹿児島",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025032.htm"
+  },
+  {
+    "name_kanji": "鬼木 誠",
+    "name_kana": "おにき まこと",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022009.htm"
+  },
+  {
+    "name_kanji": "小野田 紀美",
+    "name_kana": "おのだ きみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016013.htm"
+  },
+  {
+    "name_kanji": "かごしま 彰宏",
+    "name_kana": "かごしま あきひろ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025016.htm"
+  },
+  {
+    "name_kanji": "梶原 大介",
+    "name_kana": "かじはら だいすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022012.htm"
+  },
+  {
+    "name_kanji": "加田 裕之",
+    "name_kana": "かだ ひろゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019011.htm"
+  },
+  {
+    "name_kanji": "嘉田 由紀子",
+    "name_kana": "かだ ゆきこ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019012.htm"
+  },
+  {
+    "name_kanji": "片山 さつき",
+    "name_kana": "かたやま さつき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010020.htm"
+  },
+  {
+    "name_kanji": "片山 大介",
+    "name_kana": "かたやま だいすけ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016014.htm"
+  },
+  {
+    "name_kanji": "勝部 賢志",
+    "name_kana": "かつべ けんじ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019013.htm"
+  },
+  {
+    "name_kanji": "加藤 明良",
+    "name_kana": "かとう あきよし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022010.htm"
+  },
+  {
+    "name_kanji": "金子 道仁",
+    "name_kana": "かねこ みちひと",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022013.htm"
+  },
+  {
+    "name_kanji": "かまやち 敏",
+    "name_kana": "かまやち さとし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025017.htm"
+  },
+  {
+    "name_kanji": "神谷 宗幣",
+    "name_kana": "かみや そうへい",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022014.htm"
+  },
+  {
+    "name_kanji": "神谷 政幸",
+    "name_kana": "かみや まさゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022015.htm"
+  },
+  {
+    "name_kanji": "川合 孝典",
+    "name_kana": "かわい たかのり",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007022.htm"
+  },
+  {
+    "name_kanji": "川村 雄大",
+    "name_kana": "かわむら ゆうだい",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025018.htm"
+  },
+  {
+    "name_kanji": "岸 真紀子",
+    "name_kana": "きし まきこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019016.htm"
+  },
+  {
+    "name_kanji": "北村 経夫",
+    "name_kana": "きたむら つねお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山口",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013019.htm"
+  },
+  {
+    "name_kanji": "北村 晴男",
+    "name_kana": "きたむら はるお",
+    "party_short": "保守",
+    "party_name": "日本保守党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025020.htm"
+  },
+  {
+    "name_kanji": "木戸口 英司",
+    "name_kana": "きどぐち えいじ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "岩手",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016015.htm"
+  },
+  {
+    "name_kanji": "木村 英子",
+    "name_kana": "きむら えいこ",
+    "party_short": "れ新",
+    "party_name": "れいわ新選組",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019015.htm"
+  },
+  {
+    "name_kanji": "木村 義雄",
+    "name_kana": "きむら よしお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013016.htm"
+  },
+  {
+    "name_kanji": "吉良 よし子",
+    "name_kana": "きら よしこ",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013017.htm"
+  },
+  {
+    "name_kanji": "串田 誠一",
+    "name_kana": "くしだ せいいち",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022016.htm"
+  },
+  {
+    "name_kanji": "窪田 哲也",
+    "name_kana": "くぼた てつや",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022017.htm"
+  },
+  {
+    "name_kanji": "熊谷 裕人",
+    "name_kana": "くまがい ひろと",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019017.htm"
+  },
+  {
+    "name_kanji": "見坂 茂範",
+    "name_kana": "けんざか しげのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025021.htm"
+  },
+  {
+    "name_kanji": "小池 晃",
+    "name_kana": "こいけ あきら",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998022.htm"
+  },
+  {
+    "name_kanji": "上月 良祐",
+    "name_kana": "こうづき りょうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "茨城",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013022.htm"
+  },
+  {
+    "name_kanji": "郡山 りょう",
+    "name_kana": "こおりやま りょう",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025022.htm"
+  },
+  {
+    "name_kanji": "古賀 千景",
+    "name_kana": "こが ちかげ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022019.htm"
+  },
+  {
+    "name_kanji": "古賀 友一郎",
+    "name_kana": "こが ゆういちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長崎",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013021.htm"
+  },
+  {
+    "name_kanji": "古賀 之士",
+    "name_kana": "こが ゆきひと",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016018.htm"
+  },
+  {
+    "name_kanji": "小島 とも子",
+    "name_kana": "こじま ともこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "三重",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025023.htm"
+  },
+  {
+    "name_kanji": "古庄 玄知",
+    "name_kana": "こしょう はるとも",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大分",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022020.htm"
+  },
+  {
+    "name_kanji": "後藤 翔太",
+    "name_kana": "ごとう しょうた",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025024.htm"
+  },
+  {
+    "name_kanji": "後藤 斎",
+    "name_kana": "ごとう ひとし",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "山梨",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025025.htm"
+  },
+  {
+    "name_kanji": "小西 洋之",
+    "name_kana": "こにし ひろゆき",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010024.htm"
+  },
+  {
+    "name_kanji": "小林 一大",
+    "name_kana": "こばやし かずひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "新潟",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022018.htm"
+  },
+  {
+    "name_kanji": "小林 孝一郎",
+    "name_kana": "こばやし こういちろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岡山",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025026.htm"
+  },
+  {
+    "name_kanji": "小林 さやか",
+    "name_kana": "こばやし さやか",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025041.htm"
+  },
+  {
+    "name_kanji": "こやり 隆史",
+    "name_kana": "こやり たかし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "滋賀",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016017.htm"
+  },
+  {
+    "name_kanji": "齊藤 健一郎",
+    "name_kana": "さいとう けんいちろう",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7023002.htm"
+  },
+  {
+    "name_kanji": "斎藤 嘉隆",
+    "name_kana": "さいとう よしたか",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010027.htm"
+  },
+  {
+    "name_kanji": "酒井 庸行",
+    "name_kana": "さかい やすゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013024.htm"
+  },
+  {
+    "name_kanji": "櫻井 祥子",
+    "name_kana": "さくらい しょうこ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "茨城",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025028.htm"
+  },
+  {
+    "name_kanji": "櫻井 充",
+    "name_kana": "さくらい みつる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮城",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998030.htm"
+  },
+  {
+    "name_kanji": "佐々木 雅文",
+    "name_kana": "ささき まさふみ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025029.htm"
+  },
+  {
+    "name_kanji": "佐々木 りえ",
+    "name_kana": "ささき りえ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025040.htm"
+  },
+  {
+    "name_kanji": "佐藤 啓",
+    "name_kana": "さとう けい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "奈良",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016019.htm"
+  },
+  {
+    "name_kanji": "里見 隆治",
+    "name_kana": "さとみ りゅうじ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016020.htm"
+  },
+  {
+    "name_kanji": "塩入 清香",
+    "name_kana": "しおいり さやか",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025030.htm"
+  },
+  {
+    "name_kanji": "塩村 あやか",
+    "name_kana": "しおむら あやか",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019020.htm"
+  },
+  {
+    "name_kanji": "柴 愼一",
+    "name_kana": "しば しんいち",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022021.htm"
+  },
+  {
+    "name_kanji": "柴田 巧",
+    "name_kana": "しばた たくみ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010029.htm"
+  },
+  {
+    "name_kanji": "自見 はなこ",
+    "name_kana": "じみ はなこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016021.htm"
+  },
+  {
+    "name_kanji": "清水 真人",
+    "name_kana": "しみず まさと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019018.htm"
+  },
+  {
+    "name_kanji": "下野 六太",
+    "name_kana": "しもの ろくた",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019021.htm"
+  },
+  {
+    "name_kanji": "白川 容子",
+    "name_kana": "しらかわ ようこ",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025031.htm"
+  },
+  {
+    "name_kanji": "進藤 金日子",
+    "name_kana": "しんどう かねひこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016022.htm"
+  },
+  {
+    "name_kanji": "榛葉 賀津也",
+    "name_kana": "しんば かづや",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "静岡",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001027.htm"
+  },
+  {
+    "name_kanji": "末松 信介",
+    "name_kana": "すえまつ しんすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004033.htm"
+  },
+  {
+    "name_kanji": "杉 久武",
+    "name_kana": "すぎ ひさたけ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013028.htm"
+  },
+  {
+    "name_kanji": "杉尾 秀哉",
+    "name_kana": "すぎお ひでや",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "長野",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016023.htm"
+  },
+  {
+    "name_kanji": "杉本 純子",
+    "name_kana": "すぎもと じゅんこ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025033.htm"
+  },
+  {
+    "name_kanji": "鈴木 大地",
+    "name_kana": "すずき だいち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025034.htm"
+  },
+  {
+    "name_kanji": "鈴木 宗男",
+    "name_kana": "すずき むねお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019023.htm"
+  },
+  {
+    "name_kanji": "石 平",
+    "name_kana": "せき へい",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025019.htm"
+  },
+  {
+    "name_kanji": "関口 昌一",
+    "name_kana": "せきぐち まさかず",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7003005.htm"
+  },
+  {
+    "name_kanji": "大門 実紀史",
+    "name_kana": "だいもん みきし",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001001.htm"
+  },
+  {
+    "name_kanji": "高木 かおり",
+    "name_kana": "たかぎ かおり",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016026.htm"
+  },
+  {
+    "name_kanji": "高木 真理",
+    "name_kana": "たかぎ まり",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022023.htm"
+  },
+  {
+    "name_kanji": "高橋 克法",
+    "name_kana": "たかはし かつのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "栃木",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013030.htm"
+  },
+  {
+    "name_kanji": "高橋 はるみ",
+    "name_kana": "たかはし はるみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019026.htm"
+  },
+  {
+    "name_kanji": "高橋 光男",
+    "name_kana": "たかはし みつお",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "兵庫",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019027.htm"
+  },
+  {
+    "name_kanji": "高良 沙哉",
+    "name_kana": "たから さちか",
+    "party_short": "沖縄",
+    "party_name": "沖縄の風",
+    "district_name": "沖縄",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025027.htm"
+  },
+  {
+    "name_kanji": "滝波 宏文",
+    "name_kana": "たきなみ ひろふみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福井",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013032.htm"
+  },
+  {
+    "name_kanji": "竹内 真二",
+    "name_kana": "たけうち しんじ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7017001.htm"
+  },
+  {
+    "name_kanji": "竹詰 仁",
+    "name_kana": "たけづめ ひとし",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022024.htm"
+  },
+  {
+    "name_kanji": "竹谷 とし子",
+    "name_kana": "たけや としこ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010033.htm"
+  },
+  {
+    "name_kanji": "田島 麻衣子",
+    "name_kana": "たじま まいこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019024.htm"
+  },
+  {
+    "name_kanji": "田名部 匡代",
+    "name_kana": "たなぶ まさよ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "青森",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016025.htm"
+  },
+  {
+    "name_kanji": "谷合 正明",
+    "name_kana": "たにあい まさあき",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004036.htm"
+  },
+  {
+    "name_kanji": "田村 まみ",
+    "name_kana": "たむら まみ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019025.htm"
+  },
+  {
+    "name_kanji": "司 隆史",
+    "name_kana": "つかさ たかし",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025036.htm"
+  },
+  {
+    "name_kanji": "辻元 清美",
+    "name_kana": "つじもと きよみ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022025.htm"
+  },
+  {
+    "name_kanji": "鶴保 庸介",
+    "name_kana": "つるほ ようすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "和歌山",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998036.htm"
+  },
+  {
+    "name_kanji": "出川 桃子",
+    "name_kana": "でがわ ももこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鳥取・島根",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025037.htm"
+  },
+  {
+    "name_kanji": "寺田 静",
+    "name_kana": "てらた しずか",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "秋田",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019030.htm"
+  },
+  {
+    "name_kanji": "天畠 大輔",
+    "name_kana": "てんばた だいすけ",
+    "party_short": "れ新",
+    "party_name": "れいわ新選組",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022026.htm"
+  },
+  {
+    "name_kanji": "堂込 麻紀子",
+    "name_kana": "どうごみ まきこ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "茨城",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022027.htm"
+  },
+  {
+    "name_kanji": "徳永 エリ",
+    "name_kana": "とくなが えり",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010036.htm"
+  },
+  {
+    "name_kanji": "友納 理緒",
+    "name_kana": "とものう りお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022028.htm"
+  },
+  {
+    "name_kanji": "永井 学",
+    "name_kana": "ながい まなぶ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "山梨",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022030.htm"
+  },
+  {
+    "name_kanji": "ながえ 孝子",
+    "name_kana": "ながえ たかこ",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "愛媛",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019031.htm"
+  },
+  {
+    "name_kanji": "中条 きよし",
+    "name_kana": "なかじょう きよし",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022029.htm"
+  },
+  {
+    "name_kanji": "中曽根 弘文",
+    "name_kana": "なかそね ひろふみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "群馬",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5986024.htm"
+  },
+  {
+    "name_kanji": "中田 優子",
+    "name_kana": "なかだ ゆうこ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025039.htm"
+  },
+  {
+    "name_kanji": "中西 祐介",
+    "name_kana": "なかにし ゆうすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "徳島・高知",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010038.htm"
+  },
+  {
+    "name_kanji": "長浜 博行",
+    "name_kana": "ながはま ひろゆき",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "千葉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007041.htm"
+  },
+  {
+    "name_kanji": "新実 彰平",
+    "name_kana": "にいみ しょうへい",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "京都",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025042.htm"
+  },
+  {
+    "name_kanji": "西田 昌司",
+    "name_kana": "にしだ しょうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007044.htm"
+  },
+  {
+    "name_kanji": "西田 英範",
+    "name_kana": "にした ひでのり",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025043.htm"
+  },
+  {
+    "name_kanji": "西田 実仁",
+    "name_kana": "にしだ まこと",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004043.htm"
+  },
+  {
+    "name_kanji": "仁比 聡平",
+    "name_kana": "にひ そうへい",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004045.htm"
+  },
+  {
+    "name_kanji": "庭田 幸恵",
+    "name_kana": "にわた ゆきえ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "富山",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025044.htm"
+  },
+  {
+    "name_kanji": "野上 浩太郎",
+    "name_kana": "のがみ こうたろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "富山",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001037.htm"
+  },
+  {
+    "name_kanji": "野村 哲郎",
+    "name_kana": "のむら てつろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "鹿児島",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004046.htm"
+  },
+  {
+    "name_kanji": "芳賀 道也",
+    "name_kana": "はが みちや",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "山形",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019032.htm"
+  },
+  {
+    "name_kanji": "初鹿野 裕樹",
+    "name_kana": "はじかの ひろき",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025046.htm"
+  },
+  {
+    "name_kanji": "橋本 聖子",
+    "name_kana": "はしもと せいこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5995054.htm"
+  },
+  {
+    "name_kanji": "長谷川 岳",
+    "name_kana": "はせがわ がく",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010043.htm"
+  },
+  {
+    "name_kanji": "長谷川 英晴",
+    "name_kana": "はせがわ ひではる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022031.htm"
+  },
+  {
+    "name_kanji": "羽田 次郎",
+    "name_kana": "はた じろう",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "長野",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7021002.htm"
+  },
+  {
+    "name_kanji": "馬場 成志",
+    "name_kana": "ばば せいし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013044.htm"
+  },
+  {
+    "name_kanji": "浜口 誠",
+    "name_kana": "はまぐち まこと",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016032.htm"
+  },
+  {
+    "name_kanji": "浜野 喜史",
+    "name_kana": "はまの よしふみ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013045.htm"
+  },
+  {
+    "name_kanji": "原田 大二郎",
+    "name_kana": "はらだ だいじろう",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025047.htm"
+  },
+  {
+    "name_kanji": "原田 秀一",
+    "name_kana": "はらだ ひでかず",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "香川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025048.htm"
+  },
+  {
+    "name_kanji": "東野 秀樹",
+    "name_kana": "ひがしの ひでき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025049.htm"
+  },
+  {
+    "name_kanji": "百田 尚樹",
+    "name_kana": "ひゃくた なおき",
+    "party_short": "保守",
+    "party_name": "日本保守党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025050.htm"
+  },
+  {
+    "name_kanji": "平木 大作",
+    "name_kana": "ひらき だいさく",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013046.htm"
+  },
+  {
+    "name_kanji": "平戸 航太",
+    "name_kana": "ひらど こうた",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025051.htm"
+  },
+  {
+    "name_kanji": "平山 佐知子",
+    "name_kana": "ひらやま さちこ",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "静岡",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016033.htm"
+  },
+  {
+    "name_kanji": "広田 一",
+    "name_kana": "ひろた はじめ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "徳島・高知",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004050.htm"
+  },
+  {
+    "name_kanji": "福岡 資麿",
+    "name_kana": "ふくおか たかまろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "佐賀",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010045.htm"
+  },
+  {
+    "name_kanji": "福士 珠美",
+    "name_kana": "ふくし ますみ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "青森",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025052.htm"
+  },
+  {
+    "name_kanji": "福島 みずほ",
+    "name_kana": "ふくしま みずほ",
+    "party_short": "社民",
+    "party_name": "社会民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998049.htm"
+  },
+  {
+    "name_kanji": "福山 哲郎",
+    "name_kana": "ふくやま てつろう",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "京都",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5998050.htm"
+  },
+  {
+    "name_kanji": "福山 守",
+    "name_kana": "ふくやま まもる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025053.htm"
+  },
+  {
+    "name_kanji": "藤井 一博",
+    "name_kana": "ふじい かずひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022033.htm"
+  },
+  {
+    "name_kanji": "藤川 政人",
+    "name_kana": "ふじかわ まさひと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010046.htm"
+  },
+  {
+    "name_kanji": "藤木 眞也",
+    "name_kana": "ふじき しんや",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016034.htm"
+  },
+  {
+    "name_kanji": "船橋 利実",
+    "name_kana": "ふなはし としみつ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "北海道",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022034.htm"
+  },
+  {
+    "name_kanji": "舟山 康江",
+    "name_kana": "ふなやま やすえ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "山形",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007052.htm"
+  },
+  {
+    "name_kanji": "古川 俊治",
+    "name_kana": "ふるかわ としはる",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "埼玉",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007053.htm"
+  },
+  {
+    "name_kanji": "星 北斗",
+    "name_kana": "ほし ほくと",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022035.htm"
+  },
+  {
+    "name_kanji": "堀井 巌",
+    "name_kana": "ほりい いわお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "奈良",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013048.htm"
+  },
+  {
+    "name_kanji": "本田 顕子",
+    "name_kana": "ほんだ あきこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019034.htm"
+  },
+  {
+    "name_kanji": "舞立 昇治",
+    "name_kana": "まいたち しょうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013049.htm"
+  },
+  {
+    "name_kanji": "牧野 たかお",
+    "name_kana": "まきの たかお",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007054.htm"
+  },
+  {
+    "name_kanji": "牧山 ひろえ",
+    "name_kana": "まきやま ひろえ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007055.htm"
+  },
+  {
+    "name_kanji": "松川 るい",
+    "name_kana": "まつかわ るい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016035.htm"
+  },
+  {
+    "name_kanji": "松沢 成文",
+    "name_kana": "まつざわ しげふみ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013050.htm"
+  },
+  {
+    "name_kanji": "松下 新平",
+    "name_kana": "まつした しんぺい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "宮崎",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004056.htm"
+  },
+  {
+    "name_kanji": "松田 学",
+    "name_kana": "まつだ まなぶ",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025054.htm"
+  },
+  {
+    "name_kanji": "松野 明美",
+    "name_kana": "まつの あけみ",
+    "party_short": "維新",
+    "party_name": "日本維新の会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022036.htm"
+  },
+  {
+    "name_kanji": "松村 祥史",
+    "name_kana": "まつむら よしふみ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "熊本",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004057.htm"
+  },
+  {
+    "name_kanji": "松山 政司",
+    "name_kana": "まつやま まさじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福岡",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001046.htm"
+  },
+  {
+    "name_kanji": "三浦 信祐",
+    "name_kana": "みうら のぶひろ",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016036.htm"
+  },
+  {
+    "name_kanji": "三上 えり",
+    "name_kana": "みかみ えり",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "広島",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022037.htm"
+  },
+  {
+    "name_kanji": "水岡 俊一",
+    "name_kana": "みずおか しゅんいち",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004058.htm"
+  },
+  {
+    "name_kanji": "水野 孝一",
+    "name_kana": "みずの こういち",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "愛知",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025055.htm"
+  },
+  {
+    "name_kanji": "三原 じゅん子",
+    "name_kana": "みはら じゅんこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010048.htm"
+  },
+  {
+    "name_kanji": "宮崎 勝",
+    "name_kana": "みやざき まさる",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016037.htm"
+  },
+  {
+    "name_kanji": "宮沢 洋一",
+    "name_kana": "みやざわ よういち",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "広島",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010050.htm"
+  },
+  {
+    "name_kanji": "宮出 千慧",
+    "name_kana": "みやで ちさと",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "大阪",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025056.htm"
+  },
+  {
+    "name_kanji": "宮本 和宏",
+    "name_kana": "みやもと かずひろ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "滋賀",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025057.htm"
+  },
+  {
+    "name_kanji": "宮本 周司",
+    "name_kana": "みやもと しゅうじ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "石川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013053.htm"
+  },
+  {
+    "name_kanji": "村田 享子",
+    "name_kana": "むらた きょうこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022039.htm"
+  },
+  {
+    "name_kanji": "望月 良男",
+    "name_kana": "もちづき よしお",
+    "party_short": "無所属",
+    "party_name": "無所属",
+    "district_name": "和歌山",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025058.htm"
+  },
+  {
+    "name_kanji": "森 まさこ",
+    "name_kana": "もり まさこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福島",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007061.htm"
+  },
+  {
+    "name_kanji": "森 ゆうこ",
+    "name_kana": "もり ゆうこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7001047.htm"
+  },
+  {
+    "name_kanji": "森本 真治",
+    "name_kana": "もりもと しんじ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "広島",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013054.htm"
+  },
+  {
+    "name_kanji": "山内 佳菜子",
+    "name_kana": "やまうち かなこ",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "宮崎",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025059.htm"
+  },
+  {
+    "name_kanji": "山崎 正昭",
+    "name_kana": "やまざき まさあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "福井",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/5992051.htm"
+  },
+  {
+    "name_kanji": "山下 雄平",
+    "name_kana": "やました ゆうへい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "佐賀",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7013060.htm"
+  },
+  {
+    "name_kanji": "山添 拓",
+    "name_kana": "やまぞえ たく",
+    "party_short": "共産",
+    "party_name": "日本共産党",
+    "district_name": "東京",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016042.htm"
+  },
+  {
+    "name_kanji": "山田 太郎",
+    "name_kana": "やまだ たろう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7012005.htm"
+  },
+  {
+    "name_kanji": "山田 宏",
+    "name_kana": "やまだ ひろし",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7016043.htm"
+  },
+  {
+    "name_kanji": "山田 吉彦",
+    "name_kana": "やまだ よしひこ",
+    "party_short": "民主",
+    "party_name": "国民民主党・新緑風会",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025060.htm"
+  },
+  {
+    "name_kanji": "山谷 えり子",
+    "name_kana": "やまたに えりこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004013.htm"
+  },
+  {
+    "name_kanji": "山中 泉",
+    "name_kana": "やまなか せん",
+    "party_short": "参政",
+    "party_name": "参政党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025061.htm"
+  },
+  {
+    "name_kanji": "山本 啓介",
+    "name_kana": "やまもと けいすけ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "長崎",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022040.htm"
+  },
+  {
+    "name_kanji": "山本 佐知子",
+    "name_kana": "やまもと さちこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "三重",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022041.htm"
+  },
+  {
+    "name_kanji": "山本 順三",
+    "name_kana": "やまもと じゅんぞう",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "愛媛",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004062.htm"
+  },
+  {
+    "name_kanji": "横沢 高徳",
+    "name_kana": "よこさわ たかのり",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "岩手",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7019040.htm"
+  },
+  {
+    "name_kanji": "横山 信一",
+    "name_kana": "よこやま しんいち",
+    "party_short": "公明",
+    "party_name": "公明党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010052.htm"
+  },
+  {
+    "name_kanji": "吉井 章",
+    "name_kana": "よしい あきら",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "京都",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022042.htm"
+  },
+  {
+    "name_kanji": "吉川 沙織",
+    "name_kana": "よしかわ さおり",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7007071.htm"
+  },
+  {
+    "name_kanji": "吉田 忠智",
+    "name_kana": "よしだ ただとも",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "大分",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010053.htm"
+  },
+  {
+    "name_kanji": "ラサール石井",
+    "name_kana": "らさーるいしい",
+    "party_short": "社民",
+    "party_name": "社会民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025006.htm"
+  },
+  {
+    "name_kanji": "蓮舫",
+    "name_kana": "れんほう",
+    "party_short": "立憲",
+    "party_name": "立憲民主党",
+    "district_name": "比例",
+    "district_type": "proportional",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7004060.htm"
+  },
+  {
+    "name_kanji": "若井 敦子",
+    "name_kana": "わかい あつこ",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025062.htm"
+  },
+  {
+    "name_kanji": "若林 洋平",
+    "name_kana": "わかばやし ようへい",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "静岡",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7022043.htm"
+  },
+  {
+    "name_kanji": "脇 雅昭",
+    "name_kana": "わき まさあき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "神奈川",
+    "district_type": "single",
+    "term_end_jp": "令和13年7月28日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7025063.htm"
+  },
+  {
+    "name_kanji": "渡辺 猛之",
+    "name_kana": "わたなべ たけゆき",
+    "party_short": "自民",
+    "party_name": "自由民主党",
+    "district_name": "岐阜",
+    "district_type": "single",
+    "term_end_jp": "令和10年7月25日",
+    "profile_url": "https://www.sangiin.go.jp/japanese/joho1/kousei/giin/profile/7010055.htm"
+  }
+]
