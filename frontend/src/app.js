@@ -259,6 +259,23 @@ function bindHeader() {
 }
 
 async function renderTop() {
+  const page = document.querySelector("#page");
+  const fallbackDistricts = [
+    { id: "district-okayama-1", name: "岡山1区", house: "shugiin" },
+    { id: "district-proportional", name: "比例", house: "sangiin" },
+    { id: "district-tottori-shimane", name: "鳥取・島根", house: "sangiin" }
+  ];
+  renderTopContent({
+    page,
+    parties: fallbackParties,
+    shugiinParties: fallbackParties,
+    sangiinParties: fallbackParties,
+    districts: fallbackDistricts,
+    shugiinMembers: fallbackLegislators.filter((item) => item.house === "shugiin"),
+    sangiinMembers: fallbackLegislators.filter((item) => item.house === "sangiin"),
+    isLoading: true
+  });
+
   const [parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers] = await Promise.all([
     listParties(),
     listParties("shugiin"),
@@ -267,10 +284,14 @@ async function renderTop() {
     listAllLegislatorsByHouse("shugiin"),
     listAllLegislatorsByHouse("sangiin")
   ]);
+  if (state.view !== "top") return;
+  renderTopContent({ page, parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers });
+}
+
+function renderTopContent({ page, parties, shugiinParties, sangiinParties, districts, shugiinMembers, sangiinMembers, isLoading = false }) {
   const shugiinGauge = buildGaugeData("衆議院", shugiinMembers, shugiinParties);
   const sangiinGauge = buildGaugeData("参議院", sangiinMembers, sangiinParties);
   const featuredFreshmen = randomFirstTermLegislators([...shugiinMembers, ...sangiinMembers], 3);
-  const page = document.querySelector("#page");
   page.className = "page-frame top-page";
   page.innerHTML = `
     ${fallbackBanner()}
@@ -284,7 +305,7 @@ async function renderTop() {
     </section>
     <section class="hud-panel featured-freshmen-panel">
       <div class="panel-title">注目の大型新人議員</div>
-      <p class="panel-note">当選1回目の議員からランダムに表示しています。</p>
+      <p class="panel-note">${isLoading ? "最新データを読み込み中です。" : "当選1回目の議員からランダムに表示しています。"}</p>
       <div class="featured-grid">
         ${featuredFreshmenCards(featuredFreshmen)}
       </div>
