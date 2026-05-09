@@ -526,7 +526,7 @@ function renderContact() {
   page.innerHTML = `
     <section class="content-hero">
       <p class="panel-title">ウシガーに関する問い合わせ</p>
-      <h1 class="contact-main-heading">ウシガーは暇な人間が有志で運営しています。本サイトの改善に繋がるご指摘やお問い合わせにつきましては、以下の窓口までご連絡をいただけますと幸いです。</h1>
+      <h1 class="contact-main-heading">ウシガーは暇な人間が有志で運営しています。本サイトの改善に繋がるご指摘やお問い合わせにつきましては、以下のフォームをご利用の上、contact@ushigaa.comまでご連絡をいただけますと幸いです。</h1>
     </section>
     <section class="contact-section">
       <form class="contact-form">
@@ -537,10 +537,6 @@ function renderContact() {
         <label>
           <span>ご所属 <em>任意</em></span>
           <input name="organization" autocomplete="organization" />
-        </label>
-        <label>
-          <span>ご連絡先のメールアドレス <strong>必須</strong></span>
-          <input name="email" type="email" autocomplete="email" required />
         </label>
         <label>
           <span>お問い合わせの種類 <strong>必須</strong></span>
@@ -555,7 +551,7 @@ function renderContact() {
           <span>お問い合わせの詳細 <strong>必須</strong></span>
           <textarea name="detail" rows="8" required></textarea>
         </label>
-        <button class="primary-button contact-submit" type="submit">送信する</button>
+        <button class="primary-button contact-submit" type="submit">メールを作成する</button>
         <p class="form-note">送信ボタンを押すと、入力内容を反映したメール作成画面が開きます。宛先: contact@ushigaa.com</p>
       </form>
     </section>
@@ -1052,7 +1048,6 @@ function bindContactForm() {
     const payload = {
       name: String(formData.get("name") || "").trim(),
       organization: String(formData.get("organization") || "").trim() || null,
-      email: String(formData.get("email") || "").trim(),
       type: String(formData.get("type") || ""),
       detail: String(formData.get("detail") || "").trim()
     };
@@ -1064,7 +1059,6 @@ function bindContactForm() {
       "",
       `お名前: ${payload.name}`,
       `ご所属: ${payload.organization || "未入力"}`,
-      `ご連絡先のメールアドレス: ${payload.email}`,
       `お問い合わせの種類: ${contactTypeLabel(payload.type)}`,
       "",
       "お問い合わせの詳細:",
