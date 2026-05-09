@@ -62,6 +62,45 @@ Legislator records include profile enrichment fields when available:
 - `profile_source_type`: `diet_official`, `party_official`, `personal_official`, or `other`
 - `profile_source_checked_at`: source check date
 
+## `GET /legislators/{id}/questions`
+
+Returns stored Diet question candidates for one legislator.
+
+Query parameters:
+
+- `from`: start date, default `2023-01-01`
+- `limit`: grouped question limit, 1-100, default 50
+- `offset`: grouped question offset, default 0
+
+Stored speeches are individual National Diet API speech records where:
+
+- normalized `speaker` exactly matches the Supabase legislator name
+- `speakerPosition` is `null`
+
+Those records are materialized into `kokkai_question_groups` by `date + name_of_meeting + speaker`.
+The API reads that group table so future topic and tone classifications can attach to a stable group id.
+
+Response:
+
+```json
+{
+  "items": [
+    {
+      "date": "2025-11-20",
+      "name_of_meeting": "文教科学委員会",
+      "name_of_house": "参議院",
+      "speaker": "赤松健",
+      "speech_count": 3,
+      "speech": "発言全文...",
+      "source_issue_ids": ["..."],
+      "source_speech_ids": ["..."]
+    }
+  ],
+  "count": 1,
+  "from_date": "2023-01-01"
+}
+```
+
 ## `GET /parties`
 
 Returns party master records.

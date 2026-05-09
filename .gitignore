@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 *.egg-info/
 dist/
+data/kokkai_import_batch_*.json
+data/kokkai_import_last_batch.json
+data/kokkai_question_group_histogram.svg

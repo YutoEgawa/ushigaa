@@ -38,6 +38,23 @@ class LegislatorListResponse(BaseModel):
     count: int | None = Field(default=None, description="Exact count when Supabase returns it")
 
 
+class KokkaiQuestion(BaseModel):
+    date: date
+    name_of_meeting: str
+    name_of_house: str | None = None
+    speaker: str
+    speech_count: int
+    speech: str
+    source_issue_ids: list[str]
+    source_speech_ids: list[str]
+
+
+class KokkaiQuestionListResponse(BaseModel):
+    items: list[KokkaiQuestion]
+    count: int
+    from_date: date
+
+
 class Party(BaseModel):
     id: str
     name: str

@@ -1,4 +1,5 @@
 import random
+from datetime import date
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -9,6 +10,8 @@ from app.models import (
     ContactRequest,
     ContactResponse,
     District,
+    KokkaiQuestion,
+    KokkaiQuestionListResponse,
     LegislatorListResponse,
     LegislatorSummary,
     Party,
@@ -79,6 +82,36 @@ async def get_legislator(
     if not rows:
         raise HTTPException(status_code=404, detail="Legislator not found")
     return LegislatorSummary.model_validate(rows[0])
+
+
+@router.get("/legislators/{legislator_id}/questions", response_model=KokkaiQuestionListResponse)
+async def list_legislator_questions(
+    legislator_id: str,
+    supabase: Annotated[SupabaseClient, Depends(get_supabase)],
+    from_date: Annotated[date, Query(alias="from")] = date(2023, 1, 1),
+    limit: Annotated[int, Query(ge=1, le=100)] = 50,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> KokkaiQuestionListResponse:
+    rows, count = await supabase.get(
+        "kokkai_question_group_rows",
+        {
+            "select": (
+                "id,legislator_id,date,name_of_house,name_of_meeting,speaker,"
+                "speech_count,speech,source_issue_ids,source_speech_ids"
+            ),
+            "legislator_id": f"eq.{legislator_id}",
+            "date": f"gte.{from_date.isoformat()}",
+            "order": "date.desc,name_of_meeting.asc",
+            "limit": limit,
+            "offset": offset,
+        },
+    )
+    questions = [KokkaiQuestion.model_validate(row) for row in rows]
+    return KokkaiQuestionListResponse(
+        items=questions,
+        count=count if count is not None else len(questions),
+        from_date=from_date,
+    )
 
 
 @router.get("/parties", response_model=list[Party])

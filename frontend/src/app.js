@@ -1,7 +1,24 @@
-const API_BASE = window.USHIGA_API_BASE || "http://127.0.0.1:8000/v1";
+const configuredApiBase = window.USHIGA_API_BASE || "";
+const isLocalFrontend = ["127.0.0.1", "localhost"].includes(window.location.hostname);
+const API_BASE =
+  isLocalFrontend && configuredApiBase.includes("api.ushigaa.com")
+    ? "http://127.0.0.1:8000/v1"
+    : configuredApiBase || "http://127.0.0.1:8000/v1";
 const BRAND_NAME = "ウシガー";
+const QUESTION_PAGE_SIZE = 50;
 
 const fallbackLegislators = [
+  {
+    id: "2b3fc98c-0c82-4f95-a150-b9a67945c629",
+    name_kanji: "赤松 健",
+    name_kana: "あかまつ けん",
+    house: "sangiin",
+    party_name: "自由民主党",
+    party_short: "自民",
+    district_name: "比例",
+    district_type: "比例代表",
+    election_year: 2022
+  },
   {
     id: "sample-aisawa",
     name_kanji: "逢沢 一郎",
@@ -51,6 +68,19 @@ const fallbackDistricts = [
   { id: "district-okayama-1", name: "岡山1区", house: "shugiin" },
   { id: "district-proportional", name: "比例", house: "sangiin" },
   { id: "district-tottori-shimane", name: "鳥取・島根", house: "sangiin" }
+];
+const fallbackQuestions = [
+  {
+    date: "2025-11-20",
+    name_of_meeting: "文教科学委員会",
+    name_of_house: "参議院",
+    speaker: "赤松健",
+    speech_count: 3,
+    speech:
+      "○赤松健君 おはようございます。全国比例、赤松健でございます。質問の機会をありがとうございます。では、早速始めたいと思います。大臣の所信で、デジタル教科書の活用を進めるという御発言がございました。そこで、まずこのデジタル教科書に関してお伺いします。現状は、紙の教科書と全てが同内容のいわゆるデジタル化した教科書、これを代替教材として教育課程の一部において使用することが認められておりますが、デジタル教科書の今後の推進策に関して概要を教えてください。\n\n○赤松健君 ありがとうございます。十一月十八日に、読売新聞のアンケート調査なんですけれども、九十市区の教育委員会の六割がこのデジタル教科書で視力の低下とか使用の際の通信障害などを心配しているという記事があったんですけれども、もしこのような懸念とか心配があるとすればどのように対処していくのか、教えてください。\n\n○赤松健君 ありがとうございます。デジタル教科書の現在の、今現在の活用状況について教えてください。",
+    source_issue_ids: ["sample-issue"],
+    source_speech_ids: ["sample-speech-1", "sample-speech-2", "sample-speech-3"]
+  }
 ];
 
 let state = readState();
@@ -203,6 +233,33 @@ async function listFilteredLegislators({
 
 async function getLegislator(id) {
   return api(`/legislators/${id}`, fallbackLegislators.find((item) => item.id === id) || fallbackLegislators[0]);
+}
+
+async function listLegislatorQuestions(id, { limit = QUESTION_PAGE_SIZE, offset = 0 } = {}) {
+  const fallbackIds = new Set(["sample-akama-ken", "2b3fc98c-0c82-4f95-a150-b9a67945c629"]);
+  const fallback = fallbackIds.has(id)
+    ? await getAkamatsuQuestionFixture({ limit, offset })
+    : { items: [], count: 0, from_date: "2023-01-01" };
+  return api(`/legislators/${id}/questions?from=2023-01-01&limit=${limit}&offset=${offset}`, fallback);
+}
+
+async function getAkamatsuQuestionFixture({ limit = QUESTION_PAGE_SIZE, offset = 0 } = {}) {
+  try {
+    const response = await fetch("./data/kokkai_questions_akamatsu.json");
+    if (response.ok) return sliceQuestionFixture(await response.json(), limit, offset);
+  } catch {
+    // Fall through to the tiny inline fixture when local static data is unavailable.
+  }
+  return sliceQuestionFixture({ items: fallbackQuestions, count: fallbackQuestions.length, from_date: "2023-01-01" }, limit, offset);
+}
+
+function sliceQuestionFixture(data, limit, offset) {
+  const items = data.items || [];
+  return {
+    ...data,
+    items: items.slice(offset, offset + limit),
+    count: data.count ?? items.length
+  };
 }
 
 async function listParties(house = "all") {
@@ -456,7 +513,7 @@ function searchLoadingState() {
 }
 
 async function renderDetail() {
-  const item = await getLegislator(state.id);
+  const [item, questions] = await Promise.all([getLegislator(state.id), listLegislatorQuestions(state.id)]);
   const page = document.querySelector("#page");
   const profileSource = item.profile_source_url || item.birth_date_source_url || item.election_count_source_url || item.career_source_url;
   page.className = "page-frame detail-page";
@@ -495,8 +552,88 @@ async function renderDetail() {
       <div class="panel-title">CAREER LOG</div>
       <p>${escapeHtml(item.career_summary || "公式プロフィールから経歴を取得でき次第、ここに表示します。")}</p>
     </section>
+    <section class="hud-panel question-data">
+      <div class="question-header">
+        <div>
+          <div class="panel-title">KOKKAI QUESTIONS</div>
+          <h2>2023年以降の質疑</h2>
+        </div>
+        <span data-question-count>${questionCountLabel(questions.items.length, questions.count)}</span>
+      </div>
+      ${questionList(questions)}
+    </section>
   `;
   document.querySelector("[data-back]").addEventListener("click", () => history.back());
+  bindQuestionLoadMore(state.id);
+}
+
+function questionList(data) {
+  const items = data.items || [];
+  if (!items?.length) {
+    return `<div class="empty-state">保存済みの質疑データはまだありません。</div>`;
+  }
+  const hasMore = items.length < data.count;
+  return `
+    <div class="question-list">
+      ${items.map(questionItem).join("")}
+    </div>
+    ${
+      hasMore
+        ? `<button class="secondary-button question-more-button" type="button" data-load-questions data-loaded="${items.length}" data-total="${data.count}">さらに表示</button>`
+        : ""
+    }
+  `;
+}
+
+function questionCountLabel(loaded, total) {
+  if (!total || loaded >= total) return `${total || loaded}件`;
+  return `${loaded} / ${total}件`;
+}
+
+function bindQuestionLoadMore(legislatorId) {
+  const button = document.querySelector("[data-load-questions]");
+  if (!button) return;
+  button.addEventListener("click", async () => {
+    const list = document.querySelector(".question-list");
+    const countLabel = document.querySelector("[data-question-count]");
+    const loaded = Number(button.dataset.loaded || list?.querySelectorAll(".question-item").length || 0);
+    button.disabled = true;
+    button.textContent = "読み込み中";
+    const next = await listLegislatorQuestions(legislatorId, { offset: loaded });
+    if (!next.items.length || !list) {
+      button.remove();
+      return;
+    }
+    list.insertAdjacentHTML("beforeend", next.items.map(questionItem).join(""));
+    const nextLoaded = loaded + next.items.length;
+    const total = next.count ?? Number(button.dataset.total) ?? nextLoaded;
+    if (countLabel) countLabel.textContent = questionCountLabel(nextLoaded, total);
+    if (nextLoaded >= total) {
+      button.remove();
+      return;
+    }
+    button.dataset.loaded = String(nextLoaded);
+    button.dataset.total = String(total);
+    button.disabled = false;
+    button.textContent = "さらに表示";
+  });
+}
+
+function questionItem(item) {
+  return `
+    <article class="question-item">
+      <div class="question-meta">
+        <time datetime="${escapeHtml(item.date)}">${formatJapaneseDate(item.date)}</time>
+        <span>${escapeHtml(item.name_of_meeting)}</span>
+        ${item.speech_count > 1 ? `<span>${item.speech_count}発言を集約</span>` : ""}
+      </div>
+      <p>${escapeHtml(speechPreview(item.speech))}</p>
+      <details>
+        <summary>全文を開く</summary>
+        <div class="question-fulltext">${speechToHtml(item.speech)}</div>
+      </details>
+    </article>
+  `;
 }
 
 function renderAbout() {
@@ -1112,6 +1249,25 @@ function navInlineLink(label, view) {
 
 function dataRow(label, value) {
   return `<div><dt>${label}</dt><dd>${escapeHtml(String(value))}</dd></div>`;
+}
+
+function formatJapaneseDate(value) {
+  const parsed = new Date(`${value}T00:00:00+09:00`);
+  if (Number.isNaN(parsed.getTime())) return value || "";
+  return `${parsed.getFullYear()}年${parsed.getMonth() + 1}月${parsed.getDate()}日`;
+}
+
+function speechPreview(value, length = 180) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (text.length <= length) return text;
+  return `${text.slice(0, length)}...`;
+}
+
+function speechToHtml(value) {
+  return String(value || "")
+    .split(/\n{2,}/)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join("");
 }
 
 function formatElectionCount(item) {

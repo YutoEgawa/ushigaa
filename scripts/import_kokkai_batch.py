@@ -1,0 +1,291 @@
+from __future__ import annotations
+
+import argparse
+import http.client
+import json
+import os
+import re
+import socket
+import time
+from pathlib import Path
+from typing import Any
+from urllib.error import HTTPError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
+
+FROM_DATE = "2023-01-01"
+KOKKAI_API = "https://kokkai.ndl.go.jp/api/speech"
+OUT_PATH = Path("data/kokkai_import_last_batch.json")
+
+
+def load_dotenv(path: Path = Path(".env")) -> None:
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if "=" in line and not line.strip().startswith("#"):
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key, value)
+
+
+def clean(value: object) -> str:
+    if not value:
+        return ""
+    return re.sub(r"\s+", " ", str(value).replace("\u3000", " ")).strip()
+
+
+def normalize_name(value: object) -> str:
+    value = clean(value)
+    value = re.sub(r"\s*\[.*?\]\s*", "", value)
+    return value.removesuffix("君").replace(" ", "")
+
+
+class SupabaseRest:
+    def __init__(self) -> None:
+        self.url = os.environ["SUPABASE_URL"].rstrip("/")
+        self.key = os.environ["SUPABASE_ANON_KEY"]
+
+    @property
+    def read_headers(self) -> dict[str, str]:
+        return {
+            "apikey": self.key,
+            "Authorization": f"Bearer {self.key}",
+            "Accept": "application/json",
+        }
+
+    @property
+    def write_headers(self) -> dict[str, str]:
+        return {
+            **self.read_headers,
+            "Content-Type": "application/json",
+        }
+
+    def get(self, path: str, params: dict[str, str]) -> list[dict[str, Any]]:
+        request = Request(f"{self.url}/rest/v1/{path}?{urlencode(params)}", headers=self.read_headers)
+        last_error: Exception | None = None
+        for attempt in range(1, 5):
+            try:
+                with urlopen(request, timeout=30) as response:
+                    return json.loads(response.read().decode("utf-8"))
+            except (
+                http.client.IncompleteRead,
+                http.client.RemoteDisconnected,
+                TimeoutError,
+                socket.timeout,
+            ) as exc:
+                last_error = exc
+                if attempt == 4:
+                    break
+                time.sleep(min(2**attempt, 10))
+        assert last_error is not None
+        raise last_error
+
+    def post(self, path: str, rows: list[dict[str, Any]], on_conflict: str) -> list[dict[str, Any]]:
+        if not rows:
+            return []
+        request = Request(
+            f"{self.url}/rest/v1/{path}?{urlencode({'on_conflict': on_conflict})}",
+            method="POST",
+            data=json.dumps(rows, ensure_ascii=False).encode("utf-8"),
+            headers={
+                **self.write_headers,
+                "Prefer": "resolution=ignore-duplicates,return=representation",
+            },
+        )
+        last_error: Exception | None = None
+        for attempt in range(1, 5):
+            try:
+                with urlopen(request, timeout=60) as response:
+                    body = response.read().decode("utf-8")
+                    return json.loads(body) if body else []
+            except HTTPError as exc:
+                print(f"POST error {path} {exc.code}: {exc.read().decode('utf-8')}")
+                raise
+            except (
+                http.client.IncompleteRead,
+                http.client.RemoteDisconnected,
+                TimeoutError,
+                socket.timeout,
+            ) as exc:
+                last_error = exc
+                if attempt == 4:
+                    break
+                time.sleep(min(2**attempt, 10))
+        assert last_error is not None
+        raise last_error
+
+
+def fetch_json(url: str, attempts: int = 4) -> dict[str, Any]:
+    request = Request(url, headers={"User-Agent": "ushigaa-kokkai-import/0.1"})
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with urlopen(request, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except (
+            http.client.IncompleteRead,
+            http.client.RemoteDisconnected,
+            TimeoutError,
+            socket.timeout,
+        ) as exc:
+            last_error = exc
+            if attempt == attempts:
+                break
+            time.sleep(min(2**attempt, 10))
+    assert last_error is not None
+    raise last_error
+
+
+def next_legislators(client: SupabaseRest, limit: int) -> list[dict[str, Any]]:
+    legislators = client.get(
+        "legislators",
+        {
+            "select": "id,name_kanji,name_kana,house",
+            "status": "eq.active",
+            "order": "name_kana.asc",
+            "limit": "1000",
+        },
+    )
+    statuses = client.get(
+        "kokkai_legislator_import_status",
+        {"select": "legislator_id", "limit": "1000"},
+    )
+    done = {row["legislator_id"] for row in statuses}
+    return [row for row in legislators if row["id"] not in done][:limit]
+
+
+def fetch_question_records(legislator: dict[str, Any], sleep_seconds: float) -> list[dict[str, Any]]:
+    search_speaker = normalize_name(legislator["name_kanji"])
+    records: list[dict[str, Any]] = []
+    start_record = 1
+    while True:
+        url = f"{KOKKAI_API}?" + urlencode(
+            {
+                "speaker": search_speaker,
+                "from": FROM_DATE,
+                "startRecord": str(start_record),
+                "maximumRecords": "100",
+                "recordPacking": "json",
+            }
+        )
+        data = fetch_json(url)
+        page = data.get("speechRecord") or []
+        for record in page:
+            if normalize_name(record.get("speaker")) != search_speaker:
+                continue
+            if record.get("speakerPosition") is not None:
+                continue
+            if not clean(record.get("speech")):
+                continue
+            records.append({**record, "_legislator_id": legislator["id"]})
+        next_record = data.get("nextRecordPosition")
+        if not next_record or not page:
+            break
+        start_record = int(next_record)
+        time.sleep(sleep_seconds)
+    return records
+
+
+def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple[int, int]:
+    meetings_by_issue: dict[str, dict[str, Any]] = {}
+    for record in records:
+        issue_id = clean(record.get("issueID"))
+        if issue_id:
+            meetings_by_issue[issue_id] = {
+                "source_issue_id": issue_id,
+                "name_of_house": clean(record.get("nameOfHouse")) or None,
+                "name_of_meeting": clean(record.get("nameOfMeeting")),
+                "date": clean(record.get("date")),
+            }
+
+    meetings = list(meetings_by_issue.values())
+    for index in range(0, len(meetings), 100):
+        client.post("kokkai_meetings", meetings[index : index + 100], "source_issue_id")
+
+    meeting_map: dict[str, str] = {}
+    issue_ids = list(meetings_by_issue)
+    for index in range(0, len(issue_ids), 80):
+        batch = issue_ids[index : index + 80]
+        rows = client.get(
+            "kokkai_meetings",
+            {
+                "select": "id,source_issue_id",
+                "source_issue_id": "in.(" + ",".join(f'"{value}"' for value in batch) + ")",
+                "limit": "1000",
+            },
+        )
+        meeting_map.update({row["source_issue_id"]: row["id"] for row in rows})
+
+    speeches = []
+    for record in records:
+        issue_id = clean(record.get("issueID"))
+        speech_id = clean(record.get("speechID"))
+        meeting_id = meeting_map.get(issue_id)
+        if not issue_id or not speech_id or not meeting_id:
+            continue
+        order = record.get("speechOrder")
+        speeches.append(
+            {
+                "legislator_id": record["_legislator_id"],
+                "meeting_id": meeting_id,
+                "source_speech_id": speech_id,
+                "source_issue_id": issue_id,
+                "speech_order": int(order) if str(order or "").isdigit() else None,
+                "speaker": clean(record.get("speaker")),
+                "speaker_position": None,
+                "speech": clean(record.get("speech")),
+            }
+        )
+    for index in range(0, len(speeches), 50):
+        client.post("kokkai_speeches", speeches[index : index + 50], "source_speech_id")
+    return len(meetings), len(speeches)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Import the next batch of Kokkai question candidates.")
+    parser.add_argument("--limit", type=int, default=20)
+    parser.add_argument("--sleep", type=float, default=0.2)
+    parser.add_argument("--out", type=Path, default=OUT_PATH)
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    load_dotenv()
+    client = SupabaseRest()
+    legislators = next_legislators(client, args.limit)
+    print("batch_legislators=", len(legislators), [row["name_kanji"] for row in legislators])
+
+    all_records: list[dict[str, Any]] = []
+    per_member = []
+    for legislator in legislators:
+        records = fetch_question_records(legislator, args.sleep)
+        all_records.extend(records)
+        per_member.append(
+            {
+                "legislator_id": legislator["id"],
+                "name_kanji": legislator["name_kanji"],
+                "speech_count": len(records),
+            }
+        )
+        print(legislator["name_kanji"], len(records))
+
+    meeting_count, speech_count = import_records(client, all_records)
+    report = {
+        "from_date": FROM_DATE,
+        "members": per_member,
+        "total_records": len(all_records),
+        "meetings": meeting_count,
+        "speeches_prepared": speech_count,
+    }
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    print("total_records=", len(all_records))
+    print("meetings=", meeting_count)
+    print("speeches_prepared=", speech_count)
+    print("report=", args.out)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -49,3 +49,13 @@ Figma案をベースにした静的SPAです。依存パッケージなしで動
 /Users/y.egawa/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_sangiin_import_sql.py
 /Users/y.egawa/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_shugiin_import_sql.py
 ```
+
+国会APIの質疑データ用:
+
+```bash
+# 氏名照合の保存なし検証
+/Users/y.egawa/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/verify_kokkai_speeches.py --limit 5
+
+# Supabase投入用SQLを生成（DBへ直接書き込まない）
+/Users/y.egawa/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_kokkai_speech_import_sql.py --limit 5
+```
