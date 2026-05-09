@@ -556,7 +556,7 @@ function renderContact() {
           <textarea name="detail" rows="8" required></textarea>
         </label>
         <button class="primary-button contact-submit" type="submit">送信する</button>
-        <p class="form-note">入力内容はウシガー運営宛にメールで送信されます。</p>
+        <p class="form-note">送信ボタンを押すと、入力内容を反映したメール作成画面が開きます。宛先: contact@ushigaa.com</p>
       </form>
     </section>
   `;
@@ -1045,10 +1045,9 @@ function bindOpenDetails() {
 function bindContactForm() {
   const form = document.querySelector(".contact-form");
   if (!form) return;
-  form.addEventListener("submit", async (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     const note = form.querySelector(".form-note");
-    const submit = form.querySelector(".contact-submit");
     const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") || "").trim(),
@@ -1057,31 +1056,31 @@ function bindContactForm() {
       type: String(formData.get("type") || ""),
       detail: String(formData.get("detail") || "").trim()
     };
-
-    submit.disabled = true;
-    note.textContent = "送信中です。";
-    try {
-      const response = await fetch(`${API_BASE}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      form.reset();
-      form.classList.add("is-complete");
-      form.innerHTML = `
-        <div class="contact-complete" role="status">
-          <p>お問い合わせ頂きまして誠に有難うございます。いただいた内容を確認させていただきますので、本サイトへの反映あるいはご連絡まで今しばらくお待ちいただきますようお願いいたします。</p>
-          <button class="secondary-button" type="button" data-contact-reset>別の問い合わせを送る</button>
-        </div>
-      `;
-      form.querySelector("[data-contact-reset]").addEventListener("click", () => navigate({ view: "contact" }));
-    } catch {
-      note.textContent = "送信できませんでした。時間をおいて再度お試しください。";
-    } finally {
-      if (document.body.contains(submit)) submit.disabled = false;
-    }
+    const subject = `ウシガーへの問い合わせ: ${contactTypeLabel(payload.type)}`;
+    const body = [
+      "ウシガー運営宛",
+      "",
+      "以下の内容で問い合わせます。",
+      "",
+      `お名前: ${payload.name}`,
+      `ご所属: ${payload.organization || "未入力"}`,
+      `ご連絡先のメールアドレス: ${payload.email}`,
+      `お問い合わせの種類: ${contactTypeLabel(payload.type)}`,
+      "",
+      "お問い合わせの詳細:",
+      payload.detail
+    ].join("\n");
+    window.location.href = `mailto:contact@ushigaa.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    note.textContent = "メール作成画面を開きました。メールアプリ上で内容をご確認のうえ送信してください。";
   });
+}
+
+function contactTypeLabel(value) {
+  return {
+    "wrong-info": "誤った情報のご指摘",
+    improvement: "改善のご要望",
+    other: "その他、運営へのお問い合わせ"
+  }[value] || "未選択";
 }
 
 function bindTopIntro() {
