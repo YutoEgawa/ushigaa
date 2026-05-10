@@ -52,11 +52,15 @@ async def list_legislators(
     q: Annotated[str | None, Query(min_length=1, max_length=50)] = None,
     question_count_min: Annotated[int | None, Query(ge=0)] = None,
     question_count_max: Annotated[int | None, Query(ge=0)] = None,
+    government_role: Annotated[
+        str | None,
+        Query(pattern="^(has|none|prime_minister|minister|senior_vice_minister|parliamentary_vice_minister)$"),
+    ] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 50,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> LegislatorListResponse:
-    if question_count_min is not None or question_count_max is not None:
-        return await list_legislators_with_question_counts(
+    if question_count_min is not None or question_count_max is not None or government_role is not None:
+        return await list_legislators_with_derived_filters(
             supabase=supabase,
             house=house,
             party=party,
@@ -64,6 +68,7 @@ async def list_legislators(
             q=q,
             question_count_min=question_count_min,
             question_count_max=question_count_max,
+            government_role=government_role,
             limit=limit,
             offset=offset,
         )
@@ -85,7 +90,7 @@ async def list_legislators(
     )
 
 
-async def list_legislators_with_question_counts(
+async def list_legislators_with_derived_filters(
     *,
     supabase: SupabaseClient,
     house: str | None,
@@ -94,6 +99,7 @@ async def list_legislators_with_question_counts(
     q: str | None,
     question_count_min: int | None,
     question_count_max: int | None,
+    government_role: str | None,
     limit: int,
     offset: int,
 ) -> LegislatorListResponse:
@@ -107,13 +113,35 @@ async def list_legislators_with_question_counts(
     )
     rows, _ = await supabase.get("active_legislators", params)
     counts = await load_question_counts(supabase)
+    role_flags = await load_government_role_flags(supabase)
     min_count = question_count_min if question_count_min is not None else 0
     max_count = question_count_max if question_count_max is not None else 10**9
     filtered_rows = []
     for row in rows:
-        question_count = counts.get(str(row.get("id")), 0)
+        legislator_id = str(row.get("id"))
+        question_count = counts.get(legislator_id, 0)
+        flags = role_flags.get(legislator_id, {})
+        has_role = bool(flags.get("has_executive_government_experience"))
+        if government_role in {
+            "prime_minister",
+            "minister",
+            "senior_vice_minister",
+            "parliamentary_vice_minister",
+        } and not bool(flags.get(f"has_{government_role}_experience")):
+            continue
+        if government_role == "has" and not has_role:
+            continue
+        if government_role == "none" and has_role:
+            continue
         if min_count <= question_count <= max_count:
-            filtered_rows.append({**row, "kokkai_question_count": question_count})
+            filtered_rows.append(
+                {
+                    **row,
+                    **flags,
+                    "kokkai_question_count": question_count,
+                    "has_executive_government_experience": has_role,
+                }
+            )
 
     filtered_rows.sort(key=lambda row: str(row.get("name_kana") or ""))
     page_rows = filtered_rows[offset : offset + limit]
@@ -146,6 +174,49 @@ async def load_question_counts(supabase: SupabaseClient) -> dict[str, int]:
             break
         offset += limit
     return counts
+
+
+async def load_government_role_flags(supabase: SupabaseClient) -> dict[str, dict[str, bool]]:
+    flags: dict[str, dict[str, bool]] = {}
+    limit = 1000
+    offset = 0
+    while True:
+        rows, _ = await supabase.get(
+            "legislator_government_role_flags",
+            {
+                "select": (
+                    "legislator_id,has_prime_minister_experience,"
+                    "has_minister_experience,"
+                    "has_senior_vice_minister_experience,"
+                    "has_parliamentary_vice_minister_experience,"
+                    "has_executive_government_experience"
+                ),
+                "limit": limit,
+                "offset": offset,
+            },
+        )
+        for row in rows:
+            legislator_id = row.get("legislator_id")
+            if isinstance(legislator_id, str):
+                flags[legislator_id] = {
+                    "has_prime_minister_experience": bool(
+                        row.get("has_prime_minister_experience")
+                    ),
+                    "has_minister_experience": bool(row.get("has_minister_experience")),
+                    "has_senior_vice_minister_experience": bool(
+                        row.get("has_senior_vice_minister_experience")
+                    ),
+                    "has_parliamentary_vice_minister_experience": bool(
+                        row.get("has_parliamentary_vice_minister_experience")
+                    ),
+                    "has_executive_government_experience": bool(
+                        row.get("has_executive_government_experience")
+                    ),
+                }
+        if len(rows) < limit:
+            break
+        offset += limit
+    return flags
 
 
 @router.get("/legislators/{legislator_id}", response_model=LegislatorSummary)

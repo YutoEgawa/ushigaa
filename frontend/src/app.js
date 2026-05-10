@@ -112,6 +112,7 @@ function readState() {
     electionMax: params.get("election_max") || "",
     questionMin: params.get("question_min") || "",
     questionMax: params.get("question_max") || "",
+    governmentRole: params.get("government_role") || "all",
     proportional: params.get("proportional") || "all",
     id: params.get("id") || ""
   };
@@ -130,6 +131,7 @@ function navigate(next) {
   if (next.electionMax) params.set("election_max", next.electionMax);
   if (next.questionMin) params.set("question_min", next.questionMin);
   if (next.questionMax) params.set("question_max", next.questionMax);
+  if (next.governmentRole && next.governmentRole !== "all") params.set("government_role", next.governmentRole);
   if (next.proportional && next.proportional !== "all") params.set("proportional", next.proportional);
   if (next.id) params.set("id", next.id);
   const query = params.toString();
@@ -160,7 +162,17 @@ async function api(path, fallback) {
   }
 }
 
-async function listLegislators({ q = "", house = "all", party = "", district = "", questionMin = "", questionMax = "", limit = 24, offset = 0 } = {}) {
+async function listLegislators({
+  q = "",
+  house = "all",
+  party = "",
+  district = "",
+  questionMin = "",
+  questionMax = "",
+  governmentRole = "all",
+  limit = 24,
+  offset = 0
+} = {}) {
   const params = new URLSearchParams({ limit: String(limit), offset: String(offset) });
   if (q) params.set("q", q);
   if (house !== "all") params.set("house", house);
@@ -168,17 +180,19 @@ async function listLegislators({ q = "", house = "all", party = "", district = "
   if (district) params.set("district", district);
   if (questionMin !== "") params.set("question_count_min", questionMin);
   if (questionMax !== "") params.set("question_count_max", questionMax);
+  if (governmentRole !== "all") params.set("government_role", governmentRole);
   const fallbackItems = fallbackLegislators.filter((item) => {
     const matchesHouse = house === "all" || item.house === house;
     const matchesParty = !party || item.party_name === party;
     const matchesDistrict = !district || item.district_name === district;
+    const matchesGovernmentRole = matchesGovernmentRoleFilter(item, governmentRole);
     const matchesQuery =
       !q ||
       item.name_kanji.includes(q) ||
       item.name_kana.includes(q) ||
       item.party_name.includes(q) ||
       item.district_name.includes(q);
-    return matchesHouse && matchesParty && matchesDistrict && matchesQuery;
+    return matchesHouse && matchesParty && matchesDistrict && matchesGovernmentRole && matchesQuery;
   });
   return api(`/legislators?${params}`, {
     items: fallbackItems,
@@ -199,6 +213,7 @@ async function listFilteredLegislators({
   electionMax = "",
   questionMin = "",
   questionMax = "",
+  governmentRole = "all",
   proportional = "all"
 } = {}) {
   const hasAdvancedFilters =
@@ -210,6 +225,7 @@ async function listFilteredLegislators({
     electionMax ||
     questionMin !== "" ||
     questionMax !== "" ||
+    governmentRole !== "all" ||
     proportional !== "all";
   if (!hasAdvancedFilters) {
     return listLegislators({ q, house, limit: 50, offset: 0 });
@@ -223,15 +239,16 @@ async function listFilteredLegislators({
     !electionMax &&
     questionMin === "" &&
     questionMax === "" &&
+    governmentRole === "all" &&
     proportional === "all"
   ) {
     return listLegislators({ q, house, party: parties[0] || "", district: districts[0] || "", limit: 50, offset: 0 });
   }
-  const firstPage = await listLegislators({ q, house, questionMin, questionMax, limit: 100, offset: 0 });
+  const firstPage = await listLegislators({ q, house, questionMin, questionMax, governmentRole, limit: 100, offset: 0 });
   let items = [...firstPage.items];
   const total = firstPage.count ?? firstPage.items.length;
   for (let offset = firstPage.items.length; offset < total; offset += 100) {
-    const page = await listLegislators({ q, house, questionMin, questionMax, limit: 100, offset });
+    const page = await listLegislators({ q, house, questionMin, questionMax, governmentRole, limit: 100, offset });
     items = items.concat(page.items);
     if (!page.items.length) break;
   }
@@ -393,7 +410,7 @@ function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen
   page.innerHTML = `
     ${fallbackBanner()}
     <section class="top-control-row">
-      ${commandSearch("", { house: "all", parties: [], districts: [], ageMin: "", ageMax: "", electionMin: "", electionMax: "", questionMin: "", questionMax: "", proportional: "all" }, parties, districts)}
+      ${commandSearch("", { house: "all", parties: [], districts: [], ageMin: "", ageMax: "", electionMin: "", electionMax: "", questionMin: "", questionMax: "", governmentRole: "all", proportional: "all" }, parties, districts)}
       ${quickSearchPanel()}
     </section>
     <section class="power-map-strip" aria-label="勢力図">
@@ -460,6 +477,7 @@ async function renderSearch() {
       electionMax: state.electionMax,
       questionMin: state.questionMin,
       questionMax: state.questionMax,
+      governmentRole: state.governmentRole,
       proportional: state.proportional
     }),
     listParties(),
@@ -836,7 +854,7 @@ function quickSearchPanel() {
       <button class="secondary-button quick-action-button" type="button" data-quick-search="freshman">当選1回目の政治家を調べる</button>
       <button class="secondary-button quick-action-button" type="button" data-quick-search="under35">35歳未満の政治家を調べる</button>
       <button class="secondary-button quick-action-button" type="button" data-quick-search="multi-proportional">当選回数が複数かつ比例代表の政治家を調べる</button>
-      <button class="secondary-button quick-action-button" type="button" data-quick-search="zero-questions">2023年以降の国会質疑の回数が0回の政治家を調べる</button>
+      <button class="secondary-button quick-action-button" type="button" data-quick-search="zero-questions">国会審議における活動が少ない政治家を調べる</button>
     </section>
   `;
 }
@@ -853,7 +871,7 @@ function bindQuickSearch() {
         return;
       }
       if (button.dataset.quickSearch === "zero-questions") {
-        navigate({ view: "search", house: "all", electionMin: "2", questionMin: "0", questionMax: "0" });
+        navigate({ view: "search", house: "all", electionMin: "2", questionMin: "0", questionMax: "0", governmentRole: "none" });
         return;
       }
       navigate({ view: "search", house: "all", ageMax: "34" });
@@ -876,7 +894,11 @@ function searchFilterControls(prefix, filters, parties, districts) {
       </fieldset>
       ${rangeGroup(`${prefix}-age`, "年齢", ageMinOptions, ageMaxOptions, filters.ageMin, filters.ageMax, "歳", "歳")}
       ${rangeGroup(`${prefix}-election`, "当選回数", electionCountOptions, electionCountOptions, filters.electionMin, filters.electionMax, "回", "回")}
-      ${rangeGroup(`${prefix}-question`, "2023年以降の国会質疑回数", questionCountOptions, questionCountOptions, filters.questionMin, filters.questionMax, "回", "回")}
+      ${rangeGroup(`${prefix}-question`, "国会審議における近年の質疑回数", questionCountOptions, questionCountOptions, filters.questionMin, filters.questionMax, "回", "回")}
+      <fieldset class="filter-group">
+        <legend>2023年以降の政府役職</legend>
+        ${governmentRoleSegmented(filters.governmentRole || "all")}
+      </fieldset>
       ${suggestionGroup(`${prefix}-party`, "政党", parties.map((item) => item.name), selectedParties, "政党名を入力")}
       ${suggestionGroup(`${prefix}-district`, "選挙区", districts.map((item) => item.name), selectedDistricts, "選挙区を入力")}
     </div>
@@ -941,7 +963,8 @@ function collectSearchFilters(container) {
     electionMin: rangeValue(container, "election", "min"),
     electionMax: rangeValue(container, "election", "max"),
     questionMin: rangeValue(container, "question", "min"),
-    questionMax: rangeValue(container, "question", "max")
+    questionMax: rangeValue(container, "question", "max"),
+    governmentRole: container?.querySelector("[data-government-role].is-active")?.dataset.governmentRole || "all"
   };
 }
 
@@ -966,6 +989,12 @@ function bindSearchFilterChips(selector) {
   container.querySelectorAll("[data-proportional]").forEach((button) => {
     button.addEventListener("click", () => {
       container.querySelectorAll("[data-proportional]").forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+    });
+  });
+  container.querySelectorAll("[data-government-role]").forEach((button) => {
+    button.addEventListener("click", () => {
+      container.querySelectorAll("[data-government-role]").forEach((item) => item.classList.remove("is-active"));
       button.classList.add("is-active");
     });
   });
@@ -1024,6 +1053,20 @@ function proportionalSegmented(activeValue) {
       <button class="chip ${activeValue === "all" ? "is-active" : ""}" data-proportional="all" type="button">すべて</button>
       <button class="chip ${activeValue === "proportional" ? "is-active" : ""}" data-proportional="proportional" type="button">比例</button>
       <button class="chip ${activeValue === "non_proportional" ? "is-active" : ""}" data-proportional="non_proportional" type="button">比例以外</button>
+    </div>
+  `;
+}
+
+function governmentRoleSegmented(activeValue) {
+  return `
+    <div class="segmented-control" aria-label="政府役職経験の有無を選択">
+      <button class="chip ${activeValue === "all" ? "is-active" : ""}" data-government-role="all" type="button">すべて</button>
+      <button class="chip ${activeValue === "has" ? "is-active" : ""}" data-government-role="has" type="button">あり</button>
+      <button class="chip ${activeValue === "none" ? "is-active" : ""}" data-government-role="none" type="button">なし</button>
+      <button class="chip ${activeValue === "prime_minister" ? "is-active" : ""}" data-government-role="prime_minister" type="button">総理大臣</button>
+      <button class="chip ${activeValue === "minister" ? "is-active" : ""}" data-government-role="minister" type="button">大臣</button>
+      <button class="chip ${activeValue === "senior_vice_minister" ? "is-active" : ""}" data-government-role="senior_vice_minister" type="button">副大臣</button>
+      <button class="chip ${activeValue === "parliamentary_vice_minister" ? "is-active" : ""}" data-government-role="parliamentary_vice_minister" type="button">政務官</button>
     </div>
   `;
 }
@@ -1347,6 +1390,14 @@ function matchesAdvancedFilters(item, filters) {
   return true;
 }
 
+function matchesGovernmentRoleFilter(item, governmentRole) {
+  const hasGovernmentRole = Boolean(item.has_executive_government_experience);
+  if (!governmentRole || governmentRole === "all") return true;
+  if (governmentRole === "has") return hasGovernmentRole;
+  if (governmentRole === "none") return !hasGovernmentRole;
+  return Boolean(item[`has_${governmentRole}_experience`]);
+}
+
 function matchesProportionalFilter(item, proportional) {
   const isProportional = [item.district_type, item.election_type, item.district_name, item.block_name]
     .filter(Boolean)
@@ -1429,7 +1480,16 @@ function shortPartyName(name) {
 
 function metaLine(item) {
   const questionCount = Number.isInteger(item.kokkai_question_count) ? `2023年以降の国会質疑 ${item.kokkai_question_count}件` : "";
-  return [houseLabel(item.house), item.party_name, item.district_name, questionCount].filter(Boolean).map(escapeHtml).join(" / ");
+  const governmentRole = governmentRoleLabel(item);
+  return [houseLabel(item.house), item.party_name, item.district_name, questionCount, governmentRole].filter(Boolean).map(escapeHtml).join(" / ");
+}
+
+function governmentRoleLabel(item) {
+  if (item.has_prime_minister_experience) return "2023年以降の総理大臣経験あり";
+  if (item.has_minister_experience) return "2023年以降の大臣経験あり";
+  if (item.has_senior_vice_minister_experience) return "2023年以降の副大臣経験あり";
+  if (item.has_parliamentary_vice_minister_experience) return "2023年以降の政務官経験あり";
+  return "";
 }
 
 function arcPath(cx, cy, r, startAngle, endAngle) {

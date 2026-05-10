@@ -30,6 +30,11 @@ class LegislatorSummary(BaseModel):
     election_year: int | None = None
     election_type: str | None = None
     kokkai_question_count: int | None = None
+    has_prime_minister_experience: bool | None = None
+    has_minister_experience: bool | None = None
+    has_senior_vice_minister_experience: bool | None = None
+    has_parliamentary_vice_minister_experience: bool | None = None
+    has_executive_government_experience: bool | None = None
 
 
 class LegislatorListResponse(BaseModel):
