@@ -14,6 +14,8 @@ Query parameters:
 - `party`: exact party name
 - `district`: exact district name
 - `q`: text search across name, kana, party, and district
+- `question_count_min`: minimum stored Kokkai question-group count since 2023
+- `question_count_max`: maximum stored Kokkai question-group count since 2023
 - `limit`: 1-100, default 50
 - `offset`: default 0
 
@@ -32,6 +34,7 @@ Returns:
       "election_count": 1,
       "birth_date": "1968-07-05",
       "birth_date_precision": "day",
+      "kokkai_question_count": 0,
       "career_summary": "公式プロフィール由来の略歴",
       "profile_source_url": "https://...",
       "profile_source_type": "diet_official",

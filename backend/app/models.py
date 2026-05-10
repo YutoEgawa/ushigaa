@@ -29,6 +29,7 @@ class LegislatorSummary(BaseModel):
     block_name: str | None = None
     election_year: int | None = None
     election_type: str | None = None
+    kokkai_question_count: int | None = None
 
 
 class LegislatorListResponse(BaseModel):

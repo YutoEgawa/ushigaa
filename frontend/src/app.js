@@ -58,6 +58,7 @@ const gaugeColors = ["#38D5FF", "#A7F83B", "#FFBE3D", "#B985FF", "#FF6B45", "#35
 const ageMinOptions = [25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80];
 const ageMaxOptions = [29, 34, 39, 44, 49, 54, 59, 64, 69, 74, 79, 84];
 const electionCountOptions = Array.from({ length: 15 }, (_, index) => index + 1);
+const questionCountOptions = [0, 1, 2, 3, 5, 10, 20, 30, 50, 75, 100];
 const fallbackParties = [
   { id: "party-ldp", name: "自由民主党", name_short: "自民", alignment: "ruling", alignment_rank: 1 },
   { id: "party-ishin", name: "日本維新の会", name_short: "維新", alignment: "ruling", alignment_rank: 2 },
@@ -109,6 +110,8 @@ function readState() {
     ageMax: params.get("age_max") || "",
     electionMin: params.get("election_min") || "",
     electionMax: params.get("election_max") || "",
+    questionMin: params.get("question_min") || "",
+    questionMax: params.get("question_max") || "",
     proportional: params.get("proportional") || "all",
     id: params.get("id") || ""
   };
@@ -125,6 +128,8 @@ function navigate(next) {
   if (next.ageMax) params.set("age_max", next.ageMax);
   if (next.electionMin) params.set("election_min", next.electionMin);
   if (next.electionMax) params.set("election_max", next.electionMax);
+  if (next.questionMin) params.set("question_min", next.questionMin);
+  if (next.questionMax) params.set("question_max", next.questionMax);
   if (next.proportional && next.proportional !== "all") params.set("proportional", next.proportional);
   if (next.id) params.set("id", next.id);
   const query = params.toString();
@@ -155,12 +160,14 @@ async function api(path, fallback) {
   }
 }
 
-async function listLegislators({ q = "", house = "all", party = "", district = "", limit = 24, offset = 0 } = {}) {
+async function listLegislators({ q = "", house = "all", party = "", district = "", questionMin = "", questionMax = "", limit = 24, offset = 0 } = {}) {
   const params = new URLSearchParams({ limit: String(limit), offset: String(offset) });
   if (q) params.set("q", q);
   if (house !== "all") params.set("house", house);
   if (party) params.set("party", party);
   if (district) params.set("district", district);
+  if (questionMin !== "") params.set("question_count_min", questionMin);
+  if (questionMax !== "") params.set("question_count_max", questionMax);
   const fallbackItems = fallbackLegislators.filter((item) => {
     const matchesHouse = house === "all" || item.house === house;
     const matchesParty = !party || item.party_name === party;
@@ -190,6 +197,8 @@ async function listFilteredLegislators({
   ageMax = "",
   electionMin = "",
   electionMax = "",
+  questionMin = "",
+  questionMax = "",
   proportional = "all"
 } = {}) {
   const hasAdvancedFilters =
@@ -199,6 +208,8 @@ async function listFilteredLegislators({
     ageMax ||
     electionMin ||
     electionMax ||
+    questionMin !== "" ||
+    questionMax !== "" ||
     proportional !== "all";
   if (!hasAdvancedFilters) {
     return listLegislators({ q, house, limit: 50, offset: 0 });
@@ -210,19 +221,22 @@ async function listFilteredLegislators({
     !ageMax &&
     !electionMin &&
     !electionMax &&
+    questionMin === "" &&
+    questionMax === "" &&
     proportional === "all"
   ) {
     return listLegislators({ q, house, party: parties[0] || "", district: districts[0] || "", limit: 50, offset: 0 });
   }
-  const firstPage = await listLegislators({ q, house, limit: 100, offset: 0 });
+  const firstPage = await listLegislators({ q, house, questionMin, questionMax, limit: 100, offset: 0 });
   let items = [...firstPage.items];
   const total = firstPage.count ?? firstPage.items.length;
   for (let offset = firstPage.items.length; offset < total; offset += 100) {
-    const page = await listLegislators({ q, house, limit: 100, offset });
+    const page = await listLegislators({ q, house, questionMin, questionMax, limit: 100, offset });
     items = items.concat(page.items);
     if (!page.items.length) break;
   }
-  const filteredItems = items.filter((item) => matchesAdvancedFilters(item, { parties, districts, ageMin, ageMax, electionMin, electionMax, proportional }));
+  const filteredItems = items
+    .filter((item) => matchesAdvancedFilters(item, { parties, districts, ageMin, ageMax, electionMin, electionMax, proportional }));
   return {
     items: filteredItems,
     count: filteredItems.length,
@@ -379,7 +393,7 @@ function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen
   page.innerHTML = `
     ${fallbackBanner()}
     <section class="top-control-row">
-      ${commandSearch("", { house: "all", parties: [], districts: [], ageMin: "", ageMax: "", electionMin: "", electionMax: "", proportional: "all" }, parties, districts)}
+      ${commandSearch("", { house: "all", parties: [], districts: [], ageMin: "", ageMax: "", electionMin: "", electionMax: "", questionMin: "", questionMax: "", proportional: "all" }, parties, districts)}
       ${quickSearchPanel()}
     </section>
     <section class="power-map-strip" aria-label="勢力図">
@@ -444,6 +458,8 @@ async function renderSearch() {
       ageMax: state.ageMax,
       electionMin: state.electionMin,
       electionMax: state.electionMax,
+      questionMin: state.questionMin,
+      questionMax: state.questionMax,
       proportional: state.proportional
     }),
     listParties(),
@@ -820,6 +836,7 @@ function quickSearchPanel() {
       <button class="secondary-button quick-action-button" type="button" data-quick-search="freshman">当選1回目の政治家を調べる</button>
       <button class="secondary-button quick-action-button" type="button" data-quick-search="under35">35歳未満の政治家を調べる</button>
       <button class="secondary-button quick-action-button" type="button" data-quick-search="multi-proportional">当選回数が複数かつ比例代表の政治家を調べる</button>
+      <button class="secondary-button quick-action-button" type="button" data-quick-search="zero-questions">2023年以降の国会質疑の回数が0回の政治家を調べる</button>
     </section>
   `;
 }
@@ -833,6 +850,10 @@ function bindQuickSearch() {
       }
       if (button.dataset.quickSearch === "multi-proportional") {
         navigate({ view: "search", house: "all", electionMin: "2", proportional: "proportional" });
+        return;
+      }
+      if (button.dataset.quickSearch === "zero-questions") {
+        navigate({ view: "search", house: "all", electionMin: "2", questionMin: "0", questionMax: "0" });
         return;
       }
       navigate({ view: "search", house: "all", ageMax: "34" });
@@ -855,6 +876,7 @@ function searchFilterControls(prefix, filters, parties, districts) {
       </fieldset>
       ${rangeGroup(`${prefix}-age`, "年齢", ageMinOptions, ageMaxOptions, filters.ageMin, filters.ageMax, "歳", "歳")}
       ${rangeGroup(`${prefix}-election`, "当選回数", electionCountOptions, electionCountOptions, filters.electionMin, filters.electionMax, "回", "回")}
+      ${rangeGroup(`${prefix}-question`, "2023年以降の国会質疑回数", questionCountOptions, questionCountOptions, filters.questionMin, filters.questionMax, "回", "回")}
       ${suggestionGroup(`${prefix}-party`, "政党", parties.map((item) => item.name), selectedParties, "政党名を入力")}
       ${suggestionGroup(`${prefix}-district`, "選挙区", districts.map((item) => item.name), selectedDistricts, "選挙区を入力")}
     </div>
@@ -917,7 +939,9 @@ function collectSearchFilters(container) {
     ageMin: rangeValue(container, "age", "min"),
     ageMax: rangeValue(container, "age", "max"),
     electionMin: rangeValue(container, "election", "min"),
-    electionMax: rangeValue(container, "election", "max")
+    electionMax: rangeValue(container, "election", "max"),
+    questionMin: rangeValue(container, "question", "min"),
+    questionMax: rangeValue(container, "question", "max")
   };
 }
 
@@ -1404,7 +1428,8 @@ function shortPartyName(name) {
 }
 
 function metaLine(item) {
-  return [houseLabel(item.house), item.party_name, item.district_name].filter(Boolean).map(escapeHtml).join(" / ");
+  const questionCount = Number.isInteger(item.kokkai_question_count) ? `2023年以降の国会質疑 ${item.kokkai_question_count}件` : "";
+  return [houseLabel(item.house), item.party_name, item.district_name, questionCount].filter(Boolean).map(escapeHtml).join(" / ");
 }
 
 function arcPath(cx, cy, r, startAngle, endAngle) {

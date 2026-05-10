@@ -50,9 +50,24 @@ async def list_legislators(
     party: str | None = None,
     district: str | None = None,
     q: Annotated[str | None, Query(min_length=1, max_length=50)] = None,
+    question_count_min: Annotated[int | None, Query(ge=0)] = None,
+    question_count_max: Annotated[int | None, Query(ge=0)] = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 50,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> LegislatorListResponse:
+    if question_count_min is not None or question_count_max is not None:
+        return await list_legislators_with_question_counts(
+            supabase=supabase,
+            house=house,
+            party=party,
+            district=district,
+            q=q,
+            question_count_min=question_count_min,
+            question_count_max=question_count_max,
+            limit=limit,
+            offset=offset,
+        )
+
     params = build_legislator_params(
         house=house,
         party=party,
@@ -68,6 +83,69 @@ async def list_legislators(
         offset=offset,
         count=count,
     )
+
+
+async def list_legislators_with_question_counts(
+    *,
+    supabase: SupabaseClient,
+    house: str | None,
+    party: str | None,
+    district: str | None,
+    q: str | None,
+    question_count_min: int | None,
+    question_count_max: int | None,
+    limit: int,
+    offset: int,
+) -> LegislatorListResponse:
+    params = build_legislator_params(
+        house=house,
+        party=party,
+        district=district,
+        q=q,
+        limit=1000,
+        offset=0,
+    )
+    rows, _ = await supabase.get("active_legislators", params)
+    counts = await load_question_counts(supabase)
+    min_count = question_count_min if question_count_min is not None else 0
+    max_count = question_count_max if question_count_max is not None else 10**9
+    filtered_rows = []
+    for row in rows:
+        question_count = counts.get(str(row.get("id")), 0)
+        if min_count <= question_count <= max_count:
+            filtered_rows.append({**row, "kokkai_question_count": question_count})
+
+    filtered_rows.sort(key=lambda row: str(row.get("name_kana") or ""))
+    page_rows = filtered_rows[offset : offset + limit]
+    return LegislatorListResponse(
+        items=[LegislatorSummary.model_validate(row) for row in page_rows],
+        limit=limit,
+        offset=offset,
+        count=len(filtered_rows),
+    )
+
+
+async def load_question_counts(supabase: SupabaseClient) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    limit = 1000
+    offset = 0
+    while True:
+        rows, _ = await supabase.get(
+            "kokkai_question_groups",
+            {
+                "select": "legislator_id",
+                "limit": limit,
+                "offset": offset,
+            },
+        )
+        for row in rows:
+            legislator_id = row.get("legislator_id")
+            if isinstance(legislator_id, str):
+                counts[legislator_id] = counts.get(legislator_id, 0) + 1
+        if len(rows) < limit:
+            break
+        offset += limit
+    return counts
 
 
 @router.get("/legislators/{legislator_id}", response_model=LegislatorSummary)
