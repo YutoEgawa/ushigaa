@@ -689,7 +689,7 @@ async function renderDetail() {
       <div class="question-header">
         <div>
           <div class="panel-title">COMMITTEE CONTRIBUTION</div>
-          <h2>議論に貢献している委員会</h2>
+          <h2>質疑回数が多い委員会</h2>
         </div>
         <span>2023年以降</span>
       </div>
@@ -699,7 +699,7 @@ async function renderDetail() {
       <div class="question-header">
         <div>
           <div class="panel-title">KOKKAI QUESTIONS</div>
-          <h2>2023年以降の質疑</h2>
+          <h2>質疑の詳細</h2>
         </div>
         <span data-question-count>${questionCountLabel(questions.items.length, questions.count)}</span>
       </div>
