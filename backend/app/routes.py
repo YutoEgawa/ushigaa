@@ -12,6 +12,11 @@ from app.models import (
     District,
     KokkaiQuestion,
     KokkaiQuestionListResponse,
+    KokkaiTopicRanking,
+    KokkaiTopicRankingResponse,
+    KokkaiTopicTopRanking,
+    KokkaiTopicTopRankingItem,
+    KokkaiTopicTopRankingResponse,
     LegislatorListResponse,
     LegislatorSummary,
     Party,
@@ -176,6 +181,76 @@ async def load_question_counts(supabase: SupabaseClient) -> dict[str, int]:
     return counts
 
 
+async def load_all_rows(
+    supabase: SupabaseClient,
+    table: str,
+    params: dict[str, object],
+    *,
+    limit: int = 1000,
+) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    offset = 0
+    while True:
+        page, _ = await supabase.get(
+            table,
+            {
+                **params,
+                "limit": limit,
+                "offset": offset,
+            },
+        )
+        rows.extend(page)
+        if len(page) < limit:
+            break
+        offset += limit
+    return rows
+
+
+async def load_topic_question_counts(
+    supabase: SupabaseClient,
+    from_date: date,
+) -> dict[str, dict[str, int]]:
+    topic_counts: dict[str, dict[str, int]] = {}
+    if from_date == date(2023, 1, 1):
+        rows = await load_all_rows(
+            supabase,
+            "kokkai_question_topic_counts",
+            {"select": "legislator_id,meeting_topic,question_count"},
+        )
+        for row in rows:
+            legislator_id = row.get("legislator_id")
+            topic = row.get("meeting_topic")
+            count = row.get("question_count")
+            if not isinstance(legislator_id, str):
+                continue
+            if not isinstance(topic, str) or not topic:
+                topic = "調査会"
+            if not isinstance(count, int):
+                continue
+            topic_counts.setdefault(topic, {})
+            topic_counts[topic][legislator_id] = count
+        return topic_counts
+
+    question_rows = await load_all_rows(
+        supabase,
+        "kokkai_question_group_rows",
+        {
+            "select": "legislator_id,meeting_topic",
+            "date": f"gte.{from_date.isoformat()}",
+        },
+    )
+    for row in question_rows:
+        legislator_id = row.get("legislator_id")
+        if not isinstance(legislator_id, str):
+            continue
+        topic = row.get("meeting_topic")
+        if not isinstance(topic, str) or not topic:
+            topic = "調査会"
+        topic_counts.setdefault(topic, {})
+        topic_counts[topic][legislator_id] = topic_counts[topic].get(legislator_id, 0) + 1
+    return topic_counts
+
+
 async def load_government_role_flags(supabase: SupabaseClient) -> dict[str, dict[str, bool]]:
     flags: dict[str, dict[str, bool]] = {}
     limit = 1000
@@ -245,7 +320,7 @@ async def list_legislator_questions(
         "kokkai_question_group_rows",
         {
             "select": (
-                "id,legislator_id,date,name_of_house,name_of_meeting,speaker,"
+                "id,legislator_id,date,name_of_house,name_of_meeting,meeting_topic,speaker,"
                 "speech_count,speech,source_issue_ids,source_speech_ids"
             ),
             "legislator_id": f"eq.{legislator_id}",
@@ -261,6 +336,121 @@ async def list_legislator_questions(
         count=count if count is not None else len(questions),
         from_date=from_date,
     )
+
+
+@router.get(
+    "/legislators/{legislator_id}/question-topic-rankings",
+    response_model=KokkaiTopicRankingResponse,
+)
+async def list_legislator_question_topic_rankings(
+    legislator_id: str,
+    supabase: Annotated[SupabaseClient, Depends(get_supabase)],
+    from_date: Annotated[date, Query(alias="from")] = date(2023, 1, 1),
+) -> KokkaiTopicRankingResponse:
+    legislators = await load_all_rows(
+        supabase,
+        "active_legislators",
+        {"select": "id,name_kanji,name_kana,party_name"},
+    )
+    legislator_lookup = {
+        str(row.get("id")): row
+        for row in legislators
+        if isinstance(row.get("id"), str)
+    }
+    if legislator_id not in legislator_lookup:
+        raise HTTPException(status_code=404, detail="Legislator not found")
+
+    topic_counts = await load_topic_question_counts(supabase, from_date)
+
+    rankings: list[KokkaiTopicRanking] = []
+    for topic, counts in topic_counts.items():
+        current_count = counts.get(legislator_id, 0)
+        if current_count <= 0:
+            continue
+        ranked_counts = sorted(
+            counts.items(),
+            key=lambda item: (-item[1], str(legislator_lookup.get(item[0], {}).get("name_kana") or "")),
+        )
+        ranks: dict[str, int] = {}
+        previous_count: int | None = None
+        current_rank = 0
+        for index, (ranked_legislator_id, count) in enumerate(ranked_counts, start=1):
+            if count != previous_count:
+                current_rank = index
+                previous_count = count
+            ranks[ranked_legislator_id] = current_rank
+
+        rankings.append(
+            KokkaiTopicRanking(
+                topic=topic,
+                current_count=current_count,
+                current_rank=ranks[legislator_id],
+                total_legislators=len(counts),
+            )
+        )
+
+    rankings.sort(key=lambda item: (-item.current_count, item.topic))
+    return KokkaiTopicRankingResponse(items=rankings, from_date=from_date)
+
+
+@router.get("/kokkai/question-topic-rankings", response_model=KokkaiTopicTopRankingResponse)
+async def list_question_topic_top_rankings(
+    supabase: Annotated[SupabaseClient, Depends(get_supabase)],
+    from_date: Annotated[date, Query(alias="from")] = date(2023, 1, 1),
+    limit: Annotated[int, Query(ge=1, le=20)] = 10,
+) -> KokkaiTopicTopRankingResponse:
+    legislators = await load_all_rows(
+        supabase,
+        "active_legislators",
+        {"select": "id,name_kanji,name_kana,party_name"},
+    )
+    legislator_lookup = {
+        str(row.get("id")): row
+        for row in legislators
+        if isinstance(row.get("id"), str)
+    }
+    topic_counts = await load_topic_question_counts(supabase, from_date)
+    rankings: list[KokkaiTopicTopRanking] = []
+    for topic, counts in topic_counts.items():
+        ranked_counts = sorted(
+            counts.items(),
+            key=lambda item: (-item[1], str(legislator_lookup.get(item[0], {}).get("name_kana") or "")),
+        )
+        items: list[KokkaiTopicTopRankingItem] = []
+        previous_count: int | None = None
+        current_rank = 0
+        for index, (legislator_id, count) in enumerate(ranked_counts, start=1):
+            if count != previous_count:
+                current_rank = index
+                previous_count = count
+            if len(items) >= limit:
+                break
+            legislator = legislator_lookup.get(legislator_id)
+            if not legislator:
+                continue
+            name = legislator.get("name_kanji")
+            if not isinstance(name, str):
+                continue
+            party_name = legislator.get("party_name")
+            items.append(
+                KokkaiTopicTopRankingItem(
+                    legislator_id=legislator_id,
+                    name_kanji=name,
+                    party_name=party_name if isinstance(party_name, str) else None,
+                    question_count=count,
+                    rank=current_rank,
+                )
+            )
+        rankings.append(
+            KokkaiTopicTopRanking(
+                topic=topic,
+                total_legislators=len(counts),
+                items=items,
+            )
+        )
+
+    rankings.sort(key=lambda item: item.topic)
+    return KokkaiTopicTopRankingResponse(items=rankings, from_date=from_date)
 
 
 @router.get("/parties", response_model=list[Party])

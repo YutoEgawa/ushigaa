@@ -53,6 +53,43 @@ def normalize_name(value: str | None) -> str:
     return value.removesuffix("君").replace(" ", "")
 
 
+def meeting_topic(name_of_meeting: str) -> str:
+    rules = [
+        ("本会議", "本会議"),
+        ("議院運営", "議院運営"),
+        ("予算委員会", "予算"),
+        (("決算", "行政監視"), "決算・行政監視"),
+        (("財務金融", "財政金融"), "財政・金融"),
+        (("外交", "外務", "安全保障", "防衛", "国際", "政府開発援助"), "外交・安全保障"),
+        ("厚生労働", "厚生労働"),
+        (("こども", "子育て", "若者"), "こども・子育て"),
+        ("法務", "法務"),
+        (("文教", "文部科学"), "教育・科学"),
+        (("経済産業", "資源エネルギー", "原子力"), "経済産業・エネルギー"),
+        (("環境", "持続可能"), "環境"),
+        ("農林水産", "農林水産"),
+        ("国土交通", "国土交通"),
+        ("総務", "総務・地方行政"),
+        (("地方創生", "地域活性化", "デジタル", "人工知能"), "地方創生・デジタル"),
+        ("消費者", "消費者"),
+        (("内閣委員会", "国家基本政策"), "内閣・国家基本政策"),
+        ("憲法", "憲法"),
+        (("政治改革", "政治倫理", "公職選挙", "選挙制度"), "政治改革・選挙"),
+        (("災害", "復興"), "災害・復興"),
+        (("拉致", "北朝鮮"), "拉致・北朝鮮"),
+        (("沖縄", "北方"), "沖縄・北方"),
+        ("情報監視", "情報監視"),
+        ("懲罰", "議員規律"),
+        ("調査会", "調査会"),
+    ]
+    for patterns, topic in rules:
+        if isinstance(patterns, str):
+            patterns = (patterns,)
+        if any(pattern in name_of_meeting for pattern in patterns):
+            return topic
+    return "調査会"
+
+
 def get_json(url: str, *, headers: dict[str, str] | None = None, timeout: int = 30) -> Any:
     request = Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
     with urlopen(request, timeout=timeout) as response:
@@ -170,6 +207,7 @@ def build_sql(records: list[dict[str, Any]], *, from_date: str) -> str:
                 clean_text(record.get("issueID")),
                 clean_text(record.get("nameOfHouse")) or None,
                 clean_text(record.get("nameOfMeeting")),
+                meeting_topic(clean_text(record.get("nameOfMeeting"))),
                 clean_text(record.get("date")),
             )
             for record in records
@@ -212,6 +250,7 @@ insert into public.kokkai_meetings (
   source_issue_id,
   name_of_house,
   name_of_meeting,
+  meeting_topic,
   date
 )
 values
@@ -219,6 +258,7 @@ values
 on conflict (source_issue_id) do update set
   name_of_house = excluded.name_of_house,
   name_of_meeting = excluded.name_of_meeting,
+  meeting_topic = excluded.meeting_topic,
   date = excluded.date,
   updated_at = now();
 """

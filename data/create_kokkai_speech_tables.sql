@@ -6,12 +6,14 @@ create table if not exists public.kokkai_meetings (
   source_issue_id text not null unique,
   name_of_house text,
   name_of_meeting text not null,
+  meeting_topic text,
   date date not null,
   created_at timestamp with time zone default now(),
   updated_at timestamp with time zone default now()
 );
 
 comment on table public.kokkai_meetings is '国会APIの会議録メタデータ。source_issue_id は国会API上の issueID。';
+comment on column public.kokkai_meetings.meeting_topic is 'name_of_meeting から推定した会議・委員会の大分類トピック。';
 
 create table if not exists public.kokkai_speeches (
   id uuid primary key default extensions.uuid_generate_v4(),
@@ -34,6 +36,9 @@ comment on column public.kokkai_speeches.source_issue_id is '国会API上の iss
 
 create index if not exists kokkai_meetings_date_idx
   on public.kokkai_meetings (date desc);
+
+create index if not exists kokkai_meetings_topic_idx
+  on public.kokkai_meetings (meeting_topic);
 
 create index if not exists kokkai_speeches_legislator_idx
   on public.kokkai_speeches (legislator_id);
@@ -77,6 +82,7 @@ select
   m.date,
   m.name_of_house,
   m.name_of_meeting,
+  m.meeting_topic,
   s.speaker,
   s.speech,
   s.source_speech_id,
@@ -95,6 +101,7 @@ select
   m.date,
   m.name_of_house,
   m.name_of_meeting,
+  m.meeting_topic,
   g.speaker,
   g.speech_count,
   g.speech,
@@ -104,6 +111,18 @@ select
   g.last_speech_order
 from public.kokkai_question_groups g
 join public.kokkai_meetings m on m.id = g.meeting_id;
+
+create or replace view public.kokkai_question_topic_counts
+with (security_invoker = true)
+as
+select
+  g.legislator_id,
+  coalesce(nullif(m.meeting_topic, ''), '調査会') as meeting_topic,
+  count(*)::integer as question_count
+from public.kokkai_question_groups g
+join public.kokkai_meetings m on m.id = g.meeting_id
+where m.date >= date '2023-01-01'
+group by g.legislator_id, coalesce(nullif(m.meeting_topic, ''), '調査会');
 
 alter table public.kokkai_meetings enable row level security;
 alter table public.kokkai_speeches enable row level security;
@@ -132,3 +151,4 @@ grant select on public.kokkai_speeches to anon, authenticated;
 grant select on public.kokkai_question_groups to anon, authenticated;
 grant select on public.kokkai_question_speech_rows to anon, authenticated;
 grant select on public.kokkai_question_group_rows to anon, authenticated;
+grant select on public.kokkai_question_topic_counts to anon, authenticated;

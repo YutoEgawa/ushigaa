@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-frontend.mjs"
+    "build": "sh scripts/run-modern-node.sh scripts/build-frontend.mjs"
   }
 }

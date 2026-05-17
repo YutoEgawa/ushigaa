@@ -274,6 +274,22 @@ async function listLegislatorQuestions(id, { limit = QUESTION_PAGE_SIZE, offset 
   return api(`/legislators/${id}/questions?from=2023-01-01&limit=${limit}&offset=${offset}`, fallback);
 }
 
+async function listLegislatorQuestionTopicRankings(id) {
+  return api(`/legislators/${id}/question-topic-rankings?from=2023-01-01`, {
+    items: [],
+    from_date: "2023-01-01",
+    unit: "question_group"
+  });
+}
+
+async function listQuestionTopicTopRankings() {
+  return api("/kokkai/question-topic-rankings?from=2023-01-01&limit=10", {
+    items: [],
+    from_date: "2023-01-01",
+    unit: "question_group"
+  });
+}
+
 async function getAkamatsuQuestionFixture({ limit = QUESTION_PAGE_SIZE, offset = 0 } = {}) {
   try {
     const response = await fetch("./data/kokkai_questions_akamatsu.json");
@@ -342,6 +358,7 @@ async function render() {
   bindHeader();
   if (state.view === "search") await renderSearch();
   else if (state.view === "detail" && state.id) await renderDetail();
+  else if (state.view === "activity") await renderActivity();
   else if (state.view === "about") renderAbout();
   else if (state.view === "contact") renderContact();
   else if (state.view === "terms") renderTerms();
@@ -355,6 +372,7 @@ function siteHeader() {
       <button class="brand-button" data-nav="top">${BRAND_NAME}</button>
       <nav class="site-nav" aria-label="Primary navigation">
         <button class="nav-link ${state.view === "top" || state.view === "search" || state.view === "detail" ? "is-active" : ""}" data-nav="top">議員検索</button>
+        <button class="nav-link ${state.view === "activity" ? "is-active" : ""}" data-nav="activity">国会での活動</button>
         <button class="nav-link ${state.view === "about" ? "is-active" : ""}" data-nav="about">ウシガーについて</button>
         <button class="nav-link ${state.view === "contact" ? "is-active" : ""}" data-nav="contact">問い合わせ</button>
       </nav>
@@ -408,6 +426,7 @@ async function renderTop() {
 function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen, isLoading = false }) {
   page.className = "page-frame top-page";
   page.innerHTML = `
+    ${topPageTabs("search")}
     ${fallbackBanner()}
     <section class="top-control-row">
       ${commandSearch("", { house: "all", parties: [], districts: [], ageMin: "", ageMax: "", electionMin: "", electionMax: "", questionMin: "", questionMax: "", governmentRole: "all", proportional: "all" }, parties, districts)}
@@ -432,9 +451,85 @@ function renderTopContent({ page, parties, districts, powerMap, featuredFreshmen
     </section>
   `;
   bindCommandSearch();
+  bindTopPageTabs();
   bindOpenDetails();
   bindQuickSearch();
   bindTopIntro();
+}
+
+async function renderActivity() {
+  const page = document.querySelector("#page");
+  renderActivityContent(page, null, true);
+  const rankings = await listQuestionTopicTopRankings();
+  if (state.view !== "activity") return;
+  renderActivityContent(page, rankings);
+}
+
+function renderActivityContent(page, rankings, isLoading = false) {
+  page.className = "page-frame activity-page";
+  page.innerHTML = `
+    ${topPageTabs("activity")}
+    ${fallbackBanner()}
+    <section class="activity-hero">
+      <p class="panel-title">KOKKAI ACTIVITY</p>
+      <h1>国会での活動</h1>
+      <p>2023年以降の国会質疑について、委員会ごとに発言量の多い政治家を表示しています。</p>
+    </section>
+    <section class="activity-ranking-grid">
+      ${activityRankingList(rankings, isLoading)}
+    </section>
+  `;
+  bindTopPageTabs();
+  bindOpenDetails();
+}
+
+function topPageTabs(active) {
+  return `
+    <nav class="top-page-tabs" aria-label="トップページの表示切替">
+      <button class="top-page-tab ${active === "search" ? "is-active" : ""}" type="button" data-nav="top">議員検索</button>
+      <button class="top-page-tab ${active === "activity" ? "is-active" : ""}" type="button" data-nav="activity">国会での活動</button>
+    </nav>
+  `;
+}
+
+function bindTopPageTabs() {
+  document.querySelectorAll(".top-page-tab[data-nav]").forEach((button) => {
+    button.addEventListener("click", () => navigate({ view: button.dataset.nav }));
+  });
+}
+
+function activityRankingList(rankings, isLoading) {
+  if (isLoading) return loadingCards("委員会ごとのランキングを読み込み中です。");
+  const items = rankings?.items || [];
+  if (!items.length) return `<div class="empty-state">ランキングデータを読み込めませんでした。</div>`;
+  return items.map(activityTopicRankingCard).join("");
+}
+
+function activityTopicRankingCard(topic) {
+  return `
+    <article class="hud-panel activity-ranking-card">
+      <div class="activity-ranking-head">
+        <div>
+          <p class="panel-title">${topic.total_legislators}人が質疑</p>
+          <h2>${escapeHtml(topic.topic)}</h2>
+        </div>
+      </div>
+      <ol class="activity-ranking-list">
+        ${(topic.items || []).map(activityRankingRow).join("")}
+      </ol>
+    </article>
+  `;
+}
+
+function activityRankingRow(item) {
+  return `
+    <li>
+      <span>${item.rank}位</span>
+      <button class="activity-ranking-name" type="button" data-open="${escapeHtml(item.legislator_id)}">${escapeHtml(item.name_kanji)}</button>
+      <span>${escapeHtml(item.party_name || "")}</span>
+      <strong>${item.question_count}回</strong>
+    </li>
+  `;
 }
 
 function powerMapLoadingPanels(isLoading) {
@@ -547,7 +642,11 @@ function searchLoadingState() {
 }
 
 async function renderDetail() {
-  const [item, questions] = await Promise.all([getLegislator(state.id), listLegislatorQuestions(state.id)]);
+  const [item, questions, topicRankings] = await Promise.all([
+    getLegislator(state.id),
+    listLegislatorQuestions(state.id),
+    listLegislatorQuestionTopicRankings(state.id)
+  ]);
   const page = document.querySelector("#page");
   const profileSource = item.profile_source_url || item.birth_date_source_url || item.election_count_source_url || item.career_source_url;
   page.className = "page-frame detail-page";
@@ -586,6 +685,16 @@ async function renderDetail() {
       <div class="panel-title">CAREER LOG</div>
       <p>${escapeHtml(item.career_summary || "公式プロフィールから経歴を取得でき次第、ここに表示します。")}</p>
     </section>
+    <section class="hud-panel topic-ranking-data">
+      <div class="question-header">
+        <div>
+          <div class="panel-title">COMMITTEE CONTRIBUTION</div>
+          <h2>議論に貢献している委員会</h2>
+        </div>
+        <span>2023年以降</span>
+      </div>
+      ${topicRankingList(topicRankings)}
+    </section>
     <section class="hud-panel question-data">
       <div class="question-header">
         <div>
@@ -598,7 +707,37 @@ async function renderDetail() {
     </section>
   `;
   document.querySelector("[data-back]").addEventListener("click", () => history.back());
+  bindOpenDetails();
   bindQuestionLoadMore(state.id);
+}
+
+function topicRankingList(data) {
+  const items = (data.items || []).filter((item) => Number(item.current_rank) <= 10);
+  if (!items.length) {
+    return `<div class="empty-state">2023年以降、上位10位以内に入っている委員会はまだありません。</div>`;
+  }
+  return `
+    <div class="topic-ranking-list">
+      ${items.map(topicRankingItem).join("")}
+    </div>
+  `;
+}
+
+function topicRankingItem(item) {
+  return `
+    <article class="topic-ranking-item">
+      <div class="topic-ranking-summary">
+        <div>
+          <h3>${escapeHtml(item.topic)}</h3>
+          <p>${item.total_legislators}人中 ${item.current_rank}位</p>
+        </div>
+        <div class="topic-ranking-score">
+          <strong>${item.current_rank}位</strong>
+          <span>${item.current_count}回</span>
+        </div>
+      </div>
+    </article>
+  `;
 }
 
 function questionList(data) {

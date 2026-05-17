@@ -47,6 +47,7 @@ class LegislatorListResponse(BaseModel):
 class KokkaiQuestion(BaseModel):
     date: date
     name_of_meeting: str
+    meeting_topic: str | None = None
     name_of_house: str | None = None
     speaker: str
     speech_count: int
@@ -59,6 +60,39 @@ class KokkaiQuestionListResponse(BaseModel):
     items: list[KokkaiQuestion]
     count: int
     from_date: date
+
+
+class KokkaiTopicRanking(BaseModel):
+    topic: str
+    current_count: int
+    current_rank: int
+    total_legislators: int
+
+
+class KokkaiTopicRankingResponse(BaseModel):
+    items: list[KokkaiTopicRanking]
+    from_date: date
+    unit: str = "question_group"
+
+
+class KokkaiTopicTopRankingItem(BaseModel):
+    legislator_id: str
+    name_kanji: str
+    party_name: str | None = None
+    question_count: int
+    rank: int
+
+
+class KokkaiTopicTopRanking(BaseModel):
+    topic: str
+    total_legislators: int
+    items: list[KokkaiTopicTopRankingItem]
+
+
+class KokkaiTopicTopRankingResponse(BaseModel):
+    items: list[KokkaiTopicTopRanking]
+    from_date: date
+    unit: str = "question_group"
 
 
 class Party(BaseModel):
