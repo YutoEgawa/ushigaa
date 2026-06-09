@@ -7,6 +7,7 @@ import os
 import re
 import socket
 import time
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError
@@ -80,7 +81,7 @@ def meeting_topic(name_of_meeting: str) -> str:
 class SupabaseRest:
     def __init__(self) -> None:
         self.url = os.environ["SUPABASE_URL"].rstrip("/")
-        self.key = os.environ["SUPABASE_ANON_KEY"]
+        self.key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ["SUPABASE_ANON_KEY"]
 
     @property
     def read_headers(self) -> dict[str, str]:
@@ -117,7 +118,14 @@ class SupabaseRest:
         assert last_error is not None
         raise last_error
 
-    def post(self, path: str, rows: list[dict[str, Any]], on_conflict: str) -> list[dict[str, Any]]:
+    def post(
+        self,
+        path: str,
+        rows: list[dict[str, Any]],
+        on_conflict: str,
+        *,
+        resolution: str = "ignore-duplicates",
+    ) -> list[dict[str, Any]]:
         if not rows:
             return []
         request = Request(
@@ -126,7 +134,7 @@ class SupabaseRest:
             data=json.dumps(rows, ensure_ascii=False).encode("utf-8"),
             headers={
                 **self.write_headers,
-                "Prefer": "resolution=ignore-duplicates,return=representation",
+                "Prefer": f"resolution={resolution},return=representation",
             },
         )
         last_error: Exception | None = None
@@ -150,6 +158,10 @@ class SupabaseRest:
                 time.sleep(min(2**attempt, 10))
         assert last_error is not None
         raise last_error
+
+
+def parse_date(value: str) -> date:
+    return datetime.strptime(value, "%Y-%m-%d").date()
 
 
 def fetch_json(url: str, attempts: int = 4) -> dict[str, Any]:
@@ -191,7 +203,29 @@ def next_legislators(client: SupabaseRest, limit: int) -> list[dict[str, Any]]:
     return [row for row in legislators if row["id"] not in done][:limit]
 
 
-def fetch_question_records(legislator: dict[str, Any], sleep_seconds: float) -> list[dict[str, Any]]:
+def active_legislators(client: SupabaseRest, limit: int | None = None) -> list[dict[str, Any]]:
+    params = {
+        "select": "id,name_kanji,name_kana,house",
+        "status": "eq.active",
+        "order": "name_kana.asc",
+        "limit": str(limit or 1000),
+    }
+    return client.get("legislators", params)
+
+
+def latest_import_from_date(client: SupabaseRest, lookback_days: int) -> str:
+    rows = client.get(
+        "kokkai_meetings",
+        {"select": "date", "order": "date.desc", "limit": "1"},
+    )
+    if not rows or not rows[0].get("date"):
+        return FROM_DATE
+    latest_date = parse_date(rows[0]["date"])
+    from_date = max(parse_date(FROM_DATE), latest_date - timedelta(days=lookback_days))
+    return from_date.isoformat()
+
+
+def fetch_question_records(legislator: dict[str, Any], from_date: str, sleep_seconds: float) -> list[dict[str, Any]]:
     search_speaker = normalize_name(legislator["name_kanji"])
     records: list[dict[str, Any]] = []
     start_record = 1
@@ -199,7 +233,7 @@ def fetch_question_records(legislator: dict[str, Any], sleep_seconds: float) -> 
         url = f"{KOKKAI_API}?" + urlencode(
             {
                 "speaker": search_speaker,
-                "from": FROM_DATE,
+                "from": from_date,
                 "startRecord": str(start_record),
                 "maximumRecords": "100",
                 "recordPacking": "json",
@@ -223,7 +257,59 @@ def fetch_question_records(legislator: dict[str, Any], sleep_seconds: float) -> 
     return records
 
 
-def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple[int, int]:
+def build_question_groups(records: list[dict[str, Any]], meeting_map: dict[str, str]) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for record in records:
+        issue_id = clean(record.get("issueID"))
+        meeting_id = meeting_map.get(issue_id)
+        speaker = clean(record.get("speaker"))
+        if not meeting_id or not speaker:
+            continue
+        key = (record["_legislator_id"], meeting_id, speaker)
+        group = grouped.setdefault(
+            key,
+            {
+                "legislator_id": record["_legislator_id"],
+                "meeting_id": meeting_id,
+                "speaker": speaker,
+                "speeches": [],
+                "source_issue_ids": [],
+                "source_speech_ids": [],
+                "orders": [],
+            },
+        )
+        speech_id = clean(record.get("speechID"))
+        order = record.get("speechOrder")
+        speech_order = int(order) if str(order or "").isdigit() else None
+        group["speeches"].append((speech_order, speech_id, clean(record.get("speech"))))
+        if issue_id and issue_id not in group["source_issue_ids"]:
+            group["source_issue_ids"].append(issue_id)
+        if speech_id:
+            group["source_speech_ids"].append(speech_id)
+        if speech_order is not None:
+            group["orders"].append(speech_order)
+
+    groups = []
+    for group in grouped.values():
+        speeches = sorted(group["speeches"], key=lambda row: (row[0] is None, row[0] or 0, row[1]))
+        orders = group["orders"]
+        groups.append(
+            {
+                "legislator_id": group["legislator_id"],
+                "meeting_id": group["meeting_id"],
+                "speaker": group["speaker"],
+                "speech_count": len(speeches),
+                "speech": "\n\n".join(speech for _, _, speech in speeches if speech),
+                "source_issue_ids": group["source_issue_ids"],
+                "source_speech_ids": [speech_id for _, speech_id, _ in speeches if speech_id],
+                "first_speech_order": min(orders) if orders else None,
+                "last_speech_order": max(orders) if orders else None,
+            }
+        )
+    return groups
+
+
+def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple[int, int, int]:
     meetings_by_issue: dict[str, dict[str, Any]] = {}
     for record in records:
         issue_id = clean(record.get("issueID"))
@@ -238,7 +324,12 @@ def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple
 
     meetings = list(meetings_by_issue.values())
     for index in range(0, len(meetings), 100):
-        client.post("kokkai_meetings", meetings[index : index + 100], "source_issue_id")
+        client.post(
+            "kokkai_meetings",
+            meetings[index : index + 100],
+            "source_issue_id",
+            resolution="merge-duplicates",
+        )
 
     meeting_map: dict[str, str] = {}
     issue_ids = list(meetings_by_issue)
@@ -254,6 +345,7 @@ def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple
         )
         meeting_map.update({row["source_issue_id"]: row["id"] for row in rows})
 
+    groups = build_question_groups(records, meeting_map)
     speeches = []
     for record in records:
         issue_id = clean(record.get("issueID"))
@@ -275,13 +367,58 @@ def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple
             }
         )
     for index in range(0, len(speeches), 50):
-        client.post("kokkai_speeches", speeches[index : index + 50], "source_speech_id")
-    return len(meetings), len(speeches)
+        client.post(
+            "kokkai_speeches",
+            speeches[index : index + 50],
+            "source_speech_id",
+            resolution="merge-duplicates",
+        )
+    for index in range(0, len(groups), 50):
+        client.post(
+            "kokkai_question_groups",
+            groups[index : index + 50],
+            "legislator_id,meeting_id,speaker",
+            resolution="merge-duplicates",
+        )
+    return len(meetings), len(speeches), len(groups)
+
+
+def update_import_status(
+    client: SupabaseRest,
+    legislator: dict[str, Any],
+    from_date: str,
+    *,
+    speech_count: int,
+    group_count: int,
+    status: str,
+    error_message: str | None = None,
+) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    client.post(
+        "kokkai_legislator_import_status",
+        [
+            {
+                "legislator_id": legislator["id"],
+                "from_date": from_date,
+                "checked_at": now,
+                "speech_count": speech_count,
+                "group_count": group_count,
+                "status": status,
+                "error_message": error_message,
+                "updated_at": now,
+            }
+        ],
+        "legislator_id",
+        resolution="merge-duplicates",
+    )
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Import the next batch of Kokkai question candidates.")
+    parser = argparse.ArgumentParser(description="Import Kokkai question candidates.")
+    parser.add_argument("--mode", choices=("next", "delta"), default="next")
     parser.add_argument("--limit", type=int, default=20)
+    parser.add_argument("--from-date")
+    parser.add_argument("--lookback-days", type=int, default=14)
     parser.add_argument("--sleep", type=float, default=0.2)
     parser.add_argument("--out", type=Path, default=OUT_PATH)
     return parser.parse_args()
@@ -291,36 +428,70 @@ def main() -> int:
     args = parse_args()
     load_dotenv()
     client = SupabaseRest()
-    legislators = next_legislators(client, args.limit)
+    from_date = args.from_date or (latest_import_from_date(client, args.lookback_days) if args.mode == "delta" else FROM_DATE)
+    legislators = active_legislators(client, args.limit if args.limit > 0 else None) if args.mode == "delta" else next_legislators(client, args.limit)
+    print("mode=", args.mode)
+    print("from_date=", from_date)
     print("batch_legislators=", len(legislators), [row["name_kanji"] for row in legislators])
 
     all_records: list[dict[str, Any]] = []
     per_member = []
     for legislator in legislators:
-        records = fetch_question_records(legislator, args.sleep)
-        all_records.extend(records)
+        try:
+            records = fetch_question_records(legislator, from_date, args.sleep)
+            all_records.extend(records)
+            group_count = len({(record["_legislator_id"], clean(record.get("issueID")), clean(record.get("speaker"))) for record in records})
+            update_import_status(
+                client,
+                legislator,
+                from_date,
+                speech_count=len(records),
+                group_count=group_count,
+                status="success",
+            )
+            error_message = None
+        except Exception as exc:
+            records = []
+            group_count = 0
+            error_message = str(exc)
+            update_import_status(
+                client,
+                legislator,
+                from_date,
+                speech_count=0,
+                group_count=0,
+                status="error",
+                error_message=error_message,
+            )
         per_member.append(
             {
                 "legislator_id": legislator["id"],
                 "name_kanji": legislator["name_kanji"],
                 "speech_count": len(records),
+                "group_count": group_count,
+                "error_message": error_message,
             }
         )
-        print(legislator["name_kanji"], len(records))
+        print(legislator["name_kanji"], len(records), error_message or "")
 
-    meeting_count, speech_count = import_records(client, all_records)
+    meeting_count, speech_count, group_count = import_records(client, all_records)
     report = {
-        "from_date": FROM_DATE,
+        "mode": args.mode,
+        "from_date": from_date,
+        "lookback_days": args.lookback_days,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "members": per_member,
         "total_records": len(all_records),
         "meetings": meeting_count,
         "speeches_prepared": speech_count,
+        "groups_prepared": group_count,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print("total_records=", len(all_records))
     print("meetings=", meeting_count)
     print("speeches_prepared=", speech_count)
+    print("groups_prepared=", group_count)
     print("report=", args.out)
     return 0
 

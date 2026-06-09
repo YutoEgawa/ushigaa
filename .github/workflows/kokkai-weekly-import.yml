@@ -1,0 +1,53 @@
+name: Weekly Kokkai Import
+
+on:
+  schedule:
+    # Mondays 03:00 JST.
+    - cron: "0 18 * * 0"
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: "Optional override in YYYY-MM-DD. Defaults to latest meeting date minus lookback_days."
+        required: false
+        type: string
+      lookback_days:
+        description: "Days to rewind from the latest stored meeting date."
+        required: false
+        default: "14"
+        type: string
+      limit:
+        description: "Optional active-legislator limit for smoke runs. Use 0 for all."
+        required: false
+        default: "0"
+        type: string
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+      group: kokkai-weekly-import
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Import Kokkai delta
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          FROM_DATE: ${{ inputs.from_date }}
+          LOOKBACK_DAYS: ${{ inputs.lookback_days || '14' }}
+          LIMIT: ${{ inputs.limit || '0' }}
+        run: |
+          args=(--mode delta --lookback-days "$LOOKBACK_DAYS" --limit "$LIMIT" --out data/kokkai_import_last_batch.json)
+          if [ -n "$FROM_DATE" ]; then
+            args+=(--from-date "$FROM_DATE")
+          fi
+          python scripts/import_kokkai_batch.py "${args[@]}"

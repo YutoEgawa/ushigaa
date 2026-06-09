@@ -17,6 +17,15 @@
 3. API 用に `SUPABASE_URL` と `SUPABASE_ANON_KEY` を控える。
 4. Supabase 側で anon key に不要な更新権限がないことを確認する。
 
+国会質疑データの週次差分更新は GitHub Actions の `Weekly Kokkai Import` で実行する。GitHub Repository Secrets に以下を設定する。
+
+```text
+SUPABASE_URL=...
+SUPABASE_SERVICE_ROLE_KEY=...
+```
+
+`SUPABASE_SERVICE_ROLE_KEY` は GitHub Actions のサーバー側ジョブだけで使い、フロントエンドや公開APIには置かない。定期実行は DB 上の最新会議日から14日巻き戻して再取得し、国会APIの `source_speech_id` などの一意制約で重複を吸収する。
+
 ## 3. Backend API
 
 Render service name: `Ushigaa`
