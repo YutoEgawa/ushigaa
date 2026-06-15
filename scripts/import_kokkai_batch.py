@@ -10,13 +10,15 @@ import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
 FROM_DATE = "2023-01-01"
 KOKKAI_API = "https://kokkai.ndl.go.jp/api/speech"
+KOKKAI_API_USER_AGENT = "curl/8.7.1"
+KOKKAI_PAGE_SIZE = 20
 OUT_PATH = Path("data/kokkai_import_last_batch.json")
 
 
@@ -176,15 +178,23 @@ def parse_date(value: str) -> date:
 
 
 def fetch_json(url: str, attempts: int = 4) -> dict[str, Any]:
-    request = Request(url, headers={"User-Agent": "ushigaa-kokkai-import/0.1"})
+    request = Request(url, headers={"User-Agent": KOKKAI_API_USER_AGENT, "Accept": "application/json"})
     last_error: Exception | None = None
     for attempt in range(1, attempts + 1):
         try:
             with urlopen(request, timeout=30) as response:
                 return json.loads(response.read().decode("utf-8"))
+        except HTTPError as exc:
+            if exc.code not in {429, 500, 502, 503, 504}:
+                raise
+            last_error = exc
+            if attempt == attempts:
+                break
+            time.sleep(min(2**attempt, 10))
         except (
             http.client.IncompleteRead,
             http.client.RemoteDisconnected,
+            URLError,
             TimeoutError,
             socket.timeout,
         ) as exc:
@@ -236,7 +246,12 @@ def latest_import_from_date(client: SupabaseRest, lookback_days: int) -> str:
     return from_date.isoformat()
 
 
-def fetch_question_records(legislator: dict[str, Any], from_date: str, sleep_seconds: float) -> list[dict[str, Any]]:
+def fetch_question_records(
+    legislator: dict[str, Any],
+    from_date: str,
+    sleep_seconds: float,
+    page_size: int = KOKKAI_PAGE_SIZE,
+) -> list[dict[str, Any]]:
     search_speaker = normalize_name(legislator["name_kanji"])
     records: list[dict[str, Any]] = []
     start_record = 1
@@ -246,7 +261,7 @@ def fetch_question_records(legislator: dict[str, Any], from_date: str, sleep_sec
                 "speaker": search_speaker,
                 "from": from_date,
                 "startRecord": str(start_record),
-                "maximumRecords": "100",
+                "maximumRecords": str(page_size),
                 "recordPacking": "json",
             }
         )
@@ -430,6 +445,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=20)
     parser.add_argument("--from-date")
     parser.add_argument("--lookback-days", type=int, default=14)
+    parser.add_argument("--page-size", type=int, default=KOKKAI_PAGE_SIZE)
     parser.add_argument("--sleep", type=float, default=0.2)
     parser.add_argument("--out", type=Path, default=OUT_PATH)
     return parser.parse_args()
@@ -447,9 +463,10 @@ def main() -> int:
 
     all_records: list[dict[str, Any]] = []
     per_member = []
+    error_count = 0
     for legislator in legislators:
         try:
-            records = fetch_question_records(legislator, from_date, args.sleep)
+            records = fetch_question_records(legislator, from_date, args.sleep, args.page_size)
             all_records.extend(records)
             group_count = len({(record["_legislator_id"], clean(record.get("issueID")), clean(record.get("speaker"))) for record in records})
             update_import_status(
@@ -464,6 +481,7 @@ def main() -> int:
         except Exception as exc:
             records = []
             group_count = 0
+            error_count += 1
             error_message = str(exc)
             update_import_status(
                 client,
@@ -490,12 +508,14 @@ def main() -> int:
         "mode": args.mode,
         "from_date": from_date,
         "lookback_days": args.lookback_days,
+        "page_size": args.page_size,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "members": per_member,
         "total_records": len(all_records),
         "meetings": meeting_count,
         "speeches_prepared": speech_count,
         "groups_prepared": group_count,
+        "error_count": error_count,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -503,7 +523,11 @@ def main() -> int:
     print("meetings=", meeting_count)
     print("speeches_prepared=", speech_count)
     print("groups_prepared=", group_count)
+    print("error_count=", error_count)
     print("report=", args.out)
+    if error_count:
+        print(f"failed_legislators={error_count}", flush=True)
+        return 1
     return 0
 
 
