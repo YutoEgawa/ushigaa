@@ -21,10 +21,10 @@
 
 ```text
 SUPABASE_URL=...
-SUPABASE_SERVICE_ROLE_KEY=...
+SUPABASE_SECRET_KEY=...
 ```
 
-`SUPABASE_SERVICE_ROLE_KEY` は GitHub Actions のサーバー側ジョブだけで使い、フロントエンドや公開APIには置かない。定期実行は DB 上の最新会議日から14日巻き戻して再取得し、国会APIの `source_speech_id` などの一意制約で重複を吸収する。
+`SUPABASE_SECRET_KEY` は GitHub Actions のサーバー側ジョブだけで使い、フロントエンドや公開APIには置かない。Supabase の legacy service_role key を使う場合は、代わりに `SUPABASE_SERVICE_ROLE_KEY` という Secret 名でも動作する。定期実行は DB 上の最新会議日から14日巻き戻して再取得し、国会APIの `source_speech_id` などの一意制約で重複を吸収する。
 
 ## 3. Backend API
 

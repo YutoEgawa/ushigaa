@@ -43,14 +43,16 @@ jobs:
       - name: Validate secrets
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           test -n "$SUPABASE_URL" || { echo "::error::SUPABASE_URL repository secret is missing."; exit 1; }
-          test -n "$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::SUPABASE_SERVICE_ROLE_KEY repository secret is missing."; exit 1; }
+          test -n "$SUPABASE_SECRET_KEY$SUPABASE_SERVICE_ROLE_KEY" || { echo "::error::SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY repository secret is missing."; exit 1; }
 
       - name: Import Kokkai delta
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           FROM_DATE: ${{ inputs.from_date }}
           LOOKBACK_DAYS: ${{ inputs.lookback_days || '14' }}
