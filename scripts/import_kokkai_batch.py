@@ -80,8 +80,18 @@ def meeting_topic(name_of_meeting: str) -> str:
 
 class SupabaseRest:
     def __init__(self) -> None:
-        self.url = os.environ["SUPABASE_URL"].rstrip("/")
-        self.key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ["SUPABASE_ANON_KEY"]
+        supabase_url = os.environ.get("SUPABASE_URL")
+        service_role_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+        anon_key = os.environ.get("SUPABASE_ANON_KEY")
+        if not supabase_url:
+            raise RuntimeError("SUPABASE_URL is required.")
+        if os.environ.get("GITHUB_ACTIONS") == "true" and not service_role_key:
+            raise RuntimeError("SUPABASE_SERVICE_ROLE_KEY is required for GitHub Actions imports.")
+        key = service_role_key or anon_key
+        if not key:
+            raise RuntimeError("SUPABASE_SERVICE_ROLE_KEY or SUPABASE_ANON_KEY is required.")
+        self.url = supabase_url.rstrip("/")
+        self.key = key
 
     @property
     def read_headers(self) -> dict[str, str]:
