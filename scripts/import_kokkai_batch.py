@@ -43,6 +43,14 @@ def normalize_name(value: object) -> str:
     return value.removesuffix("君").replace(" ", "")
 
 
+def house_matches(legislator_house: object, api_house: object) -> bool:
+    expected = {
+        "shugiin": "衆議院",
+        "sangiin": "参議院",
+    }.get(clean(legislator_house))
+    return not expected or clean(api_house) == expected
+
+
 def meeting_topic(name_of_meeting: str) -> str:
     rules = [
         ("本会議", "本会議"),
@@ -270,6 +278,8 @@ def fetch_question_records(
         for record in page:
             if normalize_name(record.get("speaker")) != search_speaker:
                 continue
+            if not house_matches(legislator.get("house"), record.get("nameOfHouse")):
+                continue
             if record.get("speakerPosition") is not None:
                 continue
             if not clean(record.get("speech")):
@@ -336,6 +346,7 @@ def build_question_groups(records: list[dict[str, Any]], meeting_map: dict[str, 
 
 
 def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple[int, int, int]:
+    records = dedupe_records(records)
     meetings_by_issue: dict[str, dict[str, Any]] = {}
     for record in records:
         issue_id = clean(record.get("issueID"))
@@ -407,6 +418,19 @@ def import_records(client: SupabaseRest, records: list[dict[str, Any]]) -> tuple
             resolution="merge-duplicates",
         )
     return len(meetings), len(speeches), len(groups)
+
+
+def dedupe_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[str] = set()
+    deduped: list[dict[str, Any]] = []
+    for record in records:
+        speech_id = clean(record.get("speechID"))
+        if speech_id and speech_id in seen:
+            continue
+        if speech_id:
+            seen.add(speech_id)
+        deduped.append(record)
+    return deduped
 
 
 def update_import_status(
